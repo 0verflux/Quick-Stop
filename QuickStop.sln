@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickStop.Models", "QuickStop.Models\QuickStop.Models.csproj", "{96755911-DC9B-42A1-84CB-39BB5551536A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickStop.Client", "QuickStop.Client\QuickStop.Client.csproj", "{A88D7EE3-1ADF-4189-A755-0F01F479EC29}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{96755911-DC9B-42A1-84CB-39BB5551536A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96755911-DC9B-42A1-84CB-39BB5551536A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96755911-DC9B-42A1-84CB-39BB5551536A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96755911-DC9B-42A1-84CB-39BB5551536A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A88D7EE3-1ADF-4189-A755-0F01F479EC29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A88D7EE3-1ADF-4189-A755-0F01F479EC29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A88D7EE3-1ADF-4189-A755-0F01F479EC29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A88D7EE3-1ADF-4189-A755-0F01F479EC29}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
