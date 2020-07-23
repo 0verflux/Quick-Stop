@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HotelReservationDetailsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HotelReservationDetailsView.Designer.cs">
+      <DependentUpon>HotelReservationDetailsView.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainView.cs">
       <SubType>Form</SubType>
     </Compile>
