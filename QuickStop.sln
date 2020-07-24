@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickStop.Domain", "QuickSt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickStop.Infrastructure", "QuickStop.Infrastructure\QuickStop.Infrastructure.csproj", "{0F9C723F-9832-4480-A701-8C3C6FBE60C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickStop.Design", "QuickStop.Design\QuickStop.Design.csproj", "{EA673B00-42EF-451F-800B-D2971509DCB3}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{0F9C723F-9832-4480-A701-8C3C6FBE60C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F9C723F-9832-4480-A701-8C3C6FBE60C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F9C723F-9832-4480-A701-8C3C6FBE60C7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EA673B00-42EF-451F-800B-D2971509DCB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EA673B00-42EF-451F-800B-D2971509DCB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EA673B00-42EF-451F-800B-D2971509DCB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EA673B00-42EF-451F-800B-D2971509DCB3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
