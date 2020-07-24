@@ -1,4 +1,5 @@
-﻿using QuickStop.Domain.Enums;
+﻿using QuickStop.Domain.Contracts;
+using QuickStop.Domain.Enums;
 using System.Drawing;
 
 namespace QuickStop.Domain.Models

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuickStop.Domain.Contracts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

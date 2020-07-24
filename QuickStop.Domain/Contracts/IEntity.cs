@@ -1,4 +1,4 @@
-﻿namespace QuickStop.Domain.Models
+﻿namespace QuickStop.Domain.Contracts
 {
     public interface IEntity
     {
