@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickStop.Infrastructure", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickStop.Console", "QuickStop.Console\QuickStop.Console.csproj", "{9B470665-5B96-4B07-BC31-52749C7C11FD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickStop.Components", "QuickStop.Components\QuickStop.Components.csproj", "{49001BEE-EF7A-4D93-89AB-C99312909F33}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{9B470665-5B96-4B07-BC31-52749C7C11FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B470665-5B96-4B07-BC31-52749C7C11FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B470665-5B96-4B07-BC31-52749C7C11FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49001BEE-EF7A-4D93-89AB-C99312909F33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49001BEE-EF7A-4D93-89AB-C99312909F33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49001BEE-EF7A-4D93-89AB-C99312909F33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49001BEE-EF7A-4D93-89AB-C99312909F33}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

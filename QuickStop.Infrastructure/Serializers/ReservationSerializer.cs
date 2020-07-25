@@ -19,39 +19,37 @@ namespace QuickStop.Infrastructure.Serializers
 
         void IReservationSerializer.CreateReservation(Reservation reservation)
         {
-            var file = Path.Combine(baseDirectory, reservation.Reference + extension);
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
+            string file = Path.Combine(baseDirectory, reservation.Reference + extension);
 
-            // TODO: replace sb with a singleton instance
-
-            sb.Clear();
             sb.AppendLine(reservation.Hotel.ID.ToString());
             sb.AppendLine(reservation.CheckIn.ToString());
             sb.AppendLine(reservation.DurationOfStay.ToString());
-            sb.AppendLine(reservation.TotalCost.ToString());
+            sb.Append(reservation.TotalCost.ToString());
 
             File.WriteAllText(file, sb.ToString());
         }
 
         Reservation IReservationSerializer.ReadReservation(string reference)
         {
-            var file = Path.Combine(baseDirectory, reference + extension);
-            var reservation = new Reservation();
-
-            var parameters = File.ReadAllText(file).Split(delimiters);
-
-            reservation.Reference = reference;
-            reservation.Hotel = null; // TODO: Find Hotel by ID ; parameters[0]
-            reservation.CheckIn = Convert.ToDateTime(parameters[1]);
-            reservation.DurationOfStay = Convert.ToUInt16(parameters[2]);
-            reservation.TotalCost = Convert.ToDecimal(parameters[3]);
+            string file = Path.Combine(baseDirectory, reference + extension);
+            string[] parameters = File.ReadAllLines(file);
             
+            Reservation reservation = new Reservation
+            {
+                Reference = reference,
+                Hotel = null, // TODO: Find Hotel by ID ; parameters[0]
+                CheckIn = Convert.ToDateTime(parameters[1]),
+                DurationOfStay = Convert.ToUInt16(parameters[2]),
+                TotalCost = Convert.ToDecimal(parameters[3])
+            };
+
             return reservation;
         }
 
         bool IReservationSerializer.ReservationExists(string reference)
         {
-            var file = Path.Combine(baseDirectory, reference + extension);
+            string file = Path.Combine(baseDirectory, reference + extension);
 
             return File.Exists(file);
         }

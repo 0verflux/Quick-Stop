@@ -22,13 +22,15 @@ namespace QuickStop.Infrastructure.Serializers
 
         IEnumerable<Hotel> IHotelSerializer.DeserializeHotels()
         {
-            var file = Path.Combine(baseDirectory, fileName + extension);
-            var hotels = new List<Hotel>();
-            string[] hotelDatas = File.ReadAllText(file).Split(Environment.NewLine.ToCharArray());
+            List<Hotel> hotels = new List<Hotel>();
 
+            string file = Path.Combine(baseDirectory, fileName + extension);
+            string[] hotelDatas = File.ReadAllLines(file);
+            
             foreach(string hotelData in hotelDatas)
             {
                 string[] hotelParams = hotelData.Split(delimiters);
+
                 Hotel hotel = new Hotel
                 {
                     ID = Convert.ToInt32(hotelParams[0]),
@@ -50,29 +52,30 @@ namespace QuickStop.Infrastructure.Serializers
 
         void IHotelSerializer.SerializeHotels(IEnumerable<Hotel> hotels)
         {
-            var file = Path.Combine(baseDirectory, fileName + extension);
-            var sb = new StringBuilder();
-            var lim = delimiters.First();
-            var quote = "\"";
+            StringBuilder sb = new StringBuilder();
+            string file = Path.Combine(baseDirectory, fileName + extension);
+            char quote = '\"';
 
-            // TODO: replace sb with a singleton instance
-
-            sb.Clear();
             foreach (Hotel hotel in hotels)
             {
-                sb.Append(quote + hotel.ID.ToString() + quote + lim); // TODO: ignore delimiter reading in string
-                sb.Append(hotel.Name + lim);
-                sb.Append(quote + hotel.Description + quote + lim);
-                sb.Append("" + lim); // TODO: Convert BITMAP to byte array
-                sb.Append("" + lim);
-                sb.Append(hotel.Price.ToString() + lim);
-                sb.Append(hotel.Ratings.ToString() + lim);
-                sb.Append(hotel.Location.ToString() + lim);
-                sb.Append(hotel.DateUntilAvailable.ToString() + lim);
+                sb.Append(IncludeDelimiter(quote + hotel.ID.ToString() + quote)); // TODO: ignore delimiter reading in string
+                sb.Append(IncludeDelimiter(hotel.Name));
+                sb.Append(IncludeDelimiter(quote + hotel.Description + quote));
+                sb.Append(IncludeDelimiter("")); // TODO: Convert BITMAP to byte array
+                sb.Append(IncludeDelimiter(""));
+                sb.Append(IncludeDelimiter(hotel.Price.ToString()));
+                sb.Append(IncludeDelimiter(hotel.Ratings.ToString()));
+                sb.Append(IncludeDelimiter(hotel.Location.ToString()));
+                sb.Append(IncludeDelimiter(hotel.DateUntilAvailable.ToString()));
                 sb.AppendLine();
             }
 
             File.WriteAllText(file, sb.ToString());
+        }
+
+        private string IncludeDelimiter(string str)
+        {
+            return str + delimiters.First();
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace QuickStop.Infrastructure.Base
+﻿using System.Text;
+
+namespace QuickStop.Infrastructure.Base
 {
     public abstract class SerializerBase
     {
@@ -11,7 +13,6 @@
             this.baseDirectory = baseDirectory;
             this.delimiters = delimiters;
             this.extension = ".txt";
-            
         }
     }
 }
