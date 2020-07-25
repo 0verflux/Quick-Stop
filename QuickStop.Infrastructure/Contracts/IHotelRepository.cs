@@ -8,7 +8,6 @@ namespace QuickStop.Infrastructure.Contracts
     {
         IEnumerable<Hotel> Hotels { get; }
 
-        void UpdateHotelAvailability(int id, bool isUpdating);
         void Save();
         Hotel FindHotelByID(int id);
     }

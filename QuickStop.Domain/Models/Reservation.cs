@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace QuickStop.Domain.Models
 {
-    public class Reservation : IEntity
+    public class Reservation
     {
-        public int ID { get; set; }
+        public string Reference { get; set; }
         public Hotel Hotel { get; set; }
         public DateTime? CheckIn { get; set; }
         public ushort DurationOfStay { get; set; }

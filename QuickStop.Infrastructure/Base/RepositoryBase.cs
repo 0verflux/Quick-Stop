@@ -1,16 +1,14 @@
-﻿using QuickStop.Domain.Contracts;
-using System.Collections.Generic;
-using System.IO;
+﻿using QuickStop.Infrastructure.Contracts;
 
 namespace QuickStop.Infrastructure.Base
 {
-    public abstract class RepositoryBase<TEntity> where TEntity : IEntity
+    public abstract class RepositoryBase<TEntity>
     {
-        protected readonly string baseDirectory;
+        protected readonly ISerializer serializer;
         
-        protected RepositoryBase(string baseDirectory)
+        protected RepositoryBase(ISerializer serializer)
         {
-            this.baseDirectory = baseDirectory;
+            this.serializer = serializer;
         }
     }
 }

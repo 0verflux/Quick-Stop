@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,11 +43,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\RepositoryBase.cs" />
+    <Compile Include="Base\SerializerBase.cs" />
+    <Compile Include="Contracts\ISerializer.cs" />
     <Compile Include="Contracts\IHotelRepository.cs" />
+    <Compile Include="Contracts\IHotelSerializer.cs" />
+    <Compile Include="Contracts\IReservationDataAccess.cs" />
     <Compile Include="Contracts\IReservationRepository.cs" />
-    <Compile Include="HotelRepository.cs" />
+    <Compile Include="Repositories\HotelRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReservationRepository.cs" />
+    <Compile Include="Repositories\ReservationRepository.cs" />
+    <Compile Include="Serializers\HotelSerializer.cs" />
+    <Compile Include="Serializers\ReservationSerializer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\QuickStop.Domain\QuickStop.Domain.csproj">
@@ -54,5 +61,6 @@
       <Name>QuickStop.Domain</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
