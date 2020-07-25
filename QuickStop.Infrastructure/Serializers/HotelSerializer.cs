@@ -36,12 +36,12 @@ namespace QuickStop.Infrastructure.Serializers
                     ID = Convert.ToInt32(hotelParams[0]),
                     Name = hotelParams[1].Trim('\'', '\"'),
                     Description = hotelParams[2].Trim('\'', '\"'),
-                    Icon = null, // TODO: parse string to bitmap
-                    Room = null,
-                    Price = Convert.ToDecimal(hotelParams[5]),
-                    Ratings = Convert.ToUInt16(hotelParams[6]),
-                    Location = (Location)Enum.Parse(typeof(Location), hotelParams[7]),
-                    DateUntilAvailable = Convert.ToDateTime(hotelParams[8])
+                    Price = Convert.ToDecimal(hotelParams[3]),
+                    Ratings = Convert.ToUInt16(hotelParams[4]),
+                    Location = (Location)Enum.Parse(typeof(Location), hotelParams[5]),
+                    DateUntilAvailable = Convert.ToDateTime(hotelParams[6]),
+                    Icon = hotelParams[7],
+                    Room = hotelParams[8]
                 };
 
                 hotels.Add(hotel);
@@ -54,28 +54,28 @@ namespace QuickStop.Infrastructure.Serializers
         {
             StringBuilder sb = new StringBuilder();
             string file = Path.Combine(baseDirectory, fileName + extension);
-            string quote = "\"";
 
             foreach (Hotel hotel in hotels)
             {
-                sb.Append(IncludeDelimiter(quote + hotel.ID.ToString() + quote));
-                sb.Append(IncludeDelimiter(hotel.Name));
-                sb.Append(IncludeDelimiter(quote + hotel.Description + quote));
-                sb.Append(IncludeDelimiter("")); // TODO: Convert BITMAP to byte array
-                sb.Append(IncludeDelimiter(""));
+                sb.Append(IncludeDelimiter(hotel.ID.ToString()));
+                sb.Append(IncludeDelimiter(hotel.Name, true));
+                sb.Append(IncludeDelimiter(hotel.Description, true));
                 sb.Append(IncludeDelimiter(hotel.Price.ToString()));
                 sb.Append(IncludeDelimiter(hotel.Ratings.ToString()));
                 sb.Append(IncludeDelimiter(hotel.Location.ToString()));
                 sb.Append(IncludeDelimiter(hotel.DateUntilAvailable.ToString()));
+                sb.Append(IncludeDelimiter(hotel.Icon));
+                sb.Append(IncludeDelimiter(hotel.Room));
                 sb.AppendLine();
             }
 
             File.WriteAllText(file, sb.ToString());
         }
 
-        private string IncludeDelimiter(string str)
+        private string IncludeDelimiter(string str, bool ignoreDelimiterOnString = false)
         {
-            return str + delimiters.First();
+            string quote = ignoreDelimiterOnString ? "\"" : null;
+            return $"{quote}{str}{delimiters.First()}{quote}";
         }
     }
 }
