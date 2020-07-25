@@ -25,17 +25,17 @@ namespace QuickStop.Infrastructure.Serializers
             List<Hotel> hotels = new List<Hotel>();
 
             string file = Path.Combine(baseDirectory, fileName + extension);
-            string[] hotelDatas = File.ReadAllLines(file);
+            string[] data = File.ReadAllLines(file);
             
-            foreach(string hotelData in hotelDatas)
+            foreach(string hotelData in data)
             {
-                string[] hotelParams = hotelData.Split(delimiters);
+                string[] hotelParams = parser.Split(hotelData);
 
                 Hotel hotel = new Hotel
                 {
                     ID = Convert.ToInt32(hotelParams[0]),
-                    Name = hotelParams[1],
-                    Description = hotelParams[2],
+                    Name = hotelParams[1].Trim('\'', '\"'),
+                    Description = hotelParams[2].Trim('\'', '\"'),
                     Icon = null, // TODO: parse string to bitmap
                     Room = null,
                     Price = Convert.ToDecimal(hotelParams[5]),
@@ -54,11 +54,11 @@ namespace QuickStop.Infrastructure.Serializers
         {
             StringBuilder sb = new StringBuilder();
             string file = Path.Combine(baseDirectory, fileName + extension);
-            char quote = '\"';
+            string quote = "\"";
 
             foreach (Hotel hotel in hotels)
             {
-                sb.Append(IncludeDelimiter(quote + hotel.ID.ToString() + quote)); // TODO: ignore delimiter reading in string
+                sb.Append(IncludeDelimiter(quote + hotel.ID.ToString() + quote));
                 sb.Append(IncludeDelimiter(hotel.Name));
                 sb.Append(IncludeDelimiter(quote + hotel.Description + quote));
                 sb.Append(IncludeDelimiter("")); // TODO: Convert BITMAP to byte array
