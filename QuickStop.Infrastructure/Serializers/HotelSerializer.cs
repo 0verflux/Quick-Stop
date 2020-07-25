@@ -39,7 +39,7 @@ namespace QuickStop.Infrastructure.Serializers
                     Price = Convert.ToDecimal(hotelParams[3]),
                     Ratings = Convert.ToUInt16(hotelParams[4]),
                     Location = (Location)Enum.Parse(typeof(Location), hotelParams[5]),
-                    DateUntilAvailable = Convert.ToDateTime(hotelParams[6]),
+                    DateUntilAvailable = string.IsNullOrWhiteSpace(hotelParams[6]) ? null : (DateTime?)Convert.ToDateTime(hotelParams[6]),
                     Icon = hotelParams[7],
                     Room = hotelParams[8]
                 };
@@ -75,7 +75,7 @@ namespace QuickStop.Infrastructure.Serializers
         private string IncludeDelimiter(string str, bool ignoreDelimiterOnString = false)
         {
             string quote = ignoreDelimiterOnString ? "\"" : null;
-            return $"{quote}{str}{delimiters.First()}{quote}";
+            return $"{quote}{str}{quote}{delimiters.First()}";
         }
     }
 }
