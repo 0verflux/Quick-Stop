@@ -12,7 +12,7 @@ namespace QuickStop.Infrastructure.Serializers
 {
     public sealed class ReservationSerializer : SerializerBase, IReservationSerializer
     {
-        private IHotelRepository hotelRepository;
+        private readonly IHotelRepository hotelRepository;
 
         public ReservationSerializer(IHotelRepository hotelRepository, string baseDirectory) : base(baseDirectory, null)
         {
