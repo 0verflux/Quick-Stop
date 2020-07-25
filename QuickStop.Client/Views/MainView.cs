@@ -11,23 +11,17 @@ namespace QuickStop.Client.Views
     public partial class MainForm : IMainView
     {
         private event EventHandler<HotelSelectedEventArgs> HotelSelected;
-        private event EventHandler HotelFiltered;
-        private event EventHandler HotelSorted;
+        private event EventHandler<HotelFilterEventArgs> LoadFilteredHotel;
 
         event EventHandler<HotelSelectedEventArgs> IMainView.HotelSelected
         {
             add { HotelSelected += value; }
             remove { HotelSelected -= value; }
         }
-        event EventHandler IMainView.HotelFiltered
+        event EventHandler<HotelFilterEventArgs> IMainView.LoadFilteredHotel
         {
-            add { HotelFiltered += value; }
-            remove { HotelFiltered -= value; }
-        }
-        event EventHandler IMainView.HotelSorted
-        {
-            add { HotelSorted += value; }
-            remove { HotelSorted -= value; }
+            add { LoadFilteredHotel += value; }
+            remove { LoadFilteredHotel -= value; }
         }
 
         void IMainView.PopulateHotels(IEnumerable<Hotel> hotels)
@@ -37,7 +31,7 @@ namespace QuickStop.Client.Views
 
         void IMainView.ViewHotelDetails(Hotel hotel)
         {
-            //View Hotel Details Form
+            //TODO: View Hotel Details Form
         }
     }
 }
