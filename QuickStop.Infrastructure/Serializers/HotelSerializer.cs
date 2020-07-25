@@ -34,8 +34,8 @@ namespace QuickStop.Infrastructure.Serializers
                 Hotel hotel = new Hotel
                 {
                     ID = Convert.ToInt32(hotelParams[0]),
-                    Name = hotelParams[1].Trim('\'', '\"'),
-                    Description = hotelParams[2].Trim('\'', '\"'),
+                    Name = hotelParams[1].Trim('\"'),
+                    Description = hotelParams[2].Trim('\"'),
                     Price = Convert.ToDecimal(hotelParams[3]),
                     Ratings = Convert.ToUInt16(hotelParams[4]),
                     Location = (Location)Enum.Parse(typeof(Location), hotelParams[5]),

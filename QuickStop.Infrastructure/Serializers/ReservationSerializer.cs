@@ -12,9 +12,11 @@ namespace QuickStop.Infrastructure.Serializers
 {
     public sealed class ReservationSerializer : SerializerBase, IReservationSerializer
     {
-        public ReservationSerializer(string baseDirectory) : base(baseDirectory, null)
-        {
+        private IHotelRepository hotelRepository;
 
+        public ReservationSerializer(IHotelRepository hotelRepository, string baseDirectory) : base(baseDirectory, null)
+        {
+            this.hotelRepository = hotelRepository;
         }
 
         void IReservationSerializer.CreateReservation(Reservation reservation)
@@ -38,7 +40,7 @@ namespace QuickStop.Infrastructure.Serializers
             Reservation reservation = new Reservation
             {
                 Reference = reference,
-                Hotel = null, // TODO: Find Hotel by ID ; parameters[0]
+                Hotel = hotelRepository.FindHotelByID(Convert.ToInt32(parameters[0])),
                 CheckIn = Convert.ToDateTime(parameters[1]),
                 DurationOfStay = Convert.ToUInt16(parameters[2]),
                 TotalCost = Convert.ToDecimal(parameters[3])
