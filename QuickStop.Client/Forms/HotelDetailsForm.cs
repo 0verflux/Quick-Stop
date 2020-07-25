@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QuickStop.Client.Forms
+namespace QuickStop.Client.Views
 {
     public partial class HotelDetailsForm : Form
     {

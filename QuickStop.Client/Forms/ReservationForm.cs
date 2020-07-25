@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QuickStop.Client.Forms
+namespace QuickStop.Client.Views
 {
-    public partial class ReservationDetailsForm : Form
+    public partial class ReservationForm : Form
     {
-        public ReservationDetailsForm()
+        public ReservationForm()
         {
             InitializeComponent();
         }
