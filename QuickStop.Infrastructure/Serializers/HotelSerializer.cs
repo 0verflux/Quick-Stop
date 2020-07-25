@@ -7,7 +7,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace QuickStop.Infrastructure.Serializers
 {
@@ -39,9 +38,11 @@ namespace QuickStop.Infrastructure.Serializers
                     Price = Convert.ToDecimal(hotelParams[3]),
                     Ratings = Convert.ToUInt16(hotelParams[4]),
                     Location = (Location)Enum.Parse(typeof(Location), hotelParams[5]),
-                    DateUntilAvailable = string.IsNullOrWhiteSpace(hotelParams[6]) ? null : (DateTime?)Convert.ToDateTime(hotelParams[6]),
-                    Icon = hotelParams[7],
-                    Room = hotelParams[8]
+                    MinGuestCount = Convert.ToInt32(hotelParams[6]),
+                    MaxGuestCount = Convert.ToInt32(hotelParams[7]),
+                    DateUntilAvailable = string.IsNullOrWhiteSpace(hotelParams[8]) ? null : (DateTime?)Convert.ToDateTime(hotelParams[8]),
+                    Icon = hotelParams[9],
+                    Room = hotelParams[10]
                 };
 
                 hotels.Add(hotel);
@@ -63,6 +64,8 @@ namespace QuickStop.Infrastructure.Serializers
                 sb.Append(IncludeDelimiter(hotel.Price.ToString()));
                 sb.Append(IncludeDelimiter(hotel.Ratings.ToString()));
                 sb.Append(IncludeDelimiter(hotel.Location.ToString()));
+                sb.Append(IncludeDelimiter(hotel.MinGuestCount.ToString()));
+                sb.Append(IncludeDelimiter(hotel.MaxGuestCount.ToString()));
                 sb.Append(IncludeDelimiter(hotel.DateUntilAvailable.ToString()));
                 sb.Append(IncludeDelimiter(hotel.Icon));
                 sb.Append(IncludeDelimiter(hotel.Room));
