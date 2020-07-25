@@ -15,6 +15,5 @@ namespace QuickStop.Client.Views
         event EventHandler<HotelFilterEventArgs> LoadFilteredHotel;
         
         void PopulateHotels(IEnumerable<Hotel> hotels);
-        void ViewHotelDetails(Hotel hotel);
     }
 }

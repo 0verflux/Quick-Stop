@@ -1,4 +1,4 @@
-﻿namespace QuickStop.Client.Forms
+﻿namespace QuickStop.Client.Views
 {
     partial class HotelDetailsForm
     {
