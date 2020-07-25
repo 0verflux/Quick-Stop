@@ -1,10 +1,11 @@
 ﻿using QuickStop.Domain.Models;
+
 namespace QuickStop.Infrastructure.Contracts
 {
-    public interface IReservationSerializer : ISerializer
+    public interface IReservationRepository
     {
         void CreateReservation(Reservation reservation);
-        Reservation ReadReservation(string reference);
+        Reservation GetReservation(string reference);
         bool ReservationExists(string reference);
     }
 }
