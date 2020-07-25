@@ -28,10 +28,5 @@ namespace QuickStop.Client.Views
         {
             //TODO: Populate FlowLayoutPanel
         }
-
-        void IMainView.ViewHotelDetails(Hotel hotel)
-        {
-            //TODO: View Hotel Details Form
-        }
     }
 }
