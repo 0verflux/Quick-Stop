@@ -11,9 +11,10 @@ namespace QuickStop.Client.Presenters
         private readonly IHotelRepository hotelRepository;
         private readonly IReservationPresenter reservationPresenter;
 
-        public HotelDetailsPresenter(IHotelDetailsView hotelDetailsView, IHotelRepository hotelRepository) : base(hotelDetailsView)
+        public HotelDetailsPresenter(IHotelDetailsView hotelDetailsView, IHotelRepository hotelRepository, IReservationPresenter reservationPresenter) : base(hotelDetailsView)
         {
             this.hotelRepository = hotelRepository;
+            this.reservationPresenter = reservationPresenter;
 
             view.HotelSelected += HotelSelected;
         }
