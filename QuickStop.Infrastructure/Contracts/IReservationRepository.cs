@@ -2,8 +2,10 @@
 
 namespace QuickStop.Infrastructure.Contracts
 {
-    public interface IReservationDataAccess : IDataAccess<Reservation>
+    public interface IReservationRepository
     {
         void CreateReservation(Reservation reservation);
+        Reservation GetReservation(string reference);
+        bool ReservationExists(string reference);
     }
 }
