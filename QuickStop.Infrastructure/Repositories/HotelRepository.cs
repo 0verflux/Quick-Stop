@@ -19,7 +19,21 @@ namespace QuickStop.Infrastructure.Repositories
 
         IEnumerable<Hotel> IHotelRepository.GetHotels(Location location, int guestCount, bool sortMode)
         {
-            return hotels.Where(x => x.Location == location).Where(x => x.MinGuestCount >= guestCount && x.MaxGuestCount <= guestCount).OrderBy(x => (sortMode) ? x.Price : x.Ratings);
+            var list = hotels.Where(x => x.Location == location);
+
+            if (guestCount > 0)
+            {
+                list = list.Where(x => x.MinGuestCount >= guestCount && x.MaxGuestCount <= guestCount);
+            }
+
+            if(sortMode)
+            {
+                return list.OrderByDescending(x => x.Price);
+            }
+            else
+            {
+                return list.OrderBy(x => x.Ratings);
+            }
         }
 
         void IHotelRepository.Save()
