@@ -46,9 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base\PresenterBase.cs" />
-    <Compile Include="Contracts\IPresenter.cs" />
-    <Compile Include="Contracts\IView.cs" />
     <Compile Include="Forms\HotelDetailsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,7 +64,6 @@
     <Compile Include="Forms\ReservationDetailsForm.Designer.cs">
       <DependentUpon>ReservationDetailsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presenters\IMainPresenter.cs" />
     <Compile Include="Presenters\MainPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -97,6 +93,23 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Base\" />
+    <Folder Include="Contracts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QuickStop.Components\QuickStop.Components.csproj">
+      <Project>{49001BEE-EF7A-4D93-89AB-C99312909F33}</Project>
+      <Name>QuickStop.Components</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QuickStop.Domain\QuickStop.Domain.csproj">
+      <Project>{C7296C34-5340-4F0C-8D35-B7FAD9984209}</Project>
+      <Name>QuickStop.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QuickStop.Infrastructure\QuickStop.Infrastructure.csproj">
+      <Project>{0F9C723F-9832-4480-A701-8C3C6FBE60C7}</Project>
+      <Name>QuickStop.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
