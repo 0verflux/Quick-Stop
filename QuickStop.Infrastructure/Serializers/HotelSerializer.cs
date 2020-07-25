@@ -4,6 +4,7 @@ using QuickStop.Infrastructure.Base;
 using QuickStop.Infrastructure.Contracts;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -24,28 +25,35 @@ namespace QuickStop.Infrastructure.Serializers
             List<Hotel> hotels = new List<Hotel>();
 
             string file = Path.Combine(baseDirectory, fileName + extension);
-            string[] data = File.ReadAllLines(file);
-            
-            foreach(string hotelData in data)
+            try
             {
-                string[] hotelParams = parser.Split(hotelData);
+                string[] data = File.ReadAllLines(file);
 
-                Hotel hotel = new Hotel
+                foreach (string hotelData in data)
                 {
-                    ID = Convert.ToInt32(hotelParams[0]),
-                    Name = hotelParams[1].Trim('\"'),
-                    Description = hotelParams[2].Trim('\"'),
-                    Price = Convert.ToDecimal(hotelParams[3]),
-                    Ratings = Convert.ToUInt16(hotelParams[4]),
-                    Location = (Location)Enum.Parse(typeof(Location), hotelParams[5]),
-                    MinGuestCount = Convert.ToInt32(hotelParams[6]),
-                    MaxGuestCount = Convert.ToInt32(hotelParams[7]),
-                    DateUntilAvailable = string.IsNullOrWhiteSpace(hotelParams[8]) ? null : (DateTime?)Convert.ToDateTime(hotelParams[8]),
-                    Icon = hotelParams[9],
-                    Room = hotelParams[10]
-                };
+                    string[] hotelParams = parser.Split(hotelData);
 
-                hotels.Add(hotel);
+                    Hotel hotel = new Hotel
+                    {
+                        ID = Convert.ToInt32(hotelParams[0]),
+                        Name = hotelParams[1].Trim('\"'),
+                        Description = hotelParams[2].Trim('\"'),
+                        Price = Convert.ToDecimal(hotelParams[3]),
+                        Ratings = Convert.ToUInt16(hotelParams[4]),
+                        Location = (Location)Enum.Parse(typeof(Location), hotelParams[5]),
+                        MinGuestCount = Convert.ToInt32(hotelParams[6]),
+                        MaxGuestCount = Convert.ToInt32(hotelParams[7]),
+                        DateUntilAvailable = string.IsNullOrWhiteSpace(hotelParams[8]) ? null : (DateTime?)Convert.ToDateTime(hotelParams[8]),
+                        Icon = hotelParams[9],
+                        Room = hotelParams[10]
+                    };
+
+                    hotels.Add(hotel);
+                }
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
             }
 
             return hotels;
