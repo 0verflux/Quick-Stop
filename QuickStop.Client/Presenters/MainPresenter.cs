@@ -21,16 +21,7 @@ namespace QuickStop.Client.Presenters
             this.hotelRepository = hotelRepository;
 
             mainView.HotelSelected += HotelSelected;
-            mainView.HotelFiltered += HotelFiltered;
-            mainView.HotelSorted += HotelSorted;
-            LoadHotels();
-        }
-
-        private void LoadHotels()
-        {
-            var hotels = hotelRepository.Hotels;
-
-            mainView.PopulateHotels(hotels);
+            mainView.LoadFilteredHotel += LoadFilteredHotel;
         }
 
         private void HotelSelected(object s, HotelSelectedEventArgs e)
@@ -40,16 +31,9 @@ namespace QuickStop.Client.Presenters
             mainView.ViewHotelDetails(selectedHotel);
         }
 
-        private void HotelFiltered(object s, EventArgs e)
+        private void LoadFilteredHotel(object s, HotelFilterEventArgs e)
         {
-            var hotels = new List<Hotel>(); // TODO: Hotel Filters
-
-            mainView.PopulateHotels(hotels);
-        }
-
-        private void HotelSorted(object s, EventArgs e)
-        {
-            var hotels = new List<Hotel>(); // TODO: Hotel Sorts
+            var hotels = hotelRepository.GetHotels(e.Location, e.GuestCount, e.SortMode);
 
             mainView.PopulateHotels(hotels);
         }

@@ -11,8 +11,7 @@ namespace QuickStop.Client.Views
     public interface IMainView
     {
         event EventHandler<HotelSelectedEventArgs> HotelSelected;
-        event EventHandler HotelFiltered;
-        event EventHandler HotelSorted;
+        event EventHandler<HotelFilterEventArgs> LoadFilteredHotel;
         
         void PopulateHotels(IEnumerable<Hotel> hotels);
         void ViewHotelDetails(Hotel hotel);
