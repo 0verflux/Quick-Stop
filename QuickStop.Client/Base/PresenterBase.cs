@@ -4,11 +4,11 @@ namespace QuickStop.Client.Base
 {
     public abstract class PresenterBase<TView> where TView : IView
     {
-        public IView View { get; private set; }
+        protected TView view;
 
-        protected PresenterBase(IView view)
+        protected PresenterBase(TView view)
         {
-            View = view;
+            this.view = view;
         }
     }
 }

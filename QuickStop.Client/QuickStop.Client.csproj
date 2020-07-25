@@ -46,15 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base\PresenterBase.cs" />
-    <Compile Include="Contracts\IPresenter.cs" />
-    <Compile Include="Contracts\IView.cs" />
-    <Compile Include="Controls\UserControl1.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\HotelDetailsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,7 +64,6 @@
     <Compile Include="Forms\ReservationDetailsForm.Designer.cs">
       <DependentUpon>ReservationDetailsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presenters\IMainPresenter.cs" />
     <Compile Include="Presenters\MainPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -105,9 +95,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controls\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

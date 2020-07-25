@@ -1,4 +1,5 @@
-﻿using QuickStop.Domain.Models;
+﻿using QuickStop.Domain.Enums;
+using QuickStop.Domain.Models;
 using QuickStop.Infrastructure.Base;
 using QuickStop.Infrastructure.Contracts;
 using System;
@@ -16,7 +17,10 @@ namespace QuickStop.Infrastructure.Repositories
             hotels = (serializer as IHotelSerializer).DeserializeHotels();
         }
 
-        IEnumerable<Hotel> IHotelRepository.Hotels => hotels;
+        IEnumerable<Hotel> IHotelRepository.GetHotels(Location location, int guestCount, bool sortMode)
+        {
+            return hotels.Where(x => x.Location == location).Where(x => x.MinGuestCount >= guestCount && x.MaxGuestCount <= guestCount).OrderBy(x => (sortMode) ? x.Price : x.Ratings);
+        }
 
         void IHotelRepository.Save()
         {

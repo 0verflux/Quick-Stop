@@ -14,6 +14,8 @@ namespace QuickStop.Domain.Models
         public decimal Price { get; set; }
         public ushort Ratings { get; set; }
         public Location Location { get; set; }
+        public int MinGuestCount { get; set; }
+        public int MaxGuestCount { get; set; }
         public DateTime? DateUntilAvailable { get; set; }
         public string Icon { get; set; }    // base64 string
         public string Room { get; set; }    //base64 string

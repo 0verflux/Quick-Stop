@@ -41,7 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HotelFilterEventArgs.cs" />
+    <Compile Include="HotelSelectedEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QuickStop.Domain\QuickStop.Domain.csproj">
+      <Project>{C7296C34-5340-4F0C-8D35-B7FAD9984209}</Project>
+      <Name>QuickStop.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

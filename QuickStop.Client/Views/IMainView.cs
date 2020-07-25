@@ -1,4 +1,6 @@
 ﻿using QuickStop.Client.Contracts;
+using QuickStop.Components;
+using QuickStop.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +11,10 @@ namespace QuickStop.Client.Views
 {
     public interface IMainView : IView
     {
+        event EventHandler<HotelSelectedEventArgs> HotelSelected;
+        event EventHandler<HotelFilterEventArgs> LoadFilteredHotel;
+        
+        void PopulateHotels(IEnumerable<Hotel> hotels);
+        void ViewHotelDetails(Hotel hotel);
     }
 }
