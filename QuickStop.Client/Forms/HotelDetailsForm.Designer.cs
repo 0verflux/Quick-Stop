@@ -38,8 +38,8 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -183,18 +183,6 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(243, 37);
             this.tableLayoutPanel3.TabIndex = 8;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Location = new System.Drawing.Point(12, 6);
-            this.label6.Margin = new System.Windows.Forms.Padding(12, 6, 6, 6);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 25);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "LOCATION";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -206,6 +194,18 @@
             this.label7.TabIndex = 1;
             this.label7.Text = "LOCATION";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label6.Location = new System.Drawing.Point(12, 6);
+            this.label6.Margin = new System.Windows.Forms.Padding(12, 6, 6, 6);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(75, 25);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "LOCATION";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // HotelDetailsForm
             // 

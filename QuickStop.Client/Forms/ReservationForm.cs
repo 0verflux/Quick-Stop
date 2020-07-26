@@ -36,5 +36,10 @@ namespace QuickStop.Client.Views
         {
             
         }
+
+        private void ReservationForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

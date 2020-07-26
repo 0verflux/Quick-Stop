@@ -115,6 +115,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -143,6 +144,44 @@
       <Name>QuickStop.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\quezon city.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baguio.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\san fernando.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\manila.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1 middle.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hotel name.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hotel name1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hotel name2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book now.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkincheckout.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\roomdescription.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\total fees.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\location guests.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
