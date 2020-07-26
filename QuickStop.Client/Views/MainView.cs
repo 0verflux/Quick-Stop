@@ -53,7 +53,8 @@ namespace QuickStop.Client.Views
             {
                 HotelCard hotelCard = new HotelCard(hotel)
                 {
-                    BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+                    BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle,
+                    Margin = new System.Windows.Forms.Padding(6,12,6,12)
                 };
                 hotelCard.HotelSelected += ViewSelectedHotel;
 

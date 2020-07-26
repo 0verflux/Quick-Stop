@@ -27,8 +27,7 @@ namespace QuickStop.Client.Views
             dateTimePicker2.MinDate = DateTime.Now;
             dateTimePicker1.MinDate = DateTime.Now.AddDays(1);
             dateTimePicker1.Value = DateTime.Now.AddDays(1);
-            numericUpDown1.Value = 1;
-
+            
             this.hotel = hotel;
             label7.Text = hotel.Name;
             label4.Text = hotel.Description;
@@ -37,6 +36,7 @@ namespace QuickStop.Client.Views
             pictureBox1.Image = hotel.Room.ConvertToImage();
             numericUpDown1.Minimum = hotel.MinGuestCount;
             numericUpDown1.Maximum = hotel.MaxGuestCount;
+            numericUpDown1.Value = numericUpDown1.Minimum;
 
             numericUpDown1.Enabled = true;
             dateTimePicker1.Enabled = true;
@@ -50,6 +50,8 @@ namespace QuickStop.Client.Views
             this.hotel = null;
             dateTimePicker2.MinDate = DateTimePicker.MinimumDateTime;
             dateTimePicker1.MinDate = DateTimePicker.MinimumDateTime;
+            numericUpDown1.Minimum = 1;
+            numericUpDown1.Maximum = 100;
 
             label7.Text = hotel.Name;
             label4.Text = hotel.Description;
@@ -59,8 +61,7 @@ namespace QuickStop.Client.Views
             dateTimePicker2.Value = reservation.CheckIn;
             dateTimePicker1.Value = reservation.CheckOut;
             pictureBox1.Image = hotel.Room.ConvertToImage();
-            numericUpDown1.Minimum = 1;
-            numericUpDown1.Maximum = 100;
+            
 
             numericUpDown1.Enabled = false;
             dateTimePicker1.Enabled = false;
