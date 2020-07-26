@@ -14,6 +14,7 @@ namespace QuickStop.Client.Contracts.Views
     {
         event EventHandler<HotelSelectedEventArgs> HotelSelected;
 
-        void DisplayHotel(Hotel hotel);
+        DialogResult DisplayHotel(Hotel hotel);
+        void CloseView();
     }
 }

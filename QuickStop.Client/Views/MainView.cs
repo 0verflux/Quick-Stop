@@ -38,6 +38,9 @@ namespace QuickStop.Client.Views
             SuspendLayout();
             
             flowLayoutPanel1.Controls.Clear();
+
+            if (hotels == null) return;
+            
             foreach(Hotel hotel in hotels)
             {
                 HotelCard hotelCard = new HotelCard(hotel);

@@ -23,14 +23,17 @@ namespace QuickStop.Client.Presenters
 
         private void HotelSelected(object s, HotelSelectedEventArgs e)
         {
-            reservationPresenter.ProceedReservation(e.Index);
+            if(reservationPresenter.ProceedReservation(e.Index) == DialogResult.OK)
+            {
+                view.CloseView();
+            }
         }
 
-        void IHotelDetailsPresenter.ShowHotelDetails(int hotelIndex)
+        DialogResult IHotelDetailsPresenter.ShowHotelDetails(int hotelIndex)
         {
             Hotel selectedHotel = hotelRepository.FindHotelByID(hotelIndex);
 
-            view.DisplayHotel(selectedHotel);
+            return view.DisplayHotel(selectedHotel);
         }
     }
 }
