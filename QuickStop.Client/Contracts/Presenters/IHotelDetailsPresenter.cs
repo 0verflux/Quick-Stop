@@ -1,4 +1,4 @@
-﻿namespace QuickStop.Client.Presenters
+﻿namespace QuickStop.Client.Contracts.Presenters
 {
     public interface IHotelDetailsPresenter
     {

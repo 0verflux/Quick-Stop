@@ -1,5 +1,6 @@
 ﻿using QuickStop.Client.Base;
-using QuickStop.Client.Views;
+using QuickStop.Client.Contracts.Presenters;
+using QuickStop.Client.Contracts.Views;
 using QuickStop.Components;
 using QuickStop.Infrastructure.Contracts;
 

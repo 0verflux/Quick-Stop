@@ -1,4 +1,5 @@
-﻿using QuickStop.Components;
+﻿using QuickStop.Client.Contracts.Views;
+using QuickStop.Components;
 using QuickStop.Domain.Models;
 using System;
 using System.Collections.Generic;

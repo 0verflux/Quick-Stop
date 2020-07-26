@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QuickStop.Client.Views
+namespace QuickStop.Client.Contracts.Views
 {
     public interface IReservationView : IView
     {
