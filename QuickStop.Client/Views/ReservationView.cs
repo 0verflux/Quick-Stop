@@ -5,14 +5,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace QuickStop.Client.Views
 {
     public partial class ReservationForm : IReservationView
     {
         private event EventHandler CreateReservation;
-        private event EventHandler UpdateTotalCost;
-        private Reservation reservation;
+        private event EventHandler UpdateReservation;
 
         event EventHandler IReservationView.CreateReservation
         {
@@ -20,27 +20,42 @@ namespace QuickStop.Client.Views
             remove { CreateReservation -= value; }
         }
 
-        event EventHandler IReservationView.UpdateTotalCost
+        event EventHandler IReservationView.UpdateReservation
         {
-            add { UpdateTotalCost += value; }
-            remove { UpdateTotalCost -= value; }
+            add { UpdateReservation += value; }
+            remove { UpdateReservation -= value; }
         }
 
         void IReservationView.ShowReservation(Hotel hotel, Reservation reservation)
         {
-            // TODO: Fill Up Reservation Info
+            Tag = hotel.ID;
+            label7.Text = hotel.Name;
+            label4.Text = hotel.Description;
+            label10.Text = hotel.Location.ToString();
+            label13.Text = "- -";
 
             ShowDialog();
         }
 
-        void IReservationView.FinalizeReservation()
+        void IReservationView.FinalizeReservation(string reference)
         {
-            // TODO: Confirm Message
+            DialogResult = MessageBox.Show("Thank you for booking!");
+        }
+
+        void IReservationView.RefreshView(Reservation reservation)
+        {
+            label13.Text = reservation.TotalCost.ToString("C2");
         }
 
         Reservation IReservationView.GetReservation()
         {
-            return reservation;
+            return new Reservation
+            {
+                HotelID = Convert.ToInt32(Tag),
+                GuestCount = (int)numericUpDown1.Value,
+                CheckIn = dateTimePicker2.Value,
+                CheckOut = dateTimePicker1.Value
+            };
         }
     }
 }

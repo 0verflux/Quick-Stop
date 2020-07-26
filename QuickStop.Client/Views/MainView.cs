@@ -14,6 +14,7 @@ namespace QuickStop.Client.Views
     {
         private event EventHandler<HotelSelectedEventArgs> HotelSelected;
         private event EventHandler<HotelFilterEventArgs> LoadFilteredHotel;
+        private event EventHandler SaveData;
 
         event EventHandler<HotelSelectedEventArgs> IMainView.HotelSelected
         {
@@ -26,6 +27,12 @@ namespace QuickStop.Client.Views
             remove { LoadFilteredHotel -= value; }
         }
 
+        event EventHandler IMainView.SaveData
+        {
+            add { SaveData += value; }
+            remove { SaveData -= value; }
+        }
+
         void IMainView.PopulateHotels(IEnumerable<Hotel> hotels)
         {
             SuspendLayout();
@@ -34,6 +41,7 @@ namespace QuickStop.Client.Views
             foreach(Hotel hotel in hotels)
             {
                 HotelCard hotelCard = new HotelCard(hotel);
+                hotelCard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
                 hotelCard.HotelSelected += ViewSelectedHotel;
 
                 flowLayoutPanel1.Controls.Add(hotelCard);

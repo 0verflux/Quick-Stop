@@ -1,4 +1,6 @@
-﻿namespace QuickStop.Client.Contracts.Presenters
+﻿using System.Windows.Forms;
+
+namespace QuickStop.Client.Contracts.Presenters
 {
     public interface IReservationPresenter
     {
