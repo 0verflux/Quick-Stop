@@ -16,5 +16,10 @@ namespace QuickStop.Client.Views
         {
             InitializeComponent();
         }
+
+        private void BookHotelOnClick(object sender, EventArgs e)
+        {
+            HotelSelected?.Invoke(sender, new Components.HotelSelectedEventArgs(Convert.ToInt32(Tag)));
+        }
     }
 }

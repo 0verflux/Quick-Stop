@@ -20,7 +20,14 @@ namespace QuickStop.Client.Views
 
         void IHotelDetailsView.DisplayHotel(Hotel hotel)
         {
-            // TODO: Update Controls
+            Tag = hotel.ID.ToString();
+
+            label1.Text = hotel.Name;
+            label2.Text = hotel.Description;
+            label4.Text = hotel.Price.ToString("C2");
+            label5.Text = hotel.Ratings.ToString();
+            label7.Text = hotel.Location.ToString();
+            // TODO: Load Images from base64 string
 
             ShowDialog();
         }
