@@ -52,5 +52,10 @@ namespace QuickStop.Client.Views
                 sort = (Sort)Enum.Parse(typeof(Sort), btn.Tag.ToString());
             }
         }
+
+        private void OnClosed(object sender, FormClosedEventArgs e)
+        {
+            SaveData?.Invoke(sender, e);
+        }
     }
 }

@@ -13,7 +13,8 @@ namespace QuickStop.Client.Contracts.Views
     {
         event EventHandler<HotelSelectedEventArgs> HotelSelected;
         event EventHandler<HotelFilterEventArgs> LoadFilteredHotel;
-        
+        event EventHandler SaveData;
+
         void PopulateHotels(IEnumerable<Hotel> hotels);
     }
 }

@@ -21,15 +21,16 @@ namespace QuickStop.Client
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            string s = @"C:\Users\franc\Desktop";
+
             IMainView mainView = new MainForm();
             IHotelDetailsView hotelDetailsView = new HotelDetailsForm();
             IReservationView reservationView = new ReservationForm();
 
-            IHotelSerializer hotelSerializer = new HotelSerializer(Application.ExecutablePath);
+            IHotelSerializer hotelSerializer = new HotelSerializer(s);
+            IReservationSerializer reservationSerializer = new ReservationSerializer(s);
 
             IHotelRepository hotelRepository = new HotelRepository(hotelSerializer);
-            IReservationSerializer reservationSerializer = new ReservationSerializer(hotelRepository, Application.ExecutablePath);
-
             IReservationRepository reservationRepository = new ReservationRepository(reservationSerializer);
 
             IReservationPresenter reservationPresenter = new ReservationPresenter(reservationView, hotelRepository, reservationRepository);

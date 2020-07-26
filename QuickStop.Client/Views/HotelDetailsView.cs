@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace QuickStop.Client.Views
 {
@@ -19,7 +20,7 @@ namespace QuickStop.Client.Views
             remove { HotelSelected -= value; }
         }
 
-        void IHotelDetailsView.DisplayHotel(Hotel hotel)
+        DialogResult IHotelDetailsView.DisplayHotel(Hotel hotel)
         {
             Tag = hotel.ID.ToString();
 
@@ -28,9 +29,14 @@ namespace QuickStop.Client.Views
             label4.Text = hotel.Price.ToString("C2");
             label5.Text = hotel.Ratings.ToString();
             label7.Text = hotel.Location.ToString();
-            // TODO: Load Images from base64 string
+            pictureBox1.Image = hotel.Room.ConvertToImage();
 
-            ShowDialog();
+            return ShowDialog();
+        }
+
+        void IHotelDetailsView.CloseView()
+        {
+            DialogResult = DialogResult.OK;
         }
     }
 }

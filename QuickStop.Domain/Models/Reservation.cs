@@ -10,9 +10,10 @@ namespace QuickStop.Domain.Models
     public class Reservation
     {
         public string Reference { get; set; }
-        public Hotel Hotel { get; set; }
-        public DateTime? CheckIn { get; set; }
-        public ushort DurationOfStay { get; set; }
+        public int HotelID { get; set; }
+        public int GuestCount { get; set; }
+        public DateTime CheckIn { get; set; }
+        public DateTime CheckOut { get; set; }
         public decimal TotalCost { get; set; }
     }
 }

@@ -33,22 +33,29 @@ namespace QuickStop.Infrastructure.Serializers
                 {
                     string[] hotelParams = parser.Split(hotelData);
 
-                    Hotel hotel = new Hotel
+                    try
                     {
-                        ID = Convert.ToInt32(hotelParams[0]),
-                        Name = hotelParams[1].Trim('\"'),
-                        Description = hotelParams[2].Trim('\"'),
-                        Price = Convert.ToDecimal(hotelParams[3]),
-                        Ratings = Convert.ToUInt16(hotelParams[4]),
-                        Location = (Location)Enum.Parse(typeof(Location), hotelParams[5]),
-                        MinGuestCount = Convert.ToInt32(hotelParams[6]),
-                        MaxGuestCount = Convert.ToInt32(hotelParams[7]),
-                        DateUntilAvailable = string.IsNullOrWhiteSpace(hotelParams[8]) ? null : (DateTime?)Convert.ToDateTime(hotelParams[8]),
-                        Icon = hotelParams[9],
-                        Room = hotelParams[10]
-                    };
+                        Hotel hotel = new Hotel
+                        {
+                            ID = Convert.ToInt32(hotelParams[0]),
+                            Name = hotelParams[1].Trim('\"'),
+                            Description = hotelParams[2].Trim('\"'),
+                            Price = Convert.ToDecimal(hotelParams[3]),
+                            Ratings = Convert.ToUInt16(hotelParams[4]),
+                            Location = (Location)Enum.Parse(typeof(Location), hotelParams[5]),
+                            MinGuestCount = Convert.ToInt32(hotelParams[6]),
+                            MaxGuestCount = Convert.ToInt32(hotelParams[7]),
+                            DateUntilAvailable = string.IsNullOrWhiteSpace(hotelParams[8]) ? null : (DateTime?)Convert.ToDateTime(hotelParams[8]),
+                            Icon = hotelParams[9],
+                            Room = hotelParams[10]
+                        };
 
-                    hotels.Add(hotel);
+                        hotels.Add(hotel);
+                    }
+                    catch(Exception ex)
+                    {
+                        Debug.WriteLine(ex.Message);
+                    }
                 }
             }
             catch(Exception ex)
