@@ -28,7 +28,7 @@ namespace QuickStop.Client.Views
             label4.Text = hotel.Price.ToString("C2");
             label5.Text = hotel.Ratings.ToString();
             label7.Text = hotel.Location.ToString();
-            // TODO: Load Images from base64 string
+            pictureBox1.Image = hotel.Room.ConvertToImage();
 
             ShowDialog();
         }

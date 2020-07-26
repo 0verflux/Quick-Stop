@@ -25,8 +25,7 @@ namespace QuickStop.Client.Controls
         public HotelCard(Hotel hotel) : this()
         {
             hotelID = hotel.ID;
-            // TODO: Load Images from base64 string
-            //pictureBox.Image = Convert.ToImage(hotel.Icon);
+            pictureBox1.Image = hotel.Icon.ConvertToImage();
             label1.Text = hotel.Name;
             label2.Text = hotel.Price.ToString();
             label3.Text = hotel.Ratings.ToString();
