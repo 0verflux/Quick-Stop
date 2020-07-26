@@ -1,4 +1,5 @@
-﻿using QuickStop.Components;
+﻿using QuickStop.Client.Controls;
+using QuickStop.Components;
 using QuickStop.Domain.Models;
 using System;
 using System.Collections.Generic;
@@ -26,7 +27,18 @@ namespace QuickStop.Client.Views
 
         void IMainView.PopulateHotels(IEnumerable<Hotel> hotels)
         {
-            //TODO: Populate FlowLayoutPanel
+            SuspendLayout();
+            
+            flowLayoutPanel1.Controls.Clear();
+            foreach(Hotel hotel in hotels)
+            {
+                HotelCard hotelCard = new HotelCard(hotel);
+                hotelCard.HotelSelected += ViewSelectedHotel;
+
+                flowLayoutPanel1.Controls.Add(hotelCard);
+            }
+
+            ResumeLayout(true);
         }
     }
 }

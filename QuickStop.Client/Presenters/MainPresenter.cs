@@ -32,7 +32,7 @@ namespace QuickStop.Client.Presenters
 
         private void LoadFilteredHotel(object s, HotelFilterEventArgs e)
         {
-            var hotels = hotelRepository.GetHotels(e.Location, e.GuestCount, e.SortMode);
+            var hotels = hotelRepository.GetHotels(e.Location, e.GuestCount, e.Sort);
 
             view.PopulateHotels(hotels);
         }
