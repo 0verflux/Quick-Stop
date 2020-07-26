@@ -48,6 +48,15 @@
   <ItemGroup>
     <Compile Include="Base\PresenterBase.cs" />
     <Compile Include="Contracts\IView.cs" />
+    <Compile Include="Controls\HotelCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\HotelCard.Designer.cs">
+      <DependentUpon>HotelCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RadioToggleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Forms\HotelDetailsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,21 +69,38 @@
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ReservationDetailsForm.cs">
+    <Compile Include="Forms\ReservationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ReservationDetailsForm.Designer.cs">
-      <DependentUpon>ReservationDetailsForm.cs</DependentUpon>
+    <Compile Include="Forms\ReservationForm.Designer.cs">
+      <DependentUpon>ReservationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Presenters\HotelDetailsPresenter.cs" />
+    <Compile Include="Presenters\IHotelDetailsPresenter.cs" />
+    <Compile Include="Presenters\IMainPresenter.cs" />
+    <Compile Include="Presenters\IReservationPresenter.cs" />
     <Compile Include="Presenters\MainPresenter.cs" />
+    <Compile Include="Presenters\ReservationPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\HotelDetailsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Views\IHotelDetailsView.cs" />
     <Compile Include="Views\IMainView.cs" />
+    <Compile Include="Views\IReservationView.cs" />
     <Compile Include="Views\MainView.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Views\ReservationView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Controls\HotelCard.resx">
+      <DependentUpon>HotelCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -111,8 +137,6 @@
       <Name>QuickStop.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controls\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
