@@ -31,6 +31,22 @@ namespace QuickStop.Client.Views
             ShowDialog();
         }
 
+        void IReservationView.DisplayReservation(Reservation reservation, Hotel hotel)
+        {
+            label7.Text = hotel.Name;
+            label4.Text = hotel.Description;
+            label10.Text = hotel.Location.ToString();
+            label13.Text = reservation.TotalCost.ToString("C2");
+            numericUpDown1.Value = reservation.GuestCount;
+            dateTimePicker2.Value = reservation.CheckIn;
+            dateTimePicker1.Value = reservation.CheckOut;
+
+            numericUpDown1.Enabled = false;
+            dateTimePicker1.Enabled = false;
+            dateTimePicker2.Enabled = false;
+            button1.Visible = false;
+        }
+
         void IReservationView.FinalizeReservation(string reference)
         {
             MessageBox.Show("Thank you for booking in Quick Stop!\r\nYour booking reference is: " + reference, "Quick-Stop: Booking Complete", MessageBoxButtons.OK);

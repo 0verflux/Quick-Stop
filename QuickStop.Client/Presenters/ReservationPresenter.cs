@@ -28,6 +28,14 @@ namespace QuickStop.Client.Presenters
             view.DisplayReservation(selectedHotel);
         }
 
+        void IReservationPresenter.RequestViewReservation(string reference)
+        {
+            Reservation reservation = reservationRepository.GetReservation(reference);
+            Hotel hotel = hotelRepository.FindHotelByID(reservation.HotelID);
+
+            view.DisplayReservation(reservation, hotel);
+        }
+
         private void RequestCreateReservation(object s, EventArgs e)
         {
             Reservation reservation = view.GetReservation();
