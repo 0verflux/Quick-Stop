@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QuickStop.Client.Views
+namespace QuickStop.Client.Contracts.Views
 {
-    public interface IHotelDetailsView : IView
+    public interface IMainView : IView
     {
         event EventHandler<HotelSelectedEventArgs> HotelSelected;
-
-        void DisplayHotel(Hotel hotel);
+        event EventHandler<HotelFilterEventArgs> LoadFilteredHotel;
+        
+        void PopulateHotels(IEnumerable<Hotel> hotels);
     }
 }

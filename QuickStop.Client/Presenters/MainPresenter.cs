@@ -1,13 +1,8 @@
 ﻿using QuickStop.Client.Base;
-using QuickStop.Client.Views;
+using QuickStop.Client.Contracts.Presenters;
+using QuickStop.Client.Contracts.Views;
 using QuickStop.Components;
-using QuickStop.Domain.Models;
 using QuickStop.Infrastructure.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QuickStop.Client.Presenters
 {
@@ -32,7 +27,7 @@ namespace QuickStop.Client.Presenters
 
         private void LoadFilteredHotel(object s, HotelFilterEventArgs e)
         {
-            var hotels = hotelRepository.GetHotels(e.Location, e.GuestCount, e.SortMode);
+            var hotels = hotelRepository.GetHotels(e.Location, e.GuestCount, e.Sort);
 
             view.PopulateHotels(hotels);
         }

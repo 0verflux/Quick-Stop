@@ -7,13 +7,13 @@ namespace QuickStop.Components
     {
         public Location Location { get; private set; }
         public int GuestCount { get; private set; }
-        public bool SortMode { get; private set; }
+        public Sort Sort { get; private set; }
 
-        public HotelFilterEventArgs(Location location, int guestCount, bool sortMode) : base()
+        public HotelFilterEventArgs(Location location, int guestCount, Sort sort) : base()
         {
             Location = location;
             GuestCount = guestCount;
-            SortMode = sortMode;
+            Sort = sort;
         }
     }
 }

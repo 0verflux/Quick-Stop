@@ -76,9 +76,9 @@
       <DependentUpon>ReservationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Presenters\HotelDetailsPresenter.cs" />
-    <Compile Include="Presenters\IHotelDetailsPresenter.cs" />
-    <Compile Include="Presenters\IMainPresenter.cs" />
-    <Compile Include="Presenters\IReservationPresenter.cs" />
+    <Compile Include="Contracts\Presenters\IHotelDetailsPresenter.cs" />
+    <Compile Include="Contracts\Presenters\IMainPresenter.cs" />
+    <Compile Include="Contracts\Presenters\IReservationPresenter.cs" />
     <Compile Include="Presenters\MainPresenter.cs" />
     <Compile Include="Presenters\ReservationPresenter.cs" />
     <Compile Include="Program.cs" />
@@ -86,9 +86,9 @@
     <Compile Include="Views\HotelDetailsView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\IHotelDetailsView.cs" />
-    <Compile Include="Views\IMainView.cs" />
-    <Compile Include="Views\IReservationView.cs" />
+    <Compile Include="Contracts\Views\IHotelDetailsView.cs" />
+    <Compile Include="Contracts\Views\IMainView.cs" />
+    <Compile Include="Contracts\Views\IReservationView.cs" />
     <Compile Include="Views\MainView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,8 +98,14 @@
     <EmbeddedResource Include="Controls\HotelCard.resx">
       <DependentUpon>HotelCard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HotelDetailsForm.resx">
+      <DependentUpon>HotelDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReservationForm.resx">
+      <DependentUpon>ReservationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

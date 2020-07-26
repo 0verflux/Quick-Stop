@@ -67,6 +67,7 @@
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(12, 12, 12, 6);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(232, 135);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -120,8 +121,9 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(136, 34);
             this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
+            this.button1.Text = "View Hotel";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.ViewHotelOnClick);
             // 
             // HotelCard
             // 
