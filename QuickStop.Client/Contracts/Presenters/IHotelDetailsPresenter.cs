@@ -4,6 +4,6 @@ namespace QuickStop.Client.Contracts.Presenters
 {
     public interface IHotelDetailsPresenter
     {
-        DialogResult ShowHotelDetails(int hotelIndex);
+        void RequestViewHotelDetails(int hotelIndex);
     }
 }
