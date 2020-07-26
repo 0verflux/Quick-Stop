@@ -26,5 +26,10 @@ namespace QuickStop.Client.Views
         {
             CreateReservation?.Invoke(sender, e);
         }
+
+        private void ReservationForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
