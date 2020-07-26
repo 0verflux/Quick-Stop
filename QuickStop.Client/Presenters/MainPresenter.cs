@@ -18,29 +18,33 @@ namespace QuickStop.Client.Presenters
             this.hotelRepository = hotelRepository;
             this.hotelDetailsPresenter = hotelDetailsPresenter;
 
-            view.HotelSelected += HotelSelected;
-            view.LoadFilteredHotel += LoadFilteredHotel;
-            view.SaveData += SaveData;
+            view.RequestViewHotelDetails += RequestViewHotelDetails;
+            view.RequestLoadHotels += RequestLoadHotels;
+            view.RequestSaveData += RequestSaveData;
         }
 
-        private void HotelSelected(object s, HotelSelectedEventArgs e)
-        {
-            if(hotelDetailsPresenter.ShowHotelDetails(e.Index) == DialogResult.OK)
-            {
-                view.PopulateHotels(null);
-            }
-        }
-
-        private void LoadFilteredHotel(object s, HotelFilterEventArgs e)
+        #region Main Logic
+        private void RequestLoadHotels(object s, HotelFilterEventArgs e)
         {
             var hotels = hotelRepository.GetHotels(e.Location, e.GuestCount, e.Sort);
 
-            view.PopulateHotels(hotels);
+            view.LoadHotels(hotels);
         }
 
-        private void SaveData(object s, EventArgs e)
+        private void RequestSaveData(object s, EventArgs e)
         {
             hotelRepository.Save();
         }
+        #endregion
+
+        #region Navigation
+        //
+        // Main -> Hotel Details
+        //
+        private void RequestViewHotelDetails(object s, HotelSelectedEventArgs e)
+        {
+            hotelDetailsPresenter.RequestViewHotelDetails(e.Index);
+        }
+        #endregion
     }
 }

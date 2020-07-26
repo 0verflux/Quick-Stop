@@ -2,22 +2,12 @@
 using QuickStop.Components;
 using QuickStop.Domain.Enums;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuickStop.Client.Views
 {
     public partial class MainForm : Form
     {
-        private Location selectedLocation;
-        private Sort sort;
-
         public MainForm()
         {
             InitializeComponent();
@@ -25,12 +15,18 @@ namespace QuickStop.Client.Views
 
         private void QueryHotels(object sender, EventArgs e)
         {
-            LoadFilteredHotel?.Invoke(sender, new HotelFilterEventArgs(selectedLocation, (int)numericUpDown2.Value, sort));
+            RequestLoadHotels?.Invoke(sender, new HotelFilterEventArgs(selectedLocation, (int)numericUpDown2.Value, sort));
         }
 
         private void ViewSelectedHotel(object sender, HotelSelectedEventArgs e)
         {
-            HotelSelected?.Invoke(sender, e);
+            RequestViewHotelDetails?.Invoke(sender, e);
+            QueryHotels(sender, e);
+        }
+
+        private void OnClosed(object sender, FormClosedEventArgs e)
+        {
+            RequestSaveData?.Invoke(sender, e);
         }
 
         private void SelectedLocationChanged(object sender, EventArgs e)
@@ -47,15 +43,10 @@ namespace QuickStop.Client.Views
         {
             var btn = sender as RadioToggleButton;
 
-            if(btn.Checked)
+            if (btn.Checked)
             {
                 sort = (Sort)Enum.Parse(typeof(Sort), btn.Tag.ToString());
             }
-        }
-
-        private void OnClosed(object sender, FormClosedEventArgs e)
-        {
-            SaveData?.Invoke(sender, e);
         }
     }
 }

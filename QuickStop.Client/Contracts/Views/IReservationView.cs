@@ -7,13 +7,10 @@ namespace QuickStop.Client.Contracts.Views
 {
     public interface IReservationView : IView
     {
-        event EventHandler CreateReservation;
-        event EventHandler UpdateReservation;
+        event EventHandler RequestCreateReservation;
 
-        Reservation GetReservation();
-
-        DialogResult ShowReservation(Hotel hotel, Reservation reservation);
-        void RefreshView(Reservation reservation);
+        void DisplayReservation(Hotel hotel);
         void FinalizeReservation(string reference);
+        Reservation GetReservation();
     }
 }

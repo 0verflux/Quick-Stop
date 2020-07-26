@@ -1,60 +1,52 @@
 ﻿using QuickStop.Client.Contracts.Views;
+using QuickStop.Components;
 using QuickStop.Domain.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuickStop.Client.Views
 {
     public partial class ReservationForm : IReservationView
     {
-        private event EventHandler CreateReservation;
-        private event EventHandler UpdateReservation;
+        #region Events
+        private event EventHandler RequestCreateReservation;
 
-        event EventHandler IReservationView.CreateReservation
+        event EventHandler IReservationView.RequestCreateReservation
         {
-            add { CreateReservation += value; }
-            remove { CreateReservation -= value; }
+            add { RequestCreateReservation += value; }
+            remove { RequestCreateReservation -= value; }
         }
+        #endregion
 
-        event EventHandler IReservationView.UpdateReservation
-        {
-            add { UpdateReservation += value; }
-            remove { UpdateReservation -= value; }
-        }
+        private Hotel hotel;
+        private decimal price;
 
-        DialogResult IReservationView.ShowReservation(Hotel hotel, Reservation reservation)
+        void IReservationView.DisplayReservation(Hotel hotel)
         {
-            Tag = hotel.ID;
+            this.hotel = hotel;
             label7.Text = hotel.Name;
             label4.Text = hotel.Description;
             label10.Text = hotel.Location.ToString();
-            label13.Text = "- -";
-
-            return ShowDialog();
+            label13.Text = "Pick a number of guest!";
+            ShowDialog();
         }
 
         void IReservationView.FinalizeReservation(string reference)
         {
-            DialogResult = MessageBox.Show("Thank you for booking!");
-        }
-
-        void IReservationView.RefreshView(Reservation reservation)
-        {
-            label13.Text = reservation.TotalCost.ToString("C2");
+            MessageBox.Show("Thank you for booking in Quick Stop!\r\nYour booking reference is: " + reference, "Quick-Stop: Booking Complete", MessageBoxButtons.OK);
+            Close();
         }
 
         Reservation IReservationView.GetReservation()
         {
             return new Reservation
             {
-                HotelID = Convert.ToInt32(Tag),
+                Reference = ReferenceGenerator.Generate(6),
+                HotelID = hotel.ID,
                 GuestCount = (int)numericUpDown1.Value,
                 CheckIn = dateTimePicker2.Value,
-                CheckOut = dateTimePicker1.Value
+                CheckOut = dateTimePicker1.Value,
+                TotalCost = price
             };
         }
     }

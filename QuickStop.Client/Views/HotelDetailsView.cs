@@ -2,25 +2,22 @@
 using QuickStop.Components;
 using QuickStop.Domain.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace QuickStop.Client.Views
 {
     public partial class HotelDetailsForm : IHotelDetailsView
     {
-        private event EventHandler<HotelSelectedEventArgs> HotelSelected;
+        #region Events
+        private event EventHandler<HotelSelectedEventArgs> RequestReservation;
 
-        event EventHandler<HotelSelectedEventArgs> IHotelDetailsView.HotelSelected
+        event EventHandler<HotelSelectedEventArgs> IHotelDetailsView.RequestReservation
         {
-            add { HotelSelected += value; }
-            remove { HotelSelected -= value; }
+            add { RequestReservation += value; }
+            remove { RequestReservation -= value; }
         }
+        #endregion
 
-        DialogResult IHotelDetailsView.DisplayHotel(Hotel hotel)
+        void IHotelDetailsView.DisplayHotel(Hotel hotel)
         {
             Tag = hotel.ID.ToString();
 
@@ -31,12 +28,7 @@ namespace QuickStop.Client.Views
             label7.Text = hotel.Location.ToString();
             pictureBox1.Image = hotel.Room.ConvertToImage();
 
-            return ShowDialog();
-        }
-
-        void IHotelDetailsView.CloseView()
-        {
-            DialogResult = DialogResult.OK;
+            ShowDialog();
         }
     }
 }
