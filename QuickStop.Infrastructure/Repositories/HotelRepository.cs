@@ -28,8 +28,8 @@ namespace QuickStop.Infrastructure.Repositories
 
             switch(sort)
             {
-                case Sort.Price: return list.OrderBy(x => x.Price);
-                case Sort.Rating: return list.OrderByDescending(x => x.Ratings);
+                case Sort.Price: return list.OrderByDescending(x => x.Ratings).OrderBy(x => x.Price);
+                case Sort.Rating: return list.OrderBy(x => x.Price).OrderByDescending(x => x.Ratings);
                 default: return list;
             }
         }

@@ -34,6 +34,9 @@ namespace QuickStop.Client.Views
             label4.Text = hotel.Description;
             label10.Text = hotel.Location.ToString();
             label13.Text = "Pick a number of guest!";
+            pictureBox1.Image = hotel.Room.ConvertToImage();
+            numericUpDown1.Minimum = hotel.MinGuestCount;
+            numericUpDown1.Maximum = hotel.MaxGuestCount;
 
             numericUpDown1.Enabled = true;
             dateTimePicker1.Enabled = true;
@@ -55,6 +58,9 @@ namespace QuickStop.Client.Views
             numericUpDown1.Value = reservation.GuestCount;
             dateTimePicker2.Value = reservation.CheckIn;
             dateTimePicker1.Value = reservation.CheckOut;
+            pictureBox1.Image = hotel.Room.ConvertToImage();
+            numericUpDown1.Minimum = 1;
+            numericUpDown1.Maximum = 100;
 
             numericUpDown1.Enabled = false;
             dateTimePicker1.Enabled = false;
