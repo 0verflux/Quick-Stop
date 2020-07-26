@@ -1,4 +1,5 @@
-﻿using QuickStop.Client.Contracts.Views;
+﻿using QuickStop.Client.Contracts;
+using QuickStop.Client.Contracts.Views;
 using QuickStop.Components;
 using QuickStop.Domain.Models;
 using System;
@@ -23,16 +24,30 @@ namespace QuickStop.Client.Views
 
         void IReservationView.DisplayReservation(Hotel hotel)
         {
+            dateTimePicker2.MinDate = DateTime.Now;
+            dateTimePicker1.MinDate = DateTime.Now.AddDays(1);
+            dateTimePicker1.Value = DateTime.Now.AddDays(1);
+            numericUpDown1.Value = 1;
+
             this.hotel = hotel;
             label7.Text = hotel.Name;
             label4.Text = hotel.Description;
             label10.Text = hotel.Location.ToString();
             label13.Text = "Pick a number of guest!";
+
+            numericUpDown1.Enabled = true;
+            dateTimePicker1.Enabled = true;
+            dateTimePicker2.Enabled = true;
+            button1.Visible = true;
             ShowDialog();
         }
 
         void IReservationView.DisplayReservation(Reservation reservation, Hotel hotel)
         {
+            this.hotel = null;
+            dateTimePicker2.MinDate = DateTimePicker.MinimumDateTime;
+            dateTimePicker1.MinDate = DateTimePicker.MinimumDateTime;
+
             label7.Text = hotel.Name;
             label4.Text = hotel.Description;
             label10.Text = hotel.Location.ToString();
@@ -45,6 +60,7 @@ namespace QuickStop.Client.Views
             dateTimePicker1.Enabled = false;
             dateTimePicker2.Enabled = false;
             button1.Visible = false;
+            ShowDialog();
         }
 
         void IReservationView.FinalizeReservation(string reference)

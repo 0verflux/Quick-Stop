@@ -21,6 +21,7 @@ namespace QuickStop.Client.Presenters
             this.reservationPresenter = reservationPresenter;
 
             view.RequestViewHotelDetails += RequestViewHotelDetails;
+            view.RequestViewReservation += RequestViewReservation;
             view.RequestLoadHotels += RequestLoadHotels;
             view.RequestSaveData += RequestSaveData;
         }
