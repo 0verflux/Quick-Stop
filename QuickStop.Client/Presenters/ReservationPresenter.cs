@@ -2,6 +2,7 @@
 using QuickStop.Client.Base;
 using QuickStop.Client.Contracts.Presenters;
 using QuickStop.Client.Contracts.Views;
+using QuickStop.Components;
 using QuickStop.Domain.Models;
 using QuickStop.Infrastructure.Contracts;
 using System;
@@ -9,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace QuickStop.Client.Presenters
 {
@@ -23,22 +25,45 @@ namespace QuickStop.Client.Presenters
             this.reservationRepository = reservationRepository;
 
             view.CreateReservation += CreateReservation;
+            view.UpdateReservation += UpdateReservation;
         }
 
-        void IReservationPresenter.ProceedReservation(int hotelIndex)
+        DialogResult IReservationPresenter.ProceedReservation(int hotelIndex)
         {
             Hotel selectedHotel = hotelRepository.FindHotelByID(hotelIndex);
 
-            view.ShowReservation(selectedHotel, new Reservation());
+            return view.ShowReservation(selectedHotel, new Reservation());
         }
 
         private void CreateReservation(object s, EventArgs e)
         {
             Reservation reservation = view.GetReservation();
+            Hotel hotel = hotelRepository.FindHotelByID(reservation.HotelID);
 
-            // TODO: Validation for Reservation
+            // TODO: Validation
+
+            reservation.Reference = ReferenceGenerator.Generate(6);
+            reservation.TotalCost = CalculateTotalCost(hotel.Price, reservation.GuestCount, (reservation.CheckOut - reservation.CheckIn).Days);
 
             reservationRepository.CreateReservation(reservation);
+            hotelRepository.SetHotelInavailablity(reservation.HotelID, reservation.CheckOut);
+
+            view.FinalizeReservation(reservation.Reference);
+        }
+
+        private void UpdateReservation(object s, EventArgs e)
+        {
+            var reservation = view.GetReservation();
+            var hotel = hotelRepository.FindHotelByID(reservation.HotelID);
+
+            reservation.TotalCost = CalculateTotalCost(hotel.Price, reservation.GuestCount, (reservation.CheckOut - reservation.CheckIn).Days);
+
+            view.RefreshView(reservation);
+        }
+
+        private decimal CalculateTotalCost(decimal price, int count, int days)
+        {
+            return price * count * days;
         }
     }
 }

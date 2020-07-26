@@ -24,11 +24,11 @@ namespace QuickStop.Domain.Models
         {
             get
             {
-                bool output = false; 
+                bool output = true; 
 
                 if(DateUntilAvailable != null)
                 {
-                    if((output = DateUntilAvailable == DateTime.Now) == true)
+                    if((output = DateTime.Now >= DateUntilAvailable) == true)
                     {
                         DateUntilAvailable = null;
                     }

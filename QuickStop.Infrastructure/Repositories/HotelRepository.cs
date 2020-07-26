@@ -10,7 +10,7 @@ namespace QuickStop.Infrastructure.Repositories
 {
     public sealed class HotelRepository : RepositoryBase<Hotel>, IHotelRepository
     {
-        private readonly IEnumerable<Hotel> hotels;
+        private IEnumerable<Hotel> hotels;
 
         public HotelRepository(ISerializer serializer) : base(serializer)
         {
@@ -19,7 +19,7 @@ namespace QuickStop.Infrastructure.Repositories
 
         IEnumerable<Hotel> IHotelRepository.GetHotels(Location location, int guestCount, Sort sort)
         {
-            var list = hotels.Where(x => x.Location == location);
+            var list = hotels.Where(x => x.IsAvailable).Where(x => x.Location == location);
 
             if (guestCount > 0)
             {
@@ -42,6 +42,22 @@ namespace QuickStop.Infrastructure.Repositories
         Hotel IHotelRepository.FindHotelByID(int id)
         {
             return hotels.Where(x => x.ID == id).First();
+        }
+
+        void IHotelRepository.SetHotelInavailablity(int id, DateTime dateTime)
+        {
+            var newHotels = hotels.ToList();
+
+            for(int i = 0; i < newHotels.Count; i++)
+            {
+                if(newHotels[i].ID == id)
+                {
+                    newHotels[i].DateUntilAvailable = (DateTime?)dateTime;
+
+                    hotels = newHotels;
+                    return;
+                }
+            }
         }
     }
 }

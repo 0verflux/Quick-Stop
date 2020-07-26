@@ -2,9 +2,9 @@
 {
     public enum Location
     {
-        Baguio,
-        SanFernando,
+        Manila,
         Quezon,
-        Manila
+        Baguio,
+        SanFernando      
     }
 }

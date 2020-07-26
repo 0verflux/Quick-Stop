@@ -3,6 +3,8 @@ using QuickStop.Client.Contracts.Presenters;
 using QuickStop.Client.Contracts.Views;
 using QuickStop.Components;
 using QuickStop.Infrastructure.Contracts;
+using System;
+using System.Windows.Forms;
 
 namespace QuickStop.Client.Presenters
 {
@@ -18,11 +20,15 @@ namespace QuickStop.Client.Presenters
 
             view.HotelSelected += HotelSelected;
             view.LoadFilteredHotel += LoadFilteredHotel;
+            view.SaveData += SaveData;
         }
 
         private void HotelSelected(object s, HotelSelectedEventArgs e)
         {
-            hotelDetailsPresenter.ShowHotelDetails(e.Index);
+            if(hotelDetailsPresenter.ShowHotelDetails(e.Index) == DialogResult.OK)
+            {
+                view.PopulateHotels(null);
+            }
         }
 
         private void LoadFilteredHotel(object s, HotelFilterEventArgs e)
@@ -30,6 +36,11 @@ namespace QuickStop.Client.Presenters
             var hotels = hotelRepository.GetHotels(e.Location, e.GuestCount, e.Sort);
 
             view.PopulateHotels(hotels);
+        }
+
+        private void SaveData(object s, EventArgs e)
+        {
+            hotelRepository.Save();
         }
     }
 }

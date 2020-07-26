@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace QuickStop.Client.Contracts.Views
 {
@@ -13,6 +14,7 @@ namespace QuickStop.Client.Contracts.Views
     {
         event EventHandler<HotelSelectedEventArgs> HotelSelected;
 
-        void DisplayHotel(Hotel hotel);
+        DialogResult DisplayHotel(Hotel hotel);
+        void CloseView();
     }
 }

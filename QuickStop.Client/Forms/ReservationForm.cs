@@ -16,5 +16,15 @@ namespace QuickStop.Client.Views
         {
             InitializeComponent();
         }
+
+        private void NotifyInputChanged(object sender, EventArgs e)
+        {
+            UpdateReservation?.Invoke(sender, e);
+        }
+
+        private void BookOnClick(object sender, EventArgs e)
+        {
+            CreateReservation?.Invoke(sender, e);
+        }
     }
 }
