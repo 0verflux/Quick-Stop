@@ -26,7 +26,7 @@ namespace QuickStop.Client.Views
             remove { UpdateReservation -= value; }
         }
 
-        void IReservationView.ShowReservation(Hotel hotel, Reservation reservation)
+        DialogResult IReservationView.ShowReservation(Hotel hotel, Reservation reservation)
         {
             Tag = hotel.ID;
             label7.Text = hotel.Name;
@@ -34,7 +34,7 @@ namespace QuickStop.Client.Views
             label10.Text = hotel.Location.ToString();
             label13.Text = "- -";
 
-            ShowDialog();
+            return ShowDialog();
         }
 
         void IReservationView.FinalizeReservation(string reference)

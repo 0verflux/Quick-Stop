@@ -12,7 +12,7 @@ namespace QuickStop.Client.Contracts.Views
 
         Reservation GetReservation();
 
-        void ShowReservation(Hotel hotel, Reservation reservation);
+        DialogResult ShowReservation(Hotel hotel, Reservation reservation);
         void RefreshView(Reservation reservation);
         void FinalizeReservation(string reference);
     }

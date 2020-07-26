@@ -4,6 +4,7 @@ using QuickStop.Client.Contracts.Views;
 using QuickStop.Components;
 using QuickStop.Infrastructure.Contracts;
 using System;
+using System.Windows.Forms;
 
 namespace QuickStop.Client.Presenters
 {
@@ -24,7 +25,10 @@ namespace QuickStop.Client.Presenters
 
         private void HotelSelected(object s, HotelSelectedEventArgs e)
         {
-            hotelDetailsPresenter.ShowHotelDetails(e.Index);
+            if(hotelDetailsPresenter.ShowHotelDetails(e.Index) == DialogResult.OK)
+            {
+                view.PopulateHotels(null);
+            }
         }
 
         private void LoadFilteredHotel(object s, HotelFilterEventArgs e)

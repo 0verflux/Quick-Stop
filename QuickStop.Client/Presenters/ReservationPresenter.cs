@@ -28,11 +28,11 @@ namespace QuickStop.Client.Presenters
             view.UpdateReservation += UpdateReservation;
         }
 
-        void IReservationPresenter.ProceedReservation(int hotelIndex)
+        DialogResult IReservationPresenter.ProceedReservation(int hotelIndex)
         {
             Hotel selectedHotel = hotelRepository.FindHotelByID(hotelIndex);
 
-            view.ShowReservation(selectedHotel, new Reservation());
+            return view.ShowReservation(selectedHotel, new Reservation());
         }
 
         private void CreateReservation(object s, EventArgs e)

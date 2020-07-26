@@ -20,7 +20,7 @@ namespace QuickStop.Client.Views
             remove { HotelSelected -= value; }
         }
 
-        void IHotelDetailsView.DisplayHotel(Hotel hotel)
+        DialogResult IHotelDetailsView.DisplayHotel(Hotel hotel)
         {
             Tag = hotel.ID.ToString();
 
@@ -31,7 +31,12 @@ namespace QuickStop.Client.Views
             label7.Text = hotel.Location.ToString();
             pictureBox1.Image = hotel.Room.ConvertToImage();
 
-            ShowDialog();
+            return ShowDialog();
+        }
+
+        void IHotelDetailsView.CloseView()
+        {
+            DialogResult = DialogResult.OK;
         }
     }
 }
