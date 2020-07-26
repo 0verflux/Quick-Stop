@@ -27,7 +27,7 @@ namespace QuickStop.Client.Controls
             hotelID = hotel.ID;
             pictureBox1.Image = hotel.Icon.ConvertToImage();
             label1.Text = hotel.Name;
-            label2.Text = hotel.Price.ToString();
+            label2.Text = hotel.Price.ToString("C2");
             label3.Text = hotel.Ratings.ToString();
         }
 

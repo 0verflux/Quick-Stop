@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuickStop.Client.Views
@@ -19,7 +12,9 @@ namespace QuickStop.Client.Views
 
         private void BookHotelOnClick(object sender, EventArgs e)
         {
-            HotelSelected?.Invoke(sender, new Components.HotelSelectedEventArgs(Convert.ToInt32(Tag)));
+            Hide();
+            Close();
+            RequestReservation?.Invoke(sender, new Components.HotelSelectedEventArgs(Convert.ToInt32(Tag)));
         }
     }
 }

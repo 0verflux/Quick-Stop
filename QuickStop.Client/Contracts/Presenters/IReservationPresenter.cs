@@ -4,6 +4,7 @@ namespace QuickStop.Client.Contracts.Presenters
 {
     public interface IReservationPresenter
     {
-        DialogResult ProceedReservation(int hotelIndex);
+        void RequestReservation(int hotelIndex);
+        void RequestViewReservation(string reference);
     }
 }

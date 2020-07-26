@@ -4,7 +4,6 @@ using QuickStop.Client.Contracts.Views;
 using QuickStop.Components;
 using QuickStop.Domain.Models;
 using QuickStop.Infrastructure.Contracts;
-using System.Windows.Forms;
 
 namespace QuickStop.Client.Presenters
 {
@@ -18,22 +17,26 @@ namespace QuickStop.Client.Presenters
             this.hotelRepository = hotelRepository;
             this.reservationPresenter = reservationPresenter;
 
-            view.HotelSelected += HotelSelected;
+            view.RequestReservation += RequestReservation;
         }
 
-        private void HotelSelected(object s, HotelSelectedEventArgs e)
-        {
-            if(reservationPresenter.ProceedReservation(e.Index) == DialogResult.OK)
-            {
-                view.CloseView();
-            }
-        }
-
-        DialogResult IHotelDetailsPresenter.ShowHotelDetails(int hotelIndex)
+        #region Hotel Details Logic
+        void IHotelDetailsPresenter.RequestViewHotelDetails(int hotelIndex)
         {
             Hotel selectedHotel = hotelRepository.FindHotelByID(hotelIndex);
 
-            return view.DisplayHotel(selectedHotel);
+            view.DisplayHotel(selectedHotel);
         }
+        #endregion
+
+        #region Navigation
+        //
+        // Hotel Details -> Reservation
+        //
+        private void RequestReservation(object s, HotelSelectedEventArgs e)
+        {
+            reservationPresenter.RequestReservation(e.Index);
+        }
+        #endregion
     }
 }

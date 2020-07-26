@@ -12,9 +12,8 @@ namespace QuickStop.Client.Contracts.Views
 {
     public interface IHotelDetailsView : IView
     {
-        event EventHandler<HotelSelectedEventArgs> HotelSelected;
+        event EventHandler<HotelSelectedEventArgs> RequestReservation;
 
-        DialogResult DisplayHotel(Hotel hotel);
-        void CloseView();
+        void DisplayHotel(Hotel hotel);
     }
 }

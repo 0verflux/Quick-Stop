@@ -23,13 +23,13 @@ namespace QuickStop.Infrastructure.Repositories
 
             if (guestCount > 0)
             {
-                list = list.Where(x => x.MinGuestCount >= guestCount && x.MaxGuestCount <= guestCount);
+                list = list.Where(x => guestCount >= x.MinGuestCount && guestCount <= x.MaxGuestCount);
             }
 
             switch(sort)
             {
-                case Sort.Price: return list.OrderByDescending(x => x.Price);
-                case Sort.Rating: return list.OrderBy(x => x.Ratings);
+                case Sort.Price: return list.OrderByDescending(x => x.Ratings).OrderBy(x => x.Price);
+                case Sort.Rating: return list.OrderBy(x => x.Price).OrderByDescending(x => x.Ratings);
                 default: return list;
             }
         }
