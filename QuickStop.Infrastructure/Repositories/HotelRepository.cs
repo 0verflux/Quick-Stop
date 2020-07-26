@@ -17,7 +17,7 @@ namespace QuickStop.Infrastructure.Repositories
             hotels = (serializer as IHotelSerializer).DeserializeHotels();
         }
 
-        IEnumerable<Hotel> IHotelRepository.GetHotels(Location location, int guestCount, bool sortMode)
+        IEnumerable<Hotel> IHotelRepository.GetHotels(Location location, int guestCount, Sort sort)
         {
             var list = hotels.Where(x => x.Location == location);
 
@@ -26,13 +26,11 @@ namespace QuickStop.Infrastructure.Repositories
                 list = list.Where(x => x.MinGuestCount >= guestCount && x.MaxGuestCount <= guestCount);
             }
 
-            if(sortMode)
+            switch(sort)
             {
-                return list.OrderByDescending(x => x.Price);
-            }
-            else
-            {
-                return list.OrderBy(x => x.Ratings);
+                case Sort.Price: return list.OrderByDescending(x => x.Price);
+                case Sort.Rating: return list.OrderBy(x => x.Ratings);
+                default: return list;
             }
         }
 

@@ -7,7 +7,7 @@ namespace QuickStop.Infrastructure.Contracts
 {
     public interface IHotelRepository
     {
-        IEnumerable<Hotel> GetHotels(Location location, int guestCount, bool sortMode);
+        IEnumerable<Hotel> GetHotels(Location location, int guestCount, Sort sort);
 
         void Save();
         Hotel FindHotelByID(int id);
