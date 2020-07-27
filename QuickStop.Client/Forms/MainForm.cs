@@ -53,5 +53,25 @@ namespace QuickStop.Client.Views
         {
             RequestViewReservation?.Invoke(sender, new ReservationReferenceEventArgs(textBox1.Text));
         }
+
+        private void tableLayoutPanel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

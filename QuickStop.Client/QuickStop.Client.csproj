@@ -183,5 +183,29 @@
   <ItemGroup>
     <None Include="Resources\location guests.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\total fees1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\manila1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quezon city1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\san fernando1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baguio1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo banner.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo banner1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\locations1.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
