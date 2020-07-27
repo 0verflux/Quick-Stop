@@ -64,5 +64,5 @@ namespace QuickStop.Client.Views
         {
             ReservationViewModel.TotalCost = HotelRoomBooking.CalculateTotalPrice(ReservationViewModel.Cost, ReservationViewModel.GuestCount, ReservationViewModel.MinimumGuestCount, ReservationViewModel.MaximumGuestCount, ReservationViewModel.CheckIn, ReservationViewModel.CheckOut);
         }    
-}
+  }
 }
