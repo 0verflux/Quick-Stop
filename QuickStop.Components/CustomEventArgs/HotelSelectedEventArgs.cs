@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace QuickStop.Components
+namespace QuickStop.Components.CustomEventArgs
 {
     public class HotelSelectedEventArgs : EventArgs
     {

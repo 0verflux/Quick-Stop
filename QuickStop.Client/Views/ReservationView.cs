@@ -1,7 +1,5 @@
-﻿using QuickStop.Client.Contracts;
-using QuickStop.Client.Contracts.Views;
-using QuickStop.Components;
-using QuickStop.Domain.Models;
+﻿using QuickStop.Client.Contracts.Views;
+using QuickStop.Client.ViewModels;
 using System;
 using System.Windows.Forms;
 
@@ -19,54 +17,20 @@ namespace QuickStop.Client.Views
         }
         #endregion
 
-        private Hotel hotel;
-        private decimal price;
+        public ReservationViewModel ReservationViewModel { get; set; }
 
-        void IReservationView.DisplayReservation(Hotel hotel)
+#pragma warning disable CS1066 // The default value specified will have no effect because it applies to a member that is used in contexts that do not allow optional arguments
+        void IReservationView.DisplayReservation(bool isReadOnly = false)
+#pragma warning restore CS1066 // The default value specified will have no effect because it applies to a member that is used in contexts that do not allow optional arguments
         {
-            dateTimePicker2.MinDate = DateTime.Now;
-            dateTimePicker1.MinDate = DateTime.Now.AddDays(1);
-            dateTimePicker1.Value = DateTime.Now.AddDays(1);
-            
-            this.hotel = hotel;
-            label7.Text = hotel.Name;
-            label4.Text = hotel.Description;
-            label10.Text = hotel.Location.ToString();
-            label13.Text = "Pick a number of guest!";
-            pictureBox1.Image = hotel.Room.ConvertToImage();
-            numericUpDown1.Minimum = hotel.MinGuestCount;
-            numericUpDown1.Maximum = hotel.MaxGuestCount;
-            numericUpDown1.Value = numericUpDown1.Minimum;
+            //dateTimePicker2.Value = ReservationViewModel.CheckIn;
+            //dateTimePicker1.Value = ReservationViewModel.CheckOut;
 
-            numericUpDown1.Enabled = true;
-            dateTimePicker1.Enabled = true;
-            dateTimePicker2.Enabled = true;
-            button1.Visible = true;
-            ShowDialog();
-        }
+            numericUpDown1.Enabled = !isReadOnly;
+            dateTimePicker1.Enabled = !isReadOnly;
+            dateTimePicker2.Enabled = !isReadOnly;
+            button1.Visible = !isReadOnly;
 
-        void IReservationView.DisplayReservation(Reservation reservation, Hotel hotel)
-        {
-            this.hotel = null;
-            dateTimePicker2.MinDate = DateTimePicker.MinimumDateTime;
-            dateTimePicker1.MinDate = DateTimePicker.MinimumDateTime;
-            numericUpDown1.Minimum = 1;
-            numericUpDown1.Maximum = 100;
-
-            label7.Text = hotel.Name;
-            label4.Text = hotel.Description;
-            label10.Text = hotel.Location.ToString();
-            label13.Text = reservation.TotalCost.ToString("C2");
-            numericUpDown1.Value = reservation.GuestCount;
-            dateTimePicker2.Value = reservation.CheckIn;
-            dateTimePicker1.Value = reservation.CheckOut;
-            pictureBox1.Image = hotel.Room.ConvertToImage();
-            
-
-            numericUpDown1.Enabled = false;
-            dateTimePicker1.Enabled = false;
-            dateTimePicker2.Enabled = false;
-            button1.Visible = false;
             ShowDialog();
         }
 
@@ -74,19 +38,6 @@ namespace QuickStop.Client.Views
         {
             MessageBox.Show("Thank you for booking in Quick Stop!\r\nYour booking reference is: " + reference, "Quick-Stop: Booking Complete", MessageBoxButtons.OK);
             Close();
-        }
-
-        Reservation IReservationView.GetReservation()
-        {
-            return new Reservation
-            {
-                Reference = ReferenceGenerator.Generate(6),
-                HotelID = hotel.ID,
-                GuestCount = (int)numericUpDown1.Value,
-                CheckIn = dateTimePicker2.Value,
-                CheckOut = dateTimePicker1.Value,
-                TotalCost = price
-            };
         }
     }
 }

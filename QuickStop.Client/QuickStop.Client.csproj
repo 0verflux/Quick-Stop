@@ -83,6 +83,7 @@
     <Compile Include="Presenters\ReservationPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\ReservationViewModel.cs" />
     <Compile Include="Views\HotelDetailsView.cs">
       <SubType>Form</SubType>
     </Compile>

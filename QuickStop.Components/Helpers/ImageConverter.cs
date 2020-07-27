@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 
-namespace QuickStop.Components
+namespace QuickStop.Components.Helpers
 {
     public static class ImageConverter
     {
