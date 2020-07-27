@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuickStop.Domain.Models;
-using QuickStop.Components;
+using QuickStop.Components.CustomEventArgs;
+using QuickStop.Components.Helpers;
 
 namespace QuickStop.Client.Controls
 {

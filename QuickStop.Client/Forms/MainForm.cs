@@ -1,5 +1,5 @@
 ﻿using QuickStop.Client.Controls;
-using QuickStop.Components;
+using QuickStop.Components.CustomEventArgs;
 using QuickStop.Domain.Enums;
 using System;
 using System.Windows.Forms;

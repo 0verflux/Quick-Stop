@@ -1,6 +1,6 @@
 ﻿using QuickStop.Client.Contracts.Views;
 using QuickStop.Client.Controls;
-using QuickStop.Components;
+using QuickStop.Components.CustomEventArgs;
 using QuickStop.Domain.Enums;
 using QuickStop.Domain.Models;
 using System;

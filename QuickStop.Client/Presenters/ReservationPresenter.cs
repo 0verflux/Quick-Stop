@@ -1,7 +1,8 @@
-﻿
-using QuickStop.Client.Base;
+﻿using QuickStop.Client.Base;
 using QuickStop.Client.Contracts.Presenters;
 using QuickStop.Client.Contracts.Views;
+using QuickStop.Client.ViewModels;
+using QuickStop.Components.Helpers;
 using QuickStop.Domain.Models;
 using QuickStop.Infrastructure.Contracts;
 using System;
@@ -26,7 +27,22 @@ namespace QuickStop.Client.Presenters
         {
             Hotel selectedHotel = hotelRepository.FindHotelByID(hotelIndex);
 
-            view.DisplayReservation(selectedHotel);
+            view.ReservationViewModel = new ReservationViewModel(hotelIndex)
+            {
+                HotelName = selectedHotel.Name,
+                Cost = selectedHotel.Price,
+                HotelDescription = selectedHotel.Description,
+                HotelLocation = selectedHotel.Location.ToString(),
+                HotelRoomImage = selectedHotel.Room.ConvertToImage(),
+                MinimumGuestCount = selectedHotel.MinGuestCount,
+                MaximumGuestCount = selectedHotel.MaxGuestCount,
+                GuestCount = selectedHotel.MinGuestCount,
+                TotalCost = selectedHotel.Price,
+                CheckIn = DateTime.Now,
+                CheckOut = DateTime.Now.AddDays(1)
+            };
+
+            view.DisplayReservation();
         }
 
         void IReservationPresenter.RequestViewReservation(string reference)
@@ -36,7 +52,21 @@ namespace QuickStop.Client.Presenters
                 Reservation reservation = reservationRepository.GetReservation(reference);
                 Hotel hotel = hotelRepository.FindHotelByID(reservation.HotelID);
 
-                view.DisplayReservation(reservation, hotel);
+                view.ReservationViewModel = new ReservationViewModel(hotel.ID)
+                {
+                    HotelName = hotel.Name,
+                    HotelDescription = hotel.Description,
+                    HotelLocation = hotel.Location.ToString(),
+                    HotelRoomImage = hotel.Room.ConvertToImage(),
+                    MinimumGuestCount = hotel.MinGuestCount,
+                    MaximumGuestCount = hotel.MaxGuestCount,
+                    GuestCount = reservation.GuestCount,
+                    CheckIn = reservation.CheckIn,
+                    CheckOut = reservation.CheckOut,
+                    TotalCost = reservation.TotalCost
+                };
+
+                view.DisplayReservation(true);
             }
             catch (Exception ex)
             {
@@ -46,7 +76,8 @@ namespace QuickStop.Client.Presenters
 
         private void RequestCreateReservation(object s, EventArgs e)
         {
-            Reservation reservation = view.GetReservation();
+            Reservation reservation = view.ReservationViewModel.Reservation;
+            reservation.Reference = ReferenceGenerator.Generate(6);
 
             reservationRepository.CreateReservation(reservation);
             hotelRepository.SetHotelInavailablity(reservation.HotelID, reservation.CheckOut);

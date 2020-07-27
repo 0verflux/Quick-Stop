@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace QuickStop.Components
+namespace QuickStop.Components.Helpers
 {
     public static class ReferenceGenerator
     {

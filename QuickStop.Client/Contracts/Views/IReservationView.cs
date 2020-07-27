@@ -1,4 +1,5 @@
 ﻿using QuickStop.Client.Contracts;
+using QuickStop.Client.ViewModels;
 using QuickStop.Domain.Models;
 using System;
 using System.Windows.Forms;
@@ -9,9 +10,9 @@ namespace QuickStop.Client.Contracts.Views
     {
         event EventHandler RequestCreateReservation;
 
-        void DisplayReservation(Hotel hotel);
-        void DisplayReservation(Reservation reservation, Hotel hotel);
+        ReservationViewModel ReservationViewModel { get; set; }
+
+        void DisplayReservation(bool isReadOnly = false);
         void FinalizeReservation(string reference);
-        Reservation GetReservation();
     }
 }

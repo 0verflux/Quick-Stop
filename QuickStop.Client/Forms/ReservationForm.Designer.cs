@@ -75,8 +75,8 @@
             this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.95184F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.04816F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76.03306F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.96694F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.Size = new System.Drawing.Size(624, 601);
             this.tableLayoutPanel1.TabIndex = 11;
@@ -172,8 +172,6 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.18633F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 79.81367F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(618, 272);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
             // pictureBox1
@@ -186,7 +184,6 @@
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(10);
             this.pictureBox1.Name = "pictureBox1";
             this.tableLayoutPanel3.SetRowSpan(this.pictureBox1, 2);
-            this.pictureBox1.Size = new System.Drawing.Size(289, 252);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
@@ -198,10 +195,6 @@
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.OldLace;
-            this.label4.Location = new System.Drawing.Point(10, 64);
-            this.label4.Margin = new System.Windows.Forms.Padding(10);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(289, 198);
             this.label4.TabIndex = 5;
             this.label4.Text = "label4";
             // 
@@ -217,11 +210,9 @@
             this.tableLayoutPanel4.Controls.Add(this.label10, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.numericUpDown1, 3, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 376);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(618, 27);
             this.tableLayoutPanel4.TabIndex = 4;
             // 
             // label10
@@ -234,7 +225,7 @@
             this.label10.Location = new System.Drawing.Point(148, 6);
             this.label10.Margin = new System.Windows.Forms.Padding(6);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(168, 20);
+            this.label10.Size = new System.Drawing.Size(168, 40);
             this.label10.TabIndex = 2;
             this.label10.Text = "label10";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -244,7 +235,7 @@
             this.numericUpDown1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.numericUpDown1.BackColor = System.Drawing.Color.OldLace;
             this.numericUpDown1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(466, 3);
+            this.numericUpDown1.Location = new System.Drawing.Point(466, 13);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(136, 25);
             this.numericUpDown1.TabIndex = 3;
@@ -255,11 +246,10 @@
             0,
             0,
             0});
-            this.numericUpDown1.ValueChanged += new System.EventHandler(this.NotifyInputChanged);
+            this.numericUpDown1.Click += new System.EventHandler(this.GuestCountChanged);
             // 
             // tableLayoutPanel6
             // 
-            this.tableLayoutPanel6.AutoSize = true;
             this.tableLayoutPanel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(163)))), ((int)(((byte)(168)))));
             this.tableLayoutPanel6.BackgroundImage = global::QuickStop.Client.Properties.Resources.checkincheckout;
             this.tableLayoutPanel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -273,14 +263,13 @@
             this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 2;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(360, 82);
             this.tableLayoutPanel6.TabIndex = 11;
             // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(163)))), ((int)(((byte)(168)))));
+            this.dateTimePicker2.Checked = false;
+            this.dateTimePicker2.CustomFormat = "";
             this.dateTimePicker2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateTimePicker2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker2.Location = new System.Drawing.Point(137, 6);
@@ -289,19 +278,17 @@
             this.dateTimePicker2.Size = new System.Drawing.Size(220, 25);
             this.dateTimePicker2.TabIndex = 9;
             this.dateTimePicker2.TabStop = false;
-            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.NotifyInputChanged);
+            this.dateTimePicker2.CloseUp += new System.EventHandler(this.NotifyInputChanged);
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dateTimePicker1.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(163)))), ((int)(((byte)(168)))));
-            this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(137, 45);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(220, 25);
             this.dateTimePicker1.TabIndex = 9;
             this.dateTimePicker1.TabStop = false;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.NotifyInputChanged);
+            this.dateTimePicker1.CloseUp += new System.EventHandler(this.NotifyInputChanged);
             // 
             // button1
             // 
@@ -312,10 +299,6 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(195)))), ((int)(((byte)(100)))));
-            this.button1.Image = global::QuickStop.Client.Properties.Resources.book_now;
-            this.button1.Location = new System.Drawing.Point(261, 85);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(354, 100);
             this.button1.TabIndex = 13;
             this.button1.TabStop = false;
             this.button1.UseVisualStyleBackColor = false;
@@ -379,6 +362,7 @@
             this.Name = "ReservationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Quick Stop: Reservation";
+            this.Load += new System.EventHandler(this.OnLoad);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);

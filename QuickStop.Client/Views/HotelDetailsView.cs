@@ -1,5 +1,6 @@
 ﻿using QuickStop.Client.Contracts.Views;
-using QuickStop.Components;
+using QuickStop.Components.CustomEventArgs;
+using QuickStop.Components.Helpers;
 using QuickStop.Domain.Models;
 using System;
 

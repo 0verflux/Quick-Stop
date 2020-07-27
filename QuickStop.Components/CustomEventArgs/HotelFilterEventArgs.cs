@@ -1,7 +1,7 @@
 ﻿using QuickStop.Domain.Enums;
 using System;
 
-namespace QuickStop.Components
+namespace QuickStop.Components.CustomEventArgs
 {
     public class HotelFilterEventArgs : EventArgs
     {

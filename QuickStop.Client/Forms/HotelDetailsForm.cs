@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuickStop.Components.CustomEventArgs;
+using System;
 using System.Windows.Forms;
 
 namespace QuickStop.Client.Views
@@ -14,7 +15,7 @@ namespace QuickStop.Client.Views
         {
             Hide();
             Close();
-            RequestReservation?.Invoke(sender, new Components.HotelSelectedEventArgs(Convert.ToInt32(Tag)));
+            RequestReservation?.Invoke(sender, new HotelSelectedEventArgs(Convert.ToInt32(Tag)));
         }
     }
 }
