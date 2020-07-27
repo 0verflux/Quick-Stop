@@ -23,7 +23,7 @@ namespace QuickStop.Client.Presenters
         #region Hotel Details Logic
         void IHotelDetailsPresenter.RequestViewHotelDetails(int hotelIndex)
         {
-            Hotel selectedHotel = hotelRepository.FindHotelByID(hotelIndex);
+            HotelRoom selectedHotel = hotelRepository.FindHotelByID(hotelIndex);
 
             view.DisplayHotel(selectedHotel);
         }

@@ -20,9 +20,9 @@ namespace QuickStop.Infrastructure.Serializers
             fileName = "HotelData";
         }
 
-        IEnumerable<Hotel> IHotelSerializer.DeserializeHotels()
+        IEnumerable<HotelRoom> IHotelSerializer.DeserializeHotels()
         {
-            List<Hotel> hotels = new List<Hotel>();
+            List<HotelRoom> hotels = new List<HotelRoom>();
 
             string file = Path.Combine(baseDirectory, fileName + extension);
             try
@@ -35,7 +35,7 @@ namespace QuickStop.Infrastructure.Serializers
 
                     try
                     {
-                        Hotel hotel = new Hotel
+                        HotelRoom hotel = new HotelRoom
                         {
                             ID = Convert.ToInt32(hotelParams[0]),
                             Name = hotelParams[1].Trim('\"'),
@@ -66,12 +66,12 @@ namespace QuickStop.Infrastructure.Serializers
             return hotels;
         }
 
-        void IHotelSerializer.SerializeHotels(IEnumerable<Hotel> hotels)
+        void IHotelSerializer.SerializeHotels(IEnumerable<HotelRoom> hotels)
         {
             StringBuilder sb = new StringBuilder();
             string file = Path.Combine(baseDirectory, fileName + extension);
 
-            foreach (Hotel hotel in hotels)
+            foreach (HotelRoom hotel in hotels)
             {
                 sb.Append(IncludeDelimiter(hotel.ID.ToString()));
                 sb.Append(IncludeDelimiter(hotel.Name, true));

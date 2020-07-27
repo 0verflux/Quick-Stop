@@ -8,10 +8,10 @@ namespace QuickStop.Infrastructure.Contracts
 {
     public interface IHotelRepository
     {
-        IEnumerable<Hotel> GetHotels(Location location, int guestCount, Sort sort);
+        IEnumerable<HotelRoom> GetHotels(Location location, int guestCount, Sort sort);
 
         void Save();
-        Hotel FindHotelByID(int id);
+        HotelRoom FindHotelByID(int id);
         void SetHotelInavailablity(int id, DateTime dateTime);
     }
 }

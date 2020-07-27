@@ -163,6 +163,16 @@ namespace QuickStop.Client.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap location_icon_map_png__1 {
+            get {
+                object obj = ResourceManager.GetObject("location-icon-map-png--1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap locations {
             get {
                 object obj = ResourceManager.GetObject("locations", resourceCulture);

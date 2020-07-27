@@ -9,7 +9,7 @@ namespace QuickStop.Infrastructure.Contracts
 {
     public interface IHotelSerializer : ISerializer
     { 
-        IEnumerable<Hotel> DeserializeHotels();
-        void SerializeHotels(IEnumerable<Hotel> hotels);
+        IEnumerable<HotelRoom> DeserializeHotels();
+        void SerializeHotels(IEnumerable<HotelRoom> hotels);
     }
 }

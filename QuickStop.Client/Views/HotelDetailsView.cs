@@ -18,16 +18,16 @@ namespace QuickStop.Client.Views
         }
         #endregion
 
-        void IHotelDetailsView.DisplayHotel(Hotel hotel)
+        void IHotelDetailsView.DisplayHotel(HotelRoom hotel)
         {
             Tag = hotel.ID.ToString();
 
             label1.Text = hotel.Name;
             label2.Text = hotel.Description;
-            label4.Text = hotel.Price.ToString("C2");
+            label4.Text = $"{hotel.Price:C2}/Night";
             label5.Text = $"{new string('★', hotel.Ratings)}{new string('☆', 5-hotel.Ratings)}";
             label7.Text = hotel.Location.ToString();
-            label8.Text = $"({hotel.MinGuestCount} - {hotel.MaxGuestCount})\rGuests";
+            label8.Text = $"{hotel.MinGuestCount} - {hotel.MaxGuestCount} guests";
             pictureBox1.Image = hotel.Room.ConvertToImage();
 
             ShowDialog();

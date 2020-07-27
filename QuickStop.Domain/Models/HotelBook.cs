@@ -1,13 +1,8 @@
-﻿using QuickStop.Domain.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
 namespace QuickStop.Domain.Models
 {
-    public class Reservation
+    public class HotelBook
     {
         public string Reference { get; set; }
         public int HotelID { get; set; }

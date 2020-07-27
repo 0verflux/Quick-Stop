@@ -4,19 +4,19 @@ using QuickStop.Infrastructure.Contracts;
 
 namespace QuickStop.Infrastructure.Repositories
 {
-    public sealed class ReservationRepository : RepositoryBase<Reservation>, IReservationRepository
+    public sealed class ReservationRepository : RepositoryBase<HotelBook>, IReservationRepository
     {
         public ReservationRepository(ISerializer serializer) : base(serializer)
         {
 
         }
 
-        void IReservationRepository.CreateReservation(Reservation reservation)
+        void IReservationRepository.CreateReservation(HotelBook reservation)
         {
             (serializer as IReservationSerializer).CreateReservation(reservation);
         }
 
-        Reservation IReservationRepository.GetReservation(string reference)
+        HotelBook IReservationRepository.GetReservation(string reference)
         {
             return (serializer as IReservationSerializer).ReadReservation(reference);
         }

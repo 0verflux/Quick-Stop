@@ -16,19 +16,19 @@ namespace QuickStop.Client.ViewModels
         private string description;
         private string location;
 
-        public Reservation Reservation { get; }
+        public HotelBook Reservation { get; }
 
-        public ReservationViewModel() : this(new Reservation())
+        public ReservationViewModel() : this(new HotelBook())
         {
 
         }
 
-        public ReservationViewModel(int hotelID) : this(new Reservation { HotelID = hotelID })
+        public ReservationViewModel(int hotelID) : this(new HotelBook { HotelID = hotelID })
         {
 
         }
 
-        public ReservationViewModel(Reservation reservation)
+        public ReservationViewModel(HotelBook reservation)
         {
             Reservation = reservation;
         }

@@ -4,8 +4,8 @@ namespace QuickStop.Infrastructure.Contracts
 {
     public interface IReservationRepository
     {
-        void CreateReservation(Reservation reservation);
-        Reservation GetReservation(string reference);
+        void CreateReservation(HotelBook reservation);
+        HotelBook GetReservation(string reference);
         bool ReservationExists(string reference);
     }
 }

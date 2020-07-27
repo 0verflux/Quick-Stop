@@ -17,7 +17,7 @@ namespace QuickStop.Infrastructure.Serializers
 
         }
 
-        void IReservationSerializer.CreateReservation(Reservation reservation)
+        void IReservationSerializer.CreateReservation(HotelBook reservation)
         {
             StringBuilder sb = new StringBuilder();
             string file = Path.Combine(baseDirectory, reservation.Reference + extension);
@@ -31,12 +31,12 @@ namespace QuickStop.Infrastructure.Serializers
             File.WriteAllText(file, sb.ToString());
         }
 
-        Reservation IReservationSerializer.ReadReservation(string reference)
+        HotelBook IReservationSerializer.ReadReservation(string reference)
         {
             string file = Path.Combine(baseDirectory, reference + extension);
             string[] parameters = File.ReadAllLines(file);
             
-            Reservation reservation = new Reservation
+            HotelBook reservation = new HotelBook
             {
                 Reference = reference,
                 HotelID = Convert.ToInt32(parameters[0]),

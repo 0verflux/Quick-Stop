@@ -1,11 +1,9 @@
-﻿using QuickStop.Domain.Contracts;
-using QuickStop.Domain.Enums;
+﻿using QuickStop.Domain.Enums;
 using System;
-using System.Drawing;
 
 namespace QuickStop.Domain.Models
 {
-    public class Hotel
+    public class HotelRoom
     {
         public int ID { get; set; }
 

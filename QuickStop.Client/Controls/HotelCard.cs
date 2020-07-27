@@ -23,12 +23,12 @@ namespace QuickStop.Client.Controls
             InitializeComponent();
         }
 
-        public HotelCard(Hotel hotel) : this()
+        public HotelCard(HotelRoom hotel) : this()
         {
             hotelID = hotel.ID;
             pictureBox1.Image = hotel.Icon.ConvertToImage();
             label1.Text = hotel.Name;
-            label2.Text = $"{hotel.Price:C2}\r\n per Night";
+            label2.Text = $"{hotel.Price:C2}/Night";
             label3.Text = $"{new string('★', hotel.Ratings)}{new string('☆', 5 - hotel.Ratings)}";
         }
 

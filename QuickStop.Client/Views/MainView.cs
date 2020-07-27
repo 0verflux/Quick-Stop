@@ -41,7 +41,7 @@ namespace QuickStop.Client.Views
         private Location selectedLocation;
         private Sort sort;
 
-        void IMainView.LoadHotels(IEnumerable<Hotel> hotels)
+        void IMainView.LoadHotels(IEnumerable<HotelRoom> hotels)
         {
             SuspendLayout();
             
@@ -49,7 +49,7 @@ namespace QuickStop.Client.Views
 
             if (hotels == null) return;
             
-            foreach(Hotel hotel in hotels)
+            foreach(HotelRoom hotel in hotels)
             {
                 HotelCard hotelCard = new HotelCard(hotel)
                 {

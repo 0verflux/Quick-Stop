@@ -12,6 +12,6 @@ namespace QuickStop.Client.Contracts.Views
         event EventHandler<ReservationReferenceEventArgs> RequestViewReservation;
         event EventHandler RequestSaveData;
 
-        void LoadHotels(IEnumerable<Hotel> hotels);
+        void LoadHotels(IEnumerable<HotelRoom> hotels);
     }
 }

@@ -8,16 +8,16 @@ using System.Linq;
 
 namespace QuickStop.Infrastructure.Repositories
 {
-    public sealed class HotelRepository : RepositoryBase<Hotel>, IHotelRepository
+    public sealed class HotelRepository : RepositoryBase<HotelRoom>, IHotelRepository
     {
-        private IEnumerable<Hotel> hotels;
+        private IEnumerable<HotelRoom> hotels;
 
         public HotelRepository(ISerializer serializer) : base(serializer)
         {
             hotels = (serializer as IHotelSerializer).DeserializeHotels();
         }
 
-        IEnumerable<Hotel> IHotelRepository.GetHotels(Location location, int guestCount, Sort sort)
+        IEnumerable<HotelRoom> IHotelRepository.GetHotels(Location location, int guestCount, Sort sort)
         {
             var list = hotels.Where(x => x.IsAvailable).Where(x => x.Location == location);
 
@@ -39,7 +39,7 @@ namespace QuickStop.Infrastructure.Repositories
             (serializer as IHotelSerializer).SerializeHotels(hotels);
         }
 
-        Hotel IHotelRepository.FindHotelByID(int id)
+        HotelRoom IHotelRepository.FindHotelByID(int id)
         {
             return hotels.Where(x => x.ID == id).First();
         }

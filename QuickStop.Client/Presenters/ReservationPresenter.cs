@@ -25,7 +25,7 @@ namespace QuickStop.Client.Presenters
 
         void IReservationPresenter.RequestReservation(int hotelIndex)
         {
-            Hotel selectedHotel = hotelRepository.FindHotelByID(hotelIndex);
+            HotelRoom selectedHotel = hotelRepository.FindHotelByID(hotelIndex);
 
             view.ReservationViewModel = new ReservationViewModel(hotelIndex)
             {
@@ -49,8 +49,8 @@ namespace QuickStop.Client.Presenters
         {
             try
             {
-                Reservation reservation = reservationRepository.GetReservation(reference);
-                Hotel hotel = hotelRepository.FindHotelByID(reservation.HotelID);
+                HotelBook reservation = reservationRepository.GetReservation(reference);
+                HotelRoom hotel = hotelRepository.FindHotelByID(reservation.HotelID);
 
                 view.ReservationViewModel = new ReservationViewModel(hotel.ID)
                 {
@@ -76,7 +76,7 @@ namespace QuickStop.Client.Presenters
 
         private void RequestCreateReservation(object s, EventArgs e)
         {
-            Reservation reservation = view.ReservationViewModel.Reservation;
+            HotelBook reservation = view.ReservationViewModel.Reservation;
             reservation.Reference = ReferenceGenerator.Generate(6);
 
             reservationRepository.CreateReservation(reservation);

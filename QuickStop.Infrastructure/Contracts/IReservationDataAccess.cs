@@ -3,8 +3,8 @@ namespace QuickStop.Infrastructure.Contracts
 {
     public interface IReservationSerializer : ISerializer
     {
-        void CreateReservation(Reservation reservation);
-        Reservation ReadReservation(string reference);
+        void CreateReservation(HotelBook reservation);
+        HotelBook ReadReservation(string reference);
         bool ReservationExists(string reference);
     }
 }
