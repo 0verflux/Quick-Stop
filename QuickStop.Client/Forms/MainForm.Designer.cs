@@ -33,9 +33,15 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
+            this.radioToggleButton1 = new QuickStop.Client.Controls.RadioToggleButton();
+            this.radioToggleButton2 = new QuickStop.Client.Controls.RadioToggleButton();
+            this.radioToggleButton3 = new QuickStop.Client.Controls.RadioToggleButton();
+            this.radioToggleButton4 = new QuickStop.Client.Controls.RadioToggleButton();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
+            this.radioToggleButton5 = new QuickStop.Client.Controls.RadioToggleButton();
+            this.radioToggleButton6 = new QuickStop.Client.Controls.RadioToggleButton();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -43,12 +49,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.radioToggleButton1 = new QuickStop.Client.Controls.RadioToggleButton();
-            this.radioToggleButton2 = new QuickStop.Client.Controls.RadioToggleButton();
-            this.radioToggleButton3 = new QuickStop.Client.Controls.RadioToggleButton();
-            this.radioToggleButton4 = new QuickStop.Client.Controls.RadioToggleButton();
-            this.radioToggleButton5 = new QuickStop.Client.Controls.RadioToggleButton();
-            this.radioToggleButton6 = new QuickStop.Client.Controls.RadioToggleButton();
             this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -149,6 +149,85 @@
             this.label4.Text = "LOCATION";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // radioToggleButton1
+            // 
+            this.radioToggleButton1.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioToggleButton1.AutoSize = true;
+            this.radioToggleButton1.BackgroundImage = global::QuickStop.Client.Properties.Resources.manila;
+            this.radioToggleButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.radioToggleButton1.Checked = true;
+            this.radioToggleButton1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radioToggleButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.radioToggleButton1.Location = new System.Drawing.Point(6, 48);
+            this.radioToggleButton1.Margin = new System.Windows.Forms.Padding(6);
+            this.radioToggleButton1.MinimumSize = new System.Drawing.Size(138, 105);
+            this.radioToggleButton1.Name = "radioToggleButton1";
+            this.radioToggleButton1.Size = new System.Drawing.Size(168, 105);
+            this.radioToggleButton1.TabIndex = 1;
+            this.radioToggleButton1.TabStop = true;
+            this.radioToggleButton1.Tag = "Manila";
+            this.radioToggleButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radioToggleButton1.UseVisualStyleBackColor = true;
+            this.radioToggleButton1.CheckedChanged += new System.EventHandler(this.SelectedLocationChanged);
+            // 
+            // radioToggleButton2
+            // 
+            this.radioToggleButton2.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioToggleButton2.AutoSize = true;
+            this.radioToggleButton2.BackgroundImage = global::QuickStop.Client.Properties.Resources.quezon_city;
+            this.radioToggleButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.radioToggleButton2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radioToggleButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.radioToggleButton2.Location = new System.Drawing.Point(186, 48);
+            this.radioToggleButton2.Margin = new System.Windows.Forms.Padding(6);
+            this.radioToggleButton2.MinimumSize = new System.Drawing.Size(138, 105);
+            this.radioToggleButton2.Name = "radioToggleButton2";
+            this.radioToggleButton2.Size = new System.Drawing.Size(168, 105);
+            this.radioToggleButton2.TabIndex = 2;
+            this.radioToggleButton2.Tag = "Quezon";
+            this.radioToggleButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radioToggleButton2.UseVisualStyleBackColor = true;
+            this.radioToggleButton2.CheckedChanged += new System.EventHandler(this.SelectedLocationChanged);
+            // 
+            // radioToggleButton3
+            // 
+            this.radioToggleButton3.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioToggleButton3.AutoSize = true;
+            this.radioToggleButton3.BackgroundImage = global::QuickStop.Client.Properties.Resources.baguio;
+            this.radioToggleButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.radioToggleButton3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radioToggleButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.radioToggleButton3.Location = new System.Drawing.Point(366, 48);
+            this.radioToggleButton3.Margin = new System.Windows.Forms.Padding(6);
+            this.radioToggleButton3.MinimumSize = new System.Drawing.Size(138, 105);
+            this.radioToggleButton3.Name = "radioToggleButton3";
+            this.radioToggleButton3.Size = new System.Drawing.Size(168, 105);
+            this.radioToggleButton3.TabIndex = 3;
+            this.radioToggleButton3.Tag = "Baguio";
+            this.radioToggleButton3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radioToggleButton3.UseVisualStyleBackColor = true;
+            this.radioToggleButton3.CheckedChanged += new System.EventHandler(this.SelectedLocationChanged);
+            // 
+            // radioToggleButton4
+            // 
+            this.radioToggleButton4.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioToggleButton4.AutoSize = true;
+            this.radioToggleButton4.BackgroundImage = global::QuickStop.Client.Properties.Resources.san_fernando;
+            this.radioToggleButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.radioToggleButton4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radioToggleButton4.FlatAppearance.CheckedBackColor = System.Drawing.Color.Red;
+            this.radioToggleButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.radioToggleButton4.Location = new System.Drawing.Point(546, 48);
+            this.radioToggleButton4.Margin = new System.Windows.Forms.Padding(6);
+            this.radioToggleButton4.MinimumSize = new System.Drawing.Size(138, 105);
+            this.radioToggleButton4.Name = "radioToggleButton4";
+            this.radioToggleButton4.Size = new System.Drawing.Size(168, 105);
+            this.radioToggleButton4.TabIndex = 4;
+            this.radioToggleButton4.Tag = "SanFernando";
+            this.radioToggleButton4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radioToggleButton4.UseVisualStyleBackColor = true;
+            this.radioToggleButton4.CheckedChanged += new System.EventHandler(this.SelectedLocationChanged);
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(163)))), ((int)(((byte)(168)))));
@@ -199,6 +278,46 @@
             this.label6.TabIndex = 15;
             this.label6.Text = "SORT BY";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // radioToggleButton5
+            // 
+            this.radioToggleButton5.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioToggleButton5.AutoSize = true;
+            this.radioToggleButton5.BackColor = System.Drawing.Color.OldLace;
+            this.radioToggleButton5.Checked = true;
+            this.radioToggleButton5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radioToggleButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.radioToggleButton5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioToggleButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(163)))), ((int)(((byte)(168)))));
+            this.radioToggleButton5.Location = new System.Drawing.Point(3, 24);
+            this.radioToggleButton5.Name = "radioToggleButton5";
+            this.radioToggleButton5.Size = new System.Drawing.Size(170, 34);
+            this.radioToggleButton5.TabIndex = 16;
+            this.radioToggleButton5.TabStop = true;
+            this.radioToggleButton5.Tag = "Price";
+            this.radioToggleButton5.Text = "Cost (Lowest)";
+            this.radioToggleButton5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radioToggleButton5.UseVisualStyleBackColor = false;
+            this.radioToggleButton5.CheckedChanged += new System.EventHandler(this.SelectedSortChanged);
+            // 
+            // radioToggleButton6
+            // 
+            this.radioToggleButton6.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioToggleButton6.AutoSize = true;
+            this.radioToggleButton6.BackColor = System.Drawing.Color.OldLace;
+            this.radioToggleButton6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radioToggleButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.radioToggleButton6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioToggleButton6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(163)))), ((int)(((byte)(168)))));
+            this.radioToggleButton6.Location = new System.Drawing.Point(179, 24);
+            this.radioToggleButton6.Name = "radioToggleButton6";
+            this.radioToggleButton6.Size = new System.Drawing.Size(171, 34);
+            this.radioToggleButton6.TabIndex = 17;
+            this.radioToggleButton6.Tag = "Rating";
+            this.radioToggleButton6.Text = "Ratings (Highest)";
+            this.radioToggleButton6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radioToggleButton6.UseVisualStyleBackColor = false;
+            this.radioToggleButton6.CheckedChanged += new System.EventHandler(this.SelectedSortChanged);
             // 
             // numericUpDown2
             // 
@@ -297,125 +416,6 @@
             this.button2.Text = "View";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.ViewReservationByReference);
-            // 
-            // radioToggleButton1
-            // 
-            this.radioToggleButton1.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioToggleButton1.AutoSize = true;
-            this.radioToggleButton1.BackgroundImage = global::QuickStop.Client.Properties.Resources.manila;
-            this.radioToggleButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.radioToggleButton1.Checked = true;
-            this.radioToggleButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radioToggleButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioToggleButton1.Location = new System.Drawing.Point(6, 48);
-            this.radioToggleButton1.Margin = new System.Windows.Forms.Padding(6);
-            this.radioToggleButton1.MinimumSize = new System.Drawing.Size(138, 105);
-            this.radioToggleButton1.Name = "radioToggleButton1";
-            this.radioToggleButton1.Size = new System.Drawing.Size(168, 105);
-            this.radioToggleButton1.TabIndex = 1;
-            this.radioToggleButton1.TabStop = true;
-            this.radioToggleButton1.Tag = "Manila";
-            this.radioToggleButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioToggleButton1.UseVisualStyleBackColor = true;
-            this.radioToggleButton1.CheckedChanged += new System.EventHandler(this.SelectedLocationChanged);
-            // 
-            // radioToggleButton2
-            // 
-            this.radioToggleButton2.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioToggleButton2.AutoSize = true;
-            this.radioToggleButton2.BackgroundImage = global::QuickStop.Client.Properties.Resources.quezon_city;
-            this.radioToggleButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.radioToggleButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radioToggleButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioToggleButton2.Location = new System.Drawing.Point(186, 48);
-            this.radioToggleButton2.Margin = new System.Windows.Forms.Padding(6);
-            this.radioToggleButton2.MinimumSize = new System.Drawing.Size(138, 105);
-            this.radioToggleButton2.Name = "radioToggleButton2";
-            this.radioToggleButton2.Size = new System.Drawing.Size(168, 105);
-            this.radioToggleButton2.TabIndex = 2;
-            this.radioToggleButton2.Tag = "Quezon";
-            this.radioToggleButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioToggleButton2.UseVisualStyleBackColor = true;
-            this.radioToggleButton2.CheckedChanged += new System.EventHandler(this.SelectedLocationChanged);
-            // 
-            // radioToggleButton3
-            // 
-            this.radioToggleButton3.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioToggleButton3.AutoSize = true;
-            this.radioToggleButton3.BackgroundImage = global::QuickStop.Client.Properties.Resources.baguio;
-            this.radioToggleButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.radioToggleButton3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radioToggleButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioToggleButton3.Location = new System.Drawing.Point(366, 48);
-            this.radioToggleButton3.Margin = new System.Windows.Forms.Padding(6);
-            this.radioToggleButton3.MinimumSize = new System.Drawing.Size(138, 105);
-            this.radioToggleButton3.Name = "radioToggleButton3";
-            this.radioToggleButton3.Size = new System.Drawing.Size(168, 105);
-            this.radioToggleButton3.TabIndex = 3;
-            this.radioToggleButton3.Tag = "Baguio";
-            this.radioToggleButton3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioToggleButton3.UseVisualStyleBackColor = true;
-            this.radioToggleButton3.CheckedChanged += new System.EventHandler(this.SelectedLocationChanged);
-            // 
-            // radioToggleButton4
-            // 
-            this.radioToggleButton4.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioToggleButton4.AutoSize = true;
-            this.radioToggleButton4.BackgroundImage = global::QuickStop.Client.Properties.Resources.san_fernando;
-            this.radioToggleButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.radioToggleButton4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radioToggleButton4.FlatAppearance.CheckedBackColor = System.Drawing.Color.Red;
-            this.radioToggleButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioToggleButton4.Location = new System.Drawing.Point(546, 48);
-            this.radioToggleButton4.Margin = new System.Windows.Forms.Padding(6);
-            this.radioToggleButton4.MinimumSize = new System.Drawing.Size(138, 105);
-            this.radioToggleButton4.Name = "radioToggleButton4";
-            this.radioToggleButton4.Size = new System.Drawing.Size(168, 105);
-            this.radioToggleButton4.TabIndex = 4;
-            this.radioToggleButton4.Tag = "SanFernando";
-            this.radioToggleButton4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioToggleButton4.UseVisualStyleBackColor = true;
-            this.radioToggleButton4.CheckedChanged += new System.EventHandler(this.SelectedLocationChanged);
-            // 
-            // radioToggleButton5
-            // 
-            this.radioToggleButton5.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioToggleButton5.AutoSize = true;
-            this.radioToggleButton5.BackColor = System.Drawing.Color.OldLace;
-            this.radioToggleButton5.Checked = true;
-            this.radioToggleButton5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radioToggleButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioToggleButton5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioToggleButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(163)))), ((int)(((byte)(168)))));
-            this.radioToggleButton5.Location = new System.Drawing.Point(3, 24);
-            this.radioToggleButton5.Name = "radioToggleButton5";
-            this.radioToggleButton5.Size = new System.Drawing.Size(170, 34);
-            this.radioToggleButton5.TabIndex = 16;
-            this.radioToggleButton5.TabStop = true;
-            this.radioToggleButton5.Tag = "Price";
-            this.radioToggleButton5.Text = "Cost (Lowest)";
-            this.radioToggleButton5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioToggleButton5.UseVisualStyleBackColor = false;
-            this.radioToggleButton5.CheckedChanged += new System.EventHandler(this.SelectedSortChanged);
-            // 
-            // radioToggleButton6
-            // 
-            this.radioToggleButton6.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioToggleButton6.AutoSize = true;
-            this.radioToggleButton6.BackColor = System.Drawing.Color.OldLace;
-            this.radioToggleButton6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radioToggleButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioToggleButton6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioToggleButton6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(163)))), ((int)(((byte)(168)))));
-            this.radioToggleButton6.Location = new System.Drawing.Point(179, 24);
-            this.radioToggleButton6.Name = "radioToggleButton6";
-            this.radioToggleButton6.Size = new System.Drawing.Size(171, 34);
-            this.radioToggleButton6.TabIndex = 17;
-            this.radioToggleButton6.Tag = "Rating";
-            this.radioToggleButton6.Text = "Ratings (Highest)";
-            this.radioToggleButton6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioToggleButton6.UseVisualStyleBackColor = false;
-            this.radioToggleButton6.CheckedChanged += new System.EventHandler(this.SelectedSortChanged);
             // 
             // label2
             // 
