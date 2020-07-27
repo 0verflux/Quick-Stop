@@ -22,7 +22,7 @@ namespace QuickStop.Client.Views
             }
             else
             {
-                price = hotel.Price * numericUpDown1.Value * (dateTimePicker1.Value - dateTimePicker2.Value).Days;
+                price = hotel.Price * ((int)numericUpDown1.Value - hotel.MinGuestCount + 1) * (dateTimePicker1.Value - dateTimePicker2.Value).Days;
                 label13.Text = price.ToString("C2");
             }
         }
