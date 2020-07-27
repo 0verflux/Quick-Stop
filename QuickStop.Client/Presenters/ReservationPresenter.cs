@@ -5,6 +5,7 @@ using QuickStop.Client.Contracts.Views;
 using QuickStop.Domain.Models;
 using QuickStop.Infrastructure.Contracts;
 using System;
+using System.Windows.Forms;
 
 namespace QuickStop.Client.Presenters
 {
@@ -26,6 +27,21 @@ namespace QuickStop.Client.Presenters
             Hotel selectedHotel = hotelRepository.FindHotelByID(hotelIndex);
 
             view.DisplayReservation(selectedHotel);
+        }
+
+        void IReservationPresenter.RequestViewReservation(string reference)
+        {
+            try
+            {
+                Reservation reservation = reservationRepository.GetReservation(reference);
+                Hotel hotel = hotelRepository.FindHotelByID(reservation.HotelID);
+
+                view.DisplayReservation(reservation, hotel);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An Error Occured!\r\n" + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void RequestCreateReservation(object s, EventArgs e)

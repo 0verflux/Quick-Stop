@@ -10,6 +10,7 @@ namespace QuickStop.Client.Contracts.Views
         event EventHandler RequestCreateReservation;
 
         void DisplayReservation(Hotel hotel);
+        void DisplayReservation(Reservation reservation, Hotel hotel);
         void FinalizeReservation(string reference);
         Reservation GetReservation();
     }

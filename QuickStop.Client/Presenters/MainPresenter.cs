@@ -12,13 +12,16 @@ namespace QuickStop.Client.Presenters
     {
         private readonly IHotelRepository hotelRepository;
         private readonly IHotelDetailsPresenter hotelDetailsPresenter;
+        private readonly IReservationPresenter reservationPresenter;
 
-        public MainPresenter(IMainView mainView, IHotelRepository hotelRepository, IHotelDetailsPresenter hotelDetailsPresenter) : base(mainView)
+        public MainPresenter(IMainView mainView, IHotelRepository hotelRepository, IHotelDetailsPresenter hotelDetailsPresenter, IReservationPresenter reservationPresenter) : base(mainView)
         {
             this.hotelRepository = hotelRepository;
             this.hotelDetailsPresenter = hotelDetailsPresenter;
+            this.reservationPresenter = reservationPresenter;
 
             view.RequestViewHotelDetails += RequestViewHotelDetails;
+            view.RequestViewReservation += RequestViewReservation;
             view.RequestLoadHotels += RequestLoadHotels;
             view.RequestSaveData += RequestSaveData;
         }
@@ -44,6 +47,14 @@ namespace QuickStop.Client.Presenters
         private void RequestViewHotelDetails(object s, HotelSelectedEventArgs e)
         {
             hotelDetailsPresenter.RequestViewHotelDetails(e.Index);
+        }
+
+        //
+        // Main -> Reservation
+        //
+        private void RequestViewReservation(object s, ReservationReferenceEventArgs e)
+        {
+            reservationPresenter.RequestViewReservation(e.Reference);
         }
         #endregion
     }

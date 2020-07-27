@@ -36,7 +36,7 @@ namespace QuickStop.Client
             
             IReservationPresenter reservationPresenter = new ReservationPresenter(reservationView, hotelRepository, reservationRepository);
             IHotelDetailsPresenter hotelDetailsPresenter = new HotelDetailsPresenter(hotelDetailsView, hotelRepository, reservationPresenter);
-            IMainPresenter mainPresenter = new MainPresenter(mainView, hotelRepository, hotelDetailsPresenter);
+            IMainPresenter mainPresenter = new MainPresenter(mainView, hotelRepository, hotelDetailsPresenter, reservationPresenter);
 
             Application.Run(mainView as MainForm);
         }

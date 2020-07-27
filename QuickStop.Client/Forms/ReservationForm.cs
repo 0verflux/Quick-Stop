@@ -12,6 +12,8 @@ namespace QuickStop.Client.Views
 
         private void NotifyInputChanged(object sender, EventArgs e)
         {
+            if (hotel == null) return;
+
             dateTimePicker1.MinDate = dateTimePicker2.Value.AddDays(1);
 
             if (numericUpDown1.Value == 0)
@@ -20,7 +22,7 @@ namespace QuickStop.Client.Views
             }
             else
             {
-                price = hotel.Price * numericUpDown1.Value * (dateTimePicker1.Value - dateTimePicker2.Value).Days;
+                price = hotel.Price * ((int)numericUpDown1.Value - hotel.MinGuestCount + 1) * (dateTimePicker1.Value - dateTimePicker2.Value).Days;
                 label13.Text = price.ToString("C2");
             }
         }
@@ -32,8 +34,12 @@ namespace QuickStop.Client.Views
 
         private void OnLoad(object sender, EventArgs e)
         {
-            dateTimePicker2.MinDate = DateTime.Now;
-            dateTimePicker1.MinDate = DateTime.Now.AddDays(1);
+            
+        }
+
+        private void ReservationForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

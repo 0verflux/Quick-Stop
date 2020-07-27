@@ -48,5 +48,10 @@ namespace QuickStop.Client.Views
                 sort = (Sort)Enum.Parse(typeof(Sort), btn.Tag.ToString());
             }
         }
+
+        private void ViewReservationByReference(object sender, EventArgs e)
+        {
+            RequestViewReservation?.Invoke(sender, new ReservationReferenceEventArgs(textBox1.Text));
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using QuickStop.Client.Contracts.Views;
+﻿using QuickStop.Client.Contracts;
+using QuickStop.Client.Contracts.Views;
 using QuickStop.Components;
 using QuickStop.Domain.Models;
 using System;
@@ -23,11 +24,49 @@ namespace QuickStop.Client.Views
 
         void IReservationView.DisplayReservation(Hotel hotel)
         {
+            dateTimePicker2.MinDate = DateTime.Now;
+            dateTimePicker1.MinDate = DateTime.Now.AddDays(1);
+            dateTimePicker1.Value = DateTime.Now.AddDays(1);
+            
             this.hotel = hotel;
             label7.Text = hotel.Name;
             label4.Text = hotel.Description;
             label10.Text = hotel.Location.ToString();
             label13.Text = "Pick a number of guest!";
+            pictureBox1.Image = hotel.Room.ConvertToImage();
+            numericUpDown1.Minimum = hotel.MinGuestCount;
+            numericUpDown1.Maximum = hotel.MaxGuestCount;
+            numericUpDown1.Value = numericUpDown1.Minimum;
+
+            numericUpDown1.Enabled = true;
+            dateTimePicker1.Enabled = true;
+            dateTimePicker2.Enabled = true;
+            button1.Visible = true;
+            ShowDialog();
+        }
+
+        void IReservationView.DisplayReservation(Reservation reservation, Hotel hotel)
+        {
+            this.hotel = null;
+            dateTimePicker2.MinDate = DateTimePicker.MinimumDateTime;
+            dateTimePicker1.MinDate = DateTimePicker.MinimumDateTime;
+            numericUpDown1.Minimum = 1;
+            numericUpDown1.Maximum = 100;
+
+            label7.Text = hotel.Name;
+            label4.Text = hotel.Description;
+            label10.Text = hotel.Location.ToString();
+            label13.Text = reservation.TotalCost.ToString("C2");
+            numericUpDown1.Value = reservation.GuestCount;
+            dateTimePicker2.Value = reservation.CheckIn;
+            dateTimePicker1.Value = reservation.CheckOut;
+            pictureBox1.Image = hotel.Room.ConvertToImage();
+            
+
+            numericUpDown1.Enabled = false;
+            dateTimePicker1.Enabled = false;
+            dateTimePicker2.Enabled = false;
+            button1.Visible = false;
             ShowDialog();
         }
 
