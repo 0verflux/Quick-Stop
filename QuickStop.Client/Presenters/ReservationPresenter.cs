@@ -1,5 +1,4 @@
-﻿
-using QuickStop.Client.Base;
+﻿using QuickStop.Client.Base;
 using QuickStop.Client.Contracts.Presenters;
 using QuickStop.Client.Contracts.Views;
 using QuickStop.Client.ViewModels;
@@ -38,6 +37,7 @@ namespace QuickStop.Client.Presenters
                 MinimumGuestCount = selectedHotel.MinGuestCount,
                 MaximumGuestCount = selectedHotel.MaxGuestCount,
                 GuestCount = selectedHotel.MinGuestCount,
+                TotalCost = selectedHotel.Price,
                 CheckIn = DateTime.Now,
                 CheckOut = DateTime.Now.AddDays(1)
             };

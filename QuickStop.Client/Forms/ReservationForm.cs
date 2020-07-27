@@ -28,31 +28,41 @@ namespace QuickStop.Client.Views
             label7.DataBindings.Add("Text", ReservationViewModel, "HotelName", true, DataSourceUpdateMode.OnPropertyChanged);
             label4.DataBindings.Add("Text", ReservationViewModel, "HotelDescription", true, DataSourceUpdateMode.OnPropertyChanged);
             label10.DataBindings.Add("Text", ReservationViewModel, "HotelLocation", true, DataSourceUpdateMode.OnPropertyChanged);
-            label13.DataBindings.Add("Text", ReservationViewModel, "TotalCost", true, DataSourceUpdateMode.OnPropertyChanged, 0m,"C2");
+            label13.DataBindings.Add("Text", ReservationViewModel, "TotalCost", true, DataSourceUpdateMode.OnPropertyChanged, 0m, "C2");
             pictureBox1.DataBindings.Add("Image", ReservationViewModel, "HotelRoomImage", true, DataSourceUpdateMode.OnPropertyChanged);
             numericUpDown1.DataBindings.Add("Minimum", ReservationViewModel, "MinimumGuestCount", false, DataSourceUpdateMode.OnPropertyChanged, 1);
             numericUpDown1.DataBindings.Add("Maximum", ReservationViewModel, "MaximumGuestCount", false, DataSourceUpdateMode.OnPropertyChanged, 100);
             numericUpDown1.DataBindings.Add("Value", ReservationViewModel, "GuestCount", false, DataSourceUpdateMode.OnPropertyChanged, 1);
             dateTimePicker1.DataBindings.Add("Value", ReservationViewModel, "CheckOut", true, DataSourceUpdateMode.OnPropertyChanged);
             dateTimePicker2.DataBindings.Add("Value", ReservationViewModel, "CheckIn", true, DataSourceUpdateMode.OnPropertyChanged);
-
         }
 
         private void NotifyInputChanged(object sender, EventArgs e)
         {
-            if(Equals(sender, dateTimePicker2))
-            {
-                dateTimePicker1.MinDate = dateTimePicker2.Value.AddDays(1);
-            }
+            dateTimePicker1.MinDate = dateTimePicker2.Value.AddDays(1);
 
             if (ReservationViewModel == null) return;
 
-            ReservationViewModel.TotalCost = HotelRoomBooking.CalculateTotalPrice(ReservationViewModel.Cost, ReservationViewModel.GuestCount, ReservationViewModel.MinimumGuestCount, ReservationViewModel.MaximumGuestCount, ReservationViewModel.CheckIn, ReservationViewModel.CheckOut);
+            if((ReservationViewModel.TotalCost = HotelRoomBooking.CalculateTotalPrice(ReservationViewModel.Cost, ReservationViewModel.GuestCount, ReservationViewModel.MinimumGuestCount, ReservationViewModel.MaximumGuestCount, ReservationViewModel.CheckIn, ReservationViewModel.CheckOut)) == 0m)
+            {
+                label13.Text = "TeST";
+            }
+            
+        }
+
+        private void GuestCountChanged(object sender, EventArgs e)
+        {
+            CalculateTotalCost();
         }
 
         private void BookOnClick(object sender, EventArgs e)
         {
             RequestCreateReservation?.Invoke(sender, e);
         }
-    }
+
+        private void CalculateTotalCost()
+        {
+            ReservationViewModel.TotalCost = HotelRoomBooking.CalculateTotalPrice(ReservationViewModel.Cost, ReservationViewModel.GuestCount, ReservationViewModel.MinimumGuestCount, ReservationViewModel.MaximumGuestCount, ReservationViewModel.CheckIn, ReservationViewModel.CheckOut);
+        }    
+}
 }

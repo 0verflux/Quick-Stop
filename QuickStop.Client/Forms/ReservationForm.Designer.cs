@@ -75,8 +75,8 @@
             this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.95184F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.04816F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76.03306F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.96694F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.Size = new System.Drawing.Size(624, 601);
             this.tableLayoutPanel1.TabIndex = 11;
@@ -132,7 +132,7 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.18633F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 79.81367F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(618, 210);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(618, 178);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
             // pictureBox1
@@ -143,7 +143,7 @@
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(10);
             this.pictureBox1.Name = "pictureBox1";
             this.tableLayoutPanel3.SetRowSpan(this.pictureBox1, 2);
-            this.pictureBox1.Size = new System.Drawing.Size(289, 190);
+            this.pictureBox1.Size = new System.Drawing.Size(289, 158);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
@@ -155,10 +155,10 @@
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.OldLace;
-            this.label4.Location = new System.Drawing.Point(10, 52);
+            this.label4.Location = new System.Drawing.Point(10, 45);
             this.label4.Margin = new System.Windows.Forms.Padding(10);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(289, 148);
+            this.label4.Size = new System.Drawing.Size(289, 123);
             this.label4.TabIndex = 5;
             this.label4.Text = "label4";
             // 
@@ -174,10 +174,10 @@
             this.tableLayoutPanel4.Controls.Add(this.label10, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.numericUpDown1, 3, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 323);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 291);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(618, 20);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(618, 52);
             this.tableLayoutPanel4.TabIndex = 4;
             // 
             // label10
@@ -190,7 +190,7 @@
             this.label10.Location = new System.Drawing.Point(148, 6);
             this.label10.Margin = new System.Windows.Forms.Padding(6);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(168, 20);
+            this.label10.Size = new System.Drawing.Size(168, 40);
             this.label10.TabIndex = 2;
             this.label10.Text = "label10";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -200,7 +200,7 @@
             this.numericUpDown1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.numericUpDown1.BackColor = System.Drawing.Color.OldLace;
             this.numericUpDown1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(466, 3);
+            this.numericUpDown1.Location = new System.Drawing.Point(466, 13);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(136, 25);
             this.numericUpDown1.TabIndex = 3;
@@ -211,7 +211,7 @@
             0,
             0,
             0});
-            this.numericUpDown1.ValueChanged += new System.EventHandler(this.NotifyInputChanged);
+            this.numericUpDown1.Click += new System.EventHandler(this.GuestCountChanged);
             // 
             // tableLayoutPanel5
             // 
@@ -265,7 +265,7 @@
             this.dateTimePicker2.Size = new System.Drawing.Size(220, 25);
             this.dateTimePicker2.TabIndex = 9;
             this.dateTimePicker2.TabStop = false;
-            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.NotifyInputChanged);
+            this.dateTimePicker2.CloseUp += new System.EventHandler(this.NotifyInputChanged);
             // 
             // dateTimePicker1
             // 
@@ -279,7 +279,7 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(220, 25);
             this.dateTimePicker1.TabIndex = 9;
             this.dateTimePicker1.TabStop = false;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.NotifyInputChanged);
+            this.dateTimePicker1.CloseUp += new System.EventHandler(this.NotifyInputChanged);
             // 
             // label2
             // 
