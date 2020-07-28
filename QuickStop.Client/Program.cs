@@ -6,6 +6,7 @@ using QuickStop.Infrastructure.Contracts;
 using QuickStop.Infrastructure.Repositories;
 using QuickStop.Infrastructure.Serializers;
 using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace QuickStop.Client
@@ -21,21 +22,21 @@ namespace QuickStop.Client
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            string s = @"C:\Users\franc\Desktop";
+            string s = Path.GetDirectoryName(Application.ExecutablePath);
 
             IMainView mainView = new MainForm();
-            IHotelDetailsView hotelDetailsView = new HotelDetailsForm();
-            IReservationView reservationView = new ReservationForm();
+            IHotelRoomDetailsView hotelDetailsView = new HotelDetailsForm();
+            IHotelBookingView reservationView = new ReservationForm();
 
             IHotelSerializer hotelSerializer = new HotelSerializer(s);
-            IReservationSerializer reservationSerializer = new ReservationSerializer(s);
+            IHotelBookSerializer reservationSerializer = new HotelBookingSerializer(s);
 
-            IHotelRepository hotelRepository = new HotelRepository(hotelSerializer);
-            IReservationRepository reservationRepository = new ReservationRepository(reservationSerializer);
+            IHotelRoomRepository hotelRepository = new HotelRepository(hotelSerializer);
+            IHotelBookingRepository reservationRepository = new ReservationRepository(reservationSerializer);
 
             
-            IReservationPresenter reservationPresenter = new ReservationPresenter(reservationView, hotelRepository, reservationRepository);
-            IHotelDetailsPresenter hotelDetailsPresenter = new HotelDetailsPresenter(hotelDetailsView, hotelRepository, reservationPresenter);
+            IHotelBookingPresenter reservationPresenter = new ReservationPresenter(reservationView, hotelRepository, reservationRepository);
+            IHotelRoomDetailsPresenter hotelDetailsPresenter = new HotelRoomDetailsPresenter(hotelDetailsView, hotelRepository, reservationPresenter);
             IMainPresenter mainPresenter = new MainPresenter(mainView, hotelRepository, hotelDetailsPresenter, reservationPresenter);
 
             Application.Run(mainView as MainForm);

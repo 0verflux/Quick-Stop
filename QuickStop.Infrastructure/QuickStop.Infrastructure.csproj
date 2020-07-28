@@ -47,20 +47,28 @@
     <Compile Include="Contracts\ISerializer.cs" />
     <Compile Include="Contracts\IHotelRepository.cs" />
     <Compile Include="Contracts\IHotelSerializer.cs" />
-    <Compile Include="Contracts\IReservationDataAccess.cs" />
-    <Compile Include="Contracts\IReservationRepository.cs" />
+    <Compile Include="Contracts\IHotelBookingSerializer.cs" />
+    <Compile Include="Contracts\IHotelBookingRepository.cs" />
     <Compile Include="Repositories\HotelRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ReservationRepository.cs" />
     <Compile Include="Serializers\HotelSerializer.cs" />
-    <Compile Include="Serializers\ReservationSerializer.cs" />
+    <Compile Include="Serializers\HotelBookingSerializer.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\QuickStop.Components\QuickStop.Components.csproj">
+      <Project>{49001BEE-EF7A-4D93-89AB-C99312909F33}</Project>
+      <Name>QuickStop.Components</Name>
+    </ProjectReference>
     <ProjectReference Include="..\QuickStop.Domain\QuickStop.Domain.csproj">
       <Project>{C7296C34-5340-4F0C-8D35-B7FAD9984209}</Project>
       <Name>QuickStop.Domain</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Data\HotelData.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -44,9 +44,8 @@
   <ItemGroup>
     <Compile Include="Enums\Location.cs" />
     <Compile Include="Enums\Sort.cs" />
-    <Compile Include="Models\Hotel.cs" />
-    <Compile Include="Contracts\IEntity.cs" />
-    <Compile Include="Models\Reservation.cs" />
+    <Compile Include="Models\HotelRoom.cs" />
+    <Compile Include="Models\HotelBook.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

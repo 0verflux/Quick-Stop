@@ -28,28 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
-            this.radioToggleButton1 = new QuickStop.Client.Controls.RadioToggleButton();
-            this.radioToggleButton2 = new QuickStop.Client.Controls.RadioToggleButton();
-            this.radioToggleButton3 = new QuickStop.Client.Controls.RadioToggleButton();
-            this.radioToggleButton4 = new QuickStop.Client.Controls.RadioToggleButton();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
-            this.radioToggleButton5 = new QuickStop.Client.Controls.RadioToggleButton();
-            this.radioToggleButton6 = new QuickStop.Client.Controls.RadioToggleButton();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnQuery = new System.Windows.Forms.Button();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnManila = new QuickStop.Client.Controls.RadioToggleButton();
+            this.btnQuezon = new QuickStop.Client.Controls.RadioToggleButton();
+            this.btnBaguio = new QuickStop.Client.Controls.RadioToggleButton();
+            this.btnSanFernando = new QuickStop.Client.Controls.RadioToggleButton();
+            this.btnSortCost = new QuickStop.Client.Controls.RadioToggleButton();
+            this.btnSortRatings = new QuickStop.Client.Controls.RadioToggleButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -59,174 +58,82 @@
             this.tableLayoutPanel6.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(66)))), ((int)(((byte)(60)))));
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Black", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(195)))), ((int)(((byte)(100)))));
-            this.button1.Location = new System.Drawing.Point(731, 109);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(359, 53);
-            this.button1.TabIndex = 2;
-            this.button1.TabStop = false;
-            this.button1.Text = "QUERY";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.QueryHotels);
-            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.OldLace;
-            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 306);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 350);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0, 16, 0, 16);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1094, 389);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(957, 345);
             this.flowLayoutPanel1.TabIndex = 8;
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(163)))), ((int)(((byte)(168)))));
-            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel1.AutoSize = true;
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.59218F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.40782F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button1, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btnQuery, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 118);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0, 6, 0, 6);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 149);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1094, 166);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(957, 185);
             this.tableLayoutPanel1.TabIndex = 18;
             // 
             // tableLayoutPanel2
             // 
+            this.tableLayoutPanel2.BackgroundImage = global::QuickStop.Client.Properties.Resources.locations1;
+            this.tableLayoutPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tableLayoutPanel2.ColumnCount = 4;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.14966F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.85034F));
             this.tableLayoutPanel2.Controls.Add(this.label4, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.radioToggleButton1, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.radioToggleButton2, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.radioToggleButton3, 2, 1);
-            this.tableLayoutPanel2.Controls.Add(this.radioToggleButton4, 3, 1);
+            this.tableLayoutPanel2.Controls.Add(this.btnManila, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.btnQuezon, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.btnBaguio, 2, 1);
+            this.tableLayoutPanel2.Controls.Add(this.btnSanFernando, 3, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 4);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel1.SetRowSpan(this.tableLayoutPanel2, 2);
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(720, 158);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.51351F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.48649F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(637, 185);
             this.tableLayoutPanel2.TabIndex = 16;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(163)))), ((int)(((byte)(168)))));
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel2.SetColumnSpan(this.label4, 4);
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Segoe UI Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.OldLace;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(195)))), ((int)(((byte)(101)))));
             this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Margin = new System.Windows.Forms.Padding(0);
             this.label4.Name = "label4";
             this.label4.Padding = new System.Windows.Forms.Padding(6);
-            this.label4.Size = new System.Drawing.Size(720, 42);
+            this.label4.Size = new System.Drawing.Size(637, 61);
             this.label4.TabIndex = 0;
-            this.label4.Text = "LOCATION";
+            this.label4.Text = "LOCATIONS";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // radioToggleButton1
-            // 
-            this.radioToggleButton1.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioToggleButton1.AutoSize = true;
-            this.radioToggleButton1.BackgroundImage = global::QuickStop.Client.Properties.Resources.manila;
-            this.radioToggleButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.radioToggleButton1.Checked = true;
-            this.radioToggleButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radioToggleButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioToggleButton1.Location = new System.Drawing.Point(6, 48);
-            this.radioToggleButton1.Margin = new System.Windows.Forms.Padding(6);
-            this.radioToggleButton1.MinimumSize = new System.Drawing.Size(138, 105);
-            this.radioToggleButton1.Name = "radioToggleButton1";
-            this.radioToggleButton1.Size = new System.Drawing.Size(168, 105);
-            this.radioToggleButton1.TabIndex = 1;
-            this.radioToggleButton1.TabStop = true;
-            this.radioToggleButton1.Tag = "Manila";
-            this.radioToggleButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioToggleButton1.UseVisualStyleBackColor = true;
-            this.radioToggleButton1.CheckedChanged += new System.EventHandler(this.SelectedLocationChanged);
-            // 
-            // radioToggleButton2
-            // 
-            this.radioToggleButton2.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioToggleButton2.AutoSize = true;
-            this.radioToggleButton2.BackgroundImage = global::QuickStop.Client.Properties.Resources.quezon_city;
-            this.radioToggleButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.radioToggleButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radioToggleButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioToggleButton2.Location = new System.Drawing.Point(186, 48);
-            this.radioToggleButton2.Margin = new System.Windows.Forms.Padding(6);
-            this.radioToggleButton2.MinimumSize = new System.Drawing.Size(138, 105);
-            this.radioToggleButton2.Name = "radioToggleButton2";
-            this.radioToggleButton2.Size = new System.Drawing.Size(168, 105);
-            this.radioToggleButton2.TabIndex = 2;
-            this.radioToggleButton2.Tag = "Quezon";
-            this.radioToggleButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioToggleButton2.UseVisualStyleBackColor = true;
-            this.radioToggleButton2.CheckedChanged += new System.EventHandler(this.SelectedLocationChanged);
-            // 
-            // radioToggleButton3
-            // 
-            this.radioToggleButton3.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioToggleButton3.AutoSize = true;
-            this.radioToggleButton3.BackgroundImage = global::QuickStop.Client.Properties.Resources.baguio;
-            this.radioToggleButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.radioToggleButton3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radioToggleButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioToggleButton3.Location = new System.Drawing.Point(366, 48);
-            this.radioToggleButton3.Margin = new System.Windows.Forms.Padding(6);
-            this.radioToggleButton3.MinimumSize = new System.Drawing.Size(138, 105);
-            this.radioToggleButton3.Name = "radioToggleButton3";
-            this.radioToggleButton3.Size = new System.Drawing.Size(168, 105);
-            this.radioToggleButton3.TabIndex = 3;
-            this.radioToggleButton3.Tag = "Baguio";
-            this.radioToggleButton3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioToggleButton3.UseVisualStyleBackColor = true;
-            this.radioToggleButton3.CheckedChanged += new System.EventHandler(this.SelectedLocationChanged);
-            // 
-            // radioToggleButton4
-            // 
-            this.radioToggleButton4.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioToggleButton4.AutoSize = true;
-            this.radioToggleButton4.BackgroundImage = global::QuickStop.Client.Properties.Resources.san_fernando;
-            this.radioToggleButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.radioToggleButton4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radioToggleButton4.FlatAppearance.CheckedBackColor = System.Drawing.Color.Red;
-            this.radioToggleButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioToggleButton4.Location = new System.Drawing.Point(546, 48);
-            this.radioToggleButton4.Margin = new System.Windows.Forms.Padding(6);
-            this.radioToggleButton4.MinimumSize = new System.Drawing.Size(138, 105);
-            this.radioToggleButton4.Name = "radioToggleButton4";
-            this.radioToggleButton4.Size = new System.Drawing.Size(168, 105);
-            this.radioToggleButton4.TabIndex = 4;
-            this.radioToggleButton4.Tag = "SanFernando";
-            this.radioToggleButton4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioToggleButton4.UseVisualStyleBackColor = true;
-            this.radioToggleButton4.CheckedChanged += new System.EventHandler(this.SelectedLocationChanged);
             // 
             // tableLayoutPanel3
             // 
@@ -238,12 +145,13 @@
             this.tableLayoutPanel3.Controls.Add(this.numericUpDown2, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.label5, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(731, 4);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(637, 0);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 31.81818F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 68.18182F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(359, 98);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(320, 126);
             this.tableLayoutPanel3.TabIndex = 17;
             // 
             // tableLayoutPanel4
@@ -253,16 +161,16 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.Controls.Add(this.label6, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.radioToggleButton5, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.radioToggleButton6, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.btnSortCost, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.btnSortRatings, 1, 1);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 34);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 43);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(353, 61);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(314, 80);
             this.tableLayoutPanel4.TabIndex = 18;
             // 
             // label6
@@ -274,59 +182,20 @@
             this.label6.ForeColor = System.Drawing.Color.OldLace;
             this.label6.Location = new System.Drawing.Point(3, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(347, 21);
+            this.label6.Size = new System.Drawing.Size(308, 21);
             this.label6.TabIndex = 15;
             this.label6.Text = "SORT BY";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // radioToggleButton5
-            // 
-            this.radioToggleButton5.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioToggleButton5.AutoSize = true;
-            this.radioToggleButton5.BackColor = System.Drawing.Color.OldLace;
-            this.radioToggleButton5.Checked = true;
-            this.radioToggleButton5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radioToggleButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioToggleButton5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioToggleButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(163)))), ((int)(((byte)(168)))));
-            this.radioToggleButton5.Location = new System.Drawing.Point(3, 24);
-            this.radioToggleButton5.Name = "radioToggleButton5";
-            this.radioToggleButton5.Size = new System.Drawing.Size(170, 34);
-            this.radioToggleButton5.TabIndex = 16;
-            this.radioToggleButton5.TabStop = true;
-            this.radioToggleButton5.Tag = "Price";
-            this.radioToggleButton5.Text = "Cost (Lowest)";
-            this.radioToggleButton5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioToggleButton5.UseVisualStyleBackColor = false;
-            this.radioToggleButton5.CheckedChanged += new System.EventHandler(this.SelectedSortChanged);
-            // 
-            // radioToggleButton6
-            // 
-            this.radioToggleButton6.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioToggleButton6.AutoSize = true;
-            this.radioToggleButton6.BackColor = System.Drawing.Color.OldLace;
-            this.radioToggleButton6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radioToggleButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioToggleButton6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioToggleButton6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(163)))), ((int)(((byte)(168)))));
-            this.radioToggleButton6.Location = new System.Drawing.Point(179, 24);
-            this.radioToggleButton6.Name = "radioToggleButton6";
-            this.radioToggleButton6.Size = new System.Drawing.Size(171, 34);
-            this.radioToggleButton6.TabIndex = 17;
-            this.radioToggleButton6.Tag = "Rating";
-            this.radioToggleButton6.Text = "Ratings (Highest)";
-            this.radioToggleButton6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioToggleButton6.UseVisualStyleBackColor = false;
-            this.radioToggleButton6.CheckedChanged += new System.EventHandler(this.SelectedSortChanged);
             // 
             // numericUpDown2
             // 
             this.numericUpDown2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.numericUpDown2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown2.Location = new System.Drawing.Point(228, 3);
+            this.numericUpDown2.Location = new System.Drawing.Point(206, 6);
+            this.numericUpDown2.Margin = new System.Windows.Forms.Padding(6);
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.ReadOnly = true;
-            this.numericUpDown2.Size = new System.Drawing.Size(128, 25);
+            this.numericUpDown2.Size = new System.Drawing.Size(108, 25);
             this.numericUpDown2.TabIndex = 13;
             this.numericUpDown2.TabStop = false;
             this.numericUpDown2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -339,107 +208,233 @@
             this.label5.ForeColor = System.Drawing.Color.OldLace;
             this.label5.Location = new System.Drawing.Point(3, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(219, 31);
+            this.label5.Size = new System.Drawing.Size(194, 40);
             this.label5.TabIndex = 12;
-            this.label5.Text = "# OF GUESTS";
+            this.label5.Text = "NUMBER OF GUESTS";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnQuery
+            // 
+            this.btnQuery.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(66)))), ((int)(((byte)(60)))));
+            this.btnQuery.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnQuery.FlatAppearance.BorderSize = 0;
+            this.btnQuery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuery.Font = new System.Drawing.Font("Segoe UI Black", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuery.ForeColor = System.Drawing.Color.OldLace;
+            this.btnQuery.Location = new System.Drawing.Point(637, 126);
+            this.btnQuery.Margin = new System.Windows.Forms.Padding(0);
+            this.btnQuery.Name = "btnQuery";
+            this.btnQuery.Size = new System.Drawing.Size(320, 59);
+            this.btnQuery.TabIndex = 2;
+            this.btnQuery.TabStop = false;
+            this.btnQuery.Text = "QUERY";
+            this.btnQuery.UseVisualStyleBackColor = false;
+            this.btnQuery.Click += new System.EventHandler(this.QueryHotels);
             // 
             // tableLayoutPanel5
             // 
+            this.tableLayoutPanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(237)))), ((int)(((byte)(213)))));
             this.tableLayoutPanel5.ColumnCount = 1;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel1, 0, 2);
-            this.tableLayoutPanel5.Controls.Add(this.flowLayoutPanel1, 0, 3);
+            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel1, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.flowLayoutPanel1, 0, 2);
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel6, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 4;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.625879F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.40788F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.17581F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 59.07173F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1094, 711);
+            this.tableLayoutPanel5.RowCount = 3;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.09705F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.16034F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.88326F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(957, 711);
             this.tableLayoutPanel5.TabIndex = 19;
             // 
             // tableLayoutPanel6
             // 
-            this.tableLayoutPanel6.ColumnCount = 4;
+            this.tableLayoutPanel6.BackgroundImage = global::QuickStop.Client.Properties.Resources.logo_banner1;
+            this.tableLayoutPanel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.tableLayoutPanel6.ColumnCount = 2;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel6.Controls.Add(this.label1, 1, 0);
-            this.tableLayoutPanel6.Controls.Add(this.textBox1, 2, 0);
-            this.tableLayoutPanel6.Controls.Add(this.button2, 3, 0);
+            this.tableLayoutPanel6.Controls.Add(this.label2, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.textBox1, 1, 1);
+            this.tableLayoutPanel6.Controls.Add(this.button2, 1, 2);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 1;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(1088, 33);
+            this.tableLayoutPanel6.RowCount = 3;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.95935F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.04065F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(957, 149);
             this.tableLayoutPanel6.TabIndex = 20;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(715, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(193, 33);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Find Hotel Reservation by Reference";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(914, 5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(81, 22);
-            this.textBox1.TabIndex = 1;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(66)))), ((int)(((byte)(60)))));
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.OldLace;
-            this.button2.Location = new System.Drawing.Point(1001, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(84, 27);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "View";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.ViewReservationByReference);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(66)))), ((int)(((byte)(60)))));
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Black", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(195)))), ((int)(((byte)(100)))));
-            this.label2.Location = new System.Drawing.Point(0, 39);
-            this.label2.Margin = new System.Windows.Forms.Padding(0);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.OldLace;
+            this.label2.Location = new System.Drawing.Point(836, 12);
+            this.label2.Margin = new System.Windows.Forms.Padding(0, 12, 0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1094, 73);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "Q U I C K  -  S T O P";
+            this.label2.Size = new System.Drawing.Size(121, 31);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Already booked? ";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(66)))), ((int)(((byte)(60)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.OldLace;
+            this.button2.Location = new System.Drawing.Point(842, 75);
+            this.button2.Margin = new System.Windows.Forms.Padding(6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(109, 23);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Check Booking";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.ViewReservationByReference);
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(201)))), ((int)(((byte)(197)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.textBox1.Location = new System.Drawing.Point(839, 46);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(115, 20);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnManila
+            // 
+            this.btnManila.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnManila.AutoSize = true;
+            this.btnManila.BackgroundImage = global::QuickStop.Client.Properties.Resources.manila1;
+            this.btnManila.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnManila.Checked = true;
+            this.btnManila.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnManila.FlatAppearance.BorderSize = 0;
+            this.btnManila.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnManila.Location = new System.Drawing.Point(12, 73);
+            this.btnManila.Margin = new System.Windows.Forms.Padding(12);
+            this.btnManila.Name = "btnManila";
+            this.btnManila.Size = new System.Drawing.Size(135, 100);
+            this.btnManila.TabIndex = 1;
+            this.btnManila.TabStop = true;
+            this.btnManila.Tag = "Manila";
+            this.btnManila.UseVisualStyleBackColor = true;
+            this.btnManila.CheckedChanged += new System.EventHandler(this.SelectedLocationChanged);
+            // 
+            // btnQuezon
+            // 
+            this.btnQuezon.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnQuezon.AutoSize = true;
+            this.btnQuezon.BackgroundImage = global::QuickStop.Client.Properties.Resources.quezon_city1;
+            this.btnQuezon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnQuezon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnQuezon.FlatAppearance.BorderSize = 0;
+            this.btnQuezon.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnQuezon.Location = new System.Drawing.Point(171, 73);
+            this.btnQuezon.Margin = new System.Windows.Forms.Padding(12);
+            this.btnQuezon.Name = "btnQuezon";
+            this.btnQuezon.Size = new System.Drawing.Size(135, 100);
+            this.btnQuezon.TabIndex = 2;
+            this.btnQuezon.Tag = "Quezon";
+            this.btnQuezon.UseVisualStyleBackColor = true;
+            this.btnQuezon.CheckedChanged += new System.EventHandler(this.SelectedLocationChanged);
+            // 
+            // btnBaguio
+            // 
+            this.btnBaguio.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnBaguio.AutoSize = true;
+            this.btnBaguio.BackgroundImage = global::QuickStop.Client.Properties.Resources.baguio1;
+            this.btnBaguio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBaguio.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnBaguio.FlatAppearance.BorderSize = 0;
+            this.btnBaguio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnBaguio.Location = new System.Drawing.Point(330, 73);
+            this.btnBaguio.Margin = new System.Windows.Forms.Padding(12);
+            this.btnBaguio.Name = "btnBaguio";
+            this.btnBaguio.Size = new System.Drawing.Size(129, 100);
+            this.btnBaguio.TabIndex = 3;
+            this.btnBaguio.Tag = "Baguio";
+            this.btnBaguio.UseVisualStyleBackColor = true;
+            this.btnBaguio.CheckedChanged += new System.EventHandler(this.SelectedLocationChanged);
+            // 
+            // btnSanFernando
+            // 
+            this.btnSanFernando.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnSanFernando.AutoSize = true;
+            this.btnSanFernando.BackgroundImage = global::QuickStop.Client.Properties.Resources.san_fernando1;
+            this.btnSanFernando.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSanFernando.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSanFernando.FlatAppearance.BorderSize = 0;
+            this.btnSanFernando.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnSanFernando.Location = new System.Drawing.Point(483, 73);
+            this.btnSanFernando.Margin = new System.Windows.Forms.Padding(12);
+            this.btnSanFernando.Name = "btnSanFernando";
+            this.btnSanFernando.Size = new System.Drawing.Size(142, 100);
+            this.btnSanFernando.TabIndex = 4;
+            this.btnSanFernando.Tag = "SanFernando";
+            this.btnSanFernando.UseVisualStyleBackColor = true;
+            this.btnSanFernando.CheckedChanged += new System.EventHandler(this.SelectedLocationChanged);
+            // 
+            // btnSortCost
+            // 
+            this.btnSortCost.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnSortCost.AutoSize = true;
+            this.btnSortCost.BackColor = System.Drawing.Color.OldLace;
+            this.btnSortCost.Checked = true;
+            this.btnSortCost.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSortCost.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSortCost.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSortCost.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(163)))), ((int)(((byte)(168)))));
+            this.btnSortCost.Location = new System.Drawing.Point(3, 24);
+            this.btnSortCost.Name = "btnSortCost";
+            this.btnSortCost.Size = new System.Drawing.Size(151, 53);
+            this.btnSortCost.TabIndex = 16;
+            this.btnSortCost.TabStop = true;
+            this.btnSortCost.Tag = "Price";
+            this.btnSortCost.Text = "Cost (Lowest)";
+            this.btnSortCost.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSortCost.UseVisualStyleBackColor = false;
+            this.btnSortCost.CheckedChanged += new System.EventHandler(this.SelectedSortChanged);
+            // 
+            // btnSortRatings
+            // 
+            this.btnSortRatings.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnSortRatings.AutoSize = true;
+            this.btnSortRatings.BackColor = System.Drawing.Color.OldLace;
+            this.btnSortRatings.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSortRatings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSortRatings.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSortRatings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(163)))), ((int)(((byte)(168)))));
+            this.btnSortRatings.Location = new System.Drawing.Point(160, 24);
+            this.btnSortRatings.Name = "btnSortRatings";
+            this.btnSortRatings.Size = new System.Drawing.Size(151, 53);
+            this.btnSortRatings.TabIndex = 17;
+            this.btnSortRatings.Tag = "Rating";
+            this.btnSortRatings.Text = "Ratings (Highest)";
+            this.btnSortRatings.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSortRatings.UseVisualStyleBackColor = false;
+            this.btnSortRatings.CheckedChanged += new System.EventHandler(this.SelectedSortChanged);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OldLace;
-            this.ClientSize = new System.Drawing.Size(1094, 711);
+            this.ClientSize = new System.Drawing.Size(957, 711);
             this.Controls.Add(this.tableLayoutPanel5);
-            this.DoubleBuffered = true;
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(900, 560);
             this.Name = "MainForm";
@@ -463,27 +458,26 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label4;
-        private Controls.RadioToggleButton radioToggleButton1;
-        private Controls.RadioToggleButton radioToggleButton2;
-        private Controls.RadioToggleButton radioToggleButton3;
-        private Controls.RadioToggleButton radioToggleButton4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Label label6;
-        private Controls.RadioToggleButton radioToggleButton5;
-        private Controls.RadioToggleButton radioToggleButton6;
+        private Controls.RadioToggleButton btnSortCost;
+        private Controls.RadioToggleButton btnSortRatings;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnQuery;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label2;
+        private Controls.RadioToggleButton btnManila;
+        private Controls.RadioToggleButton btnQuezon;
+        private Controls.RadioToggleButton btnBaguio;
+        private Controls.RadioToggleButton btnSanFernando;
     }
 }

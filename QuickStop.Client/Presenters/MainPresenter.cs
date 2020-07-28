@@ -1,27 +1,26 @@
 ﻿using QuickStop.Client.Base;
 using QuickStop.Client.Contracts.Presenters;
 using QuickStop.Client.Contracts.Views;
-using QuickStop.Components;
+using QuickStop.Components.CustomEventArgs;
 using QuickStop.Infrastructure.Contracts;
 using System;
-using System.Windows.Forms;
 
 namespace QuickStop.Client.Presenters
 {
     public sealed class MainPresenter : PresenterBase<IMainView>, IMainPresenter
     {
-        private readonly IHotelRepository hotelRepository;
-        private readonly IHotelDetailsPresenter hotelDetailsPresenter;
-        private readonly IReservationPresenter reservationPresenter;
+        private readonly IHotelRoomRepository hotelRoomRepository;
+        private readonly IHotelRoomDetailsPresenter hotelRoomDetailsPresenter;
+        private readonly IHotelBookingPresenter hotelBookingPresenter;
 
-        public MainPresenter(IMainView mainView, IHotelRepository hotelRepository, IHotelDetailsPresenter hotelDetailsPresenter, IReservationPresenter reservationPresenter) : base(mainView)
+        public MainPresenter(IMainView mainView, IHotelRoomRepository hotelRoomRepository, IHotelRoomDetailsPresenter hotelRoomDetailsPresenter, IHotelBookingPresenter hotelBookingPresenter) : base(mainView)
         {
-            this.hotelRepository = hotelRepository;
-            this.hotelDetailsPresenter = hotelDetailsPresenter;
-            this.reservationPresenter = reservationPresenter;
+            this.hotelRoomRepository = hotelRoomRepository;
+            this.hotelRoomDetailsPresenter = hotelRoomDetailsPresenter;
+            this.hotelBookingPresenter = hotelBookingPresenter;
 
-            view.RequestViewHotelDetails += RequestViewHotelDetails;
-            view.RequestViewReservation += RequestViewReservation;
+            view.RequestViewHotelRoomDetails += RequestViewHotelRoomDetails;
+            view.RequestViewHotelBooking += RequestViewHotelBooking;
             view.RequestLoadHotels += RequestLoadHotels;
             view.RequestSaveData += RequestSaveData;
         }
@@ -29,14 +28,14 @@ namespace QuickStop.Client.Presenters
         #region Main Logic
         private void RequestLoadHotels(object s, HotelFilterEventArgs e)
         {
-            var hotels = hotelRepository.GetHotels(e.Location, e.GuestCount, e.Sort);
+            var hotels = hotelRoomRepository.GetHotels(e.Location, e.GuestCount, e.Sort);
 
             view.LoadHotels(hotels);
         }
 
         private void RequestSaveData(object s, EventArgs e)
         {
-            hotelRepository.Save();
+            hotelRoomRepository.Save();
         }
         #endregion
 
@@ -44,17 +43,17 @@ namespace QuickStop.Client.Presenters
         //
         // Main -> Hotel Details
         //
-        private void RequestViewHotelDetails(object s, HotelSelectedEventArgs e)
+        private void RequestViewHotelRoomDetails(object s, HotelSelectedEventArgs e)
         {
-            hotelDetailsPresenter.RequestViewHotelDetails(e.Index);
+            hotelRoomDetailsPresenter.RequestViewHotelRoomDetails(e.Index);
         }
 
         //
         // Main -> Reservation
         //
-        private void RequestViewReservation(object s, ReservationReferenceEventArgs e)
+        private void RequestViewHotelBooking(object s, BookReferenceEventArgs e)
         {
-            reservationPresenter.RequestViewReservation(e.Reference);
+            hotelBookingPresenter.RequestViewHotelBooking(e.Reference);
         }
         #endregion
     }

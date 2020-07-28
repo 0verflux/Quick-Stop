@@ -1,4 +1,5 @@
-﻿using QuickStop.Domain.Enums;
+﻿using QuickStop.Components.Exceptions;
+using QuickStop.Domain.Enums;
 using QuickStop.Domain.Models;
 using QuickStop.Infrastructure.Base;
 using QuickStop.Infrastructure.Contracts;
@@ -7,6 +8,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 
 namespace QuickStop.Infrastructure.Serializers
@@ -15,16 +17,16 @@ namespace QuickStop.Infrastructure.Serializers
     {
         private readonly string fileName;
 
-        public HotelSerializer(string baseDirectory) : base(baseDirectory, ',')
+        public HotelSerializer(string baseDirectory) : base(baseDirectory, @"\Data\", ',')
         {
             fileName = "HotelData";
         }
 
-        IEnumerable<Hotel> IHotelSerializer.DeserializeHotels()
+        IEnumerable<HotelRoom> IHotelSerializer.DeserializeHotels()
         {
-            List<Hotel> hotels = new List<Hotel>();
+            List<HotelRoom> hotels = new List<HotelRoom>();
 
-            string file = Path.Combine(baseDirectory, fileName + extension);
+            string file = FilePath(fileName);
             try
             {
                 string[] data = File.ReadAllLines(file);
@@ -35,7 +37,7 @@ namespace QuickStop.Infrastructure.Serializers
 
                     try
                     {
-                        Hotel hotel = new Hotel
+                        HotelRoom hotel = new HotelRoom
                         {
                             ID = Convert.ToInt32(hotelParams[0]),
                             Name = hotelParams[1].Trim('\"'),
@@ -52,26 +54,30 @@ namespace QuickStop.Infrastructure.Serializers
 
                         hotels.Add(hotel);
                     }
-                    catch(Exception ex)
+                    catch
                     {
-                        Debug.WriteLine(ex.Message);
+                        
                     }
                 }
-            }
-            catch(Exception ex)
-            {
-                Debug.WriteLine(ex.Message);
-            }
 
-            return hotels;
+                return hotels;
+            }
+            catch
+            {
+                string src = GetResourceFileContentAsString(fileName + extension);
+                File.WriteAllText(file, src);
+
+                throw new HotelDataNotFoundException();
+            }
         }
 
-        void IHotelSerializer.SerializeHotels(IEnumerable<Hotel> hotels)
+        void IHotelSerializer.SerializeHotels(IEnumerable<HotelRoom> hotels)
         {
-            StringBuilder sb = new StringBuilder();
-            string file = Path.Combine(baseDirectory, fileName + extension);
 
-            foreach (Hotel hotel in hotels)
+            StringBuilder sb = new StringBuilder();
+            string file = FilePath(fileName);
+
+            foreach (HotelRoom hotel in hotels)
             {
                 sb.Append(IncludeDelimiter(hotel.ID.ToString()));
                 sb.Append(IncludeDelimiter(hotel.Name, true));
@@ -94,6 +100,21 @@ namespace QuickStop.Infrastructure.Serializers
         {
             string quote = ignoreDelimiterOnString ? "\"" : null;
             return $"{quote}{str}{quote}{delimiters.First()}";
+        }
+
+        private string GetResourceFileContentAsString(string fileName)
+        {
+            var assembly = Assembly.GetExecutingAssembly();
+            var resourceName = "QuickStop.Infrastructure.Data." + fileName;
+
+            string resource = null;
+            using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+            using(StreamReader reader = new StreamReader(stream))
+            {
+                resource = reader.ReadToEnd();
+            }
+
+            return resource;
         }
     }
 }

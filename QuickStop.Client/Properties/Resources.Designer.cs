@@ -83,6 +83,16 @@ namespace QuickStop.Client.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap baguio1 {
+            get {
+                object obj = ResourceManager.GetObject("baguio1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap book_now {
             get {
                 object obj = ResourceManager.GetObject("book now", resourceCulture);
@@ -96,6 +106,16 @@ namespace QuickStop.Client.Properties {
         internal static System.Drawing.Bitmap checkincheckout {
             get {
                 object obj = ResourceManager.GetObject("checkincheckout", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap guests_and_sort {
+            get {
+                object obj = ResourceManager.GetObject("guests and sort", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,6 +163,56 @@ namespace QuickStop.Client.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap location_icon_map_png__1 {
+            get {
+                object obj = ResourceManager.GetObject("location-icon-map-png--1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap locations {
+            get {
+                object obj = ResourceManager.GetObject("locations", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap locations1 {
+            get {
+                object obj = ResourceManager.GetObject("locations1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo_banner {
+            get {
+                object obj = ResourceManager.GetObject("logo banner", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo_banner1 {
+            get {
+                object obj = ResourceManager.GetObject("logo banner1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap manila {
             get {
                 object obj = ResourceManager.GetObject("manila", resourceCulture);
@@ -153,9 +223,39 @@ namespace QuickStop.Client.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap manila1 {
+            get {
+                object obj = ResourceManager.GetObject("manila1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap query {
+            get {
+                object obj = ResourceManager.GetObject("query", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap quezon_city {
             get {
                 object obj = ResourceManager.GetObject("quezon city", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap quezon_city1 {
+            get {
+                object obj = ResourceManager.GetObject("quezon city1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,9 +283,29 @@ namespace QuickStop.Client.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap san_fernando1 {
+            get {
+                object obj = ResourceManager.GetObject("san fernando1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap total_fees {
             get {
                 object obj = ResourceManager.GetObject("total fees", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap total_fees1 {
+            get {
+                object obj = ResourceManager.GetObject("total fees1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

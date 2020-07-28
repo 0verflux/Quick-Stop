@@ -1,4 +1,4 @@
-﻿using System.Text;
+﻿using System.IO;
 using System.Text.RegularExpressions;
 
 namespace QuickStop.Infrastructure.Base
@@ -8,15 +8,21 @@ namespace QuickStop.Infrastructure.Base
         protected readonly Regex parser;
         protected readonly string baseDirectory;
         protected readonly string extension;
+        protected readonly string folder;
         protected readonly char[] delimiters;
-
-        protected SerializerBase(string baseDirectory, params char[] delimiters)
+        
+        protected SerializerBase(string baseDirectory, string folder, params char[] delimiters)
         {
-            this.parser = new Regex(",(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))");
+            parser = new Regex(",(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))");
+            extension = ".txt";
 
             this.baseDirectory = baseDirectory;
             this.delimiters = delimiters;
-            this.extension = ".txt";
+            this.folder = folder;
+
+            Directory.CreateDirectory(baseDirectory + folder);
         }
+
+        protected string FilePath(string fileName) => baseDirectory + folder + fileName + extension;
     }
 }

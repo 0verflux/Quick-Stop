@@ -1,5 +1,5 @@
 ﻿using QuickStop.Client.Controls;
-using QuickStop.Components;
+using QuickStop.Components.CustomEventArgs;
 using QuickStop.Domain.Enums;
 using System;
 using System.Windows.Forms;
@@ -51,7 +51,7 @@ namespace QuickStop.Client.Views
 
         private void ViewReservationByReference(object sender, EventArgs e)
         {
-            RequestViewReservation?.Invoke(sender, new ReservationReferenceEventArgs(textBox1.Text));
+            RequestViewReservation?.Invoke(sender, new BookReferenceEventArgs(textBox1.Text));
         }
     }
 }
