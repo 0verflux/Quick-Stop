@@ -49,9 +49,9 @@
     <Compile Include="Contracts\IHotelSerializer.cs" />
     <Compile Include="Contracts\IHotelBookingSerializer.cs" />
     <Compile Include="Contracts\IHotelBookingRepository.cs" />
-    <Compile Include="Repositories\HotelRepository.cs" />
+    <Compile Include="Repositories\HotelRoomRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\ReservationRepository.cs" />
+    <Compile Include="Repositories\HotelBookingRepository.cs" />
     <Compile Include="Serializers\HotelSerializer.cs" />
     <Compile Include="Serializers\HotelBookingSerializer.cs" />
   </ItemGroup>

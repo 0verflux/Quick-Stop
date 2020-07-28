@@ -11,13 +11,13 @@ using System.Windows.Forms;
 
 namespace QuickStop.Client.Presenters
 {
-    public sealed class ReservationPresenter : PresenterBase<IHotelBookingView>, IHotelBookingPresenter
+    public sealed class HotelBookingPresenter : PresenterBase<IHotelBookingView>, IHotelBookingPresenter
     {
         private readonly IHotelRoomRepository hotelRoomRepository;
         private readonly IHotelBookingRepository hotelBookingRepository;
         private readonly IReferenceView referenceView;
 
-        public ReservationPresenter(IHotelBookingView hotelBookingView, IHotelRoomRepository hotelRoomRepository, IHotelBookingRepository hotelBookingRepository, IReferenceView referenceView) : base(hotelBookingView)
+        public HotelBookingPresenter(IHotelBookingView hotelBookingView, IHotelRoomRepository hotelRoomRepository, IHotelBookingRepository hotelBookingRepository, IReferenceView referenceView) : base(hotelBookingView)
         {
             this.hotelRoomRepository = hotelRoomRepository;
             this.hotelBookingRepository = hotelBookingRepository;

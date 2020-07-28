@@ -8,6 +8,9 @@ using QuickStop.Infrastructure.Serializers;
 using System;
 using System.IO;
 using System.Windows.Forms;
+using Unity;
+using Unity.Injection;
+using Unity.Lifetime;
 
 namespace QuickStop.Client
 {
@@ -19,28 +22,32 @@ namespace QuickStop.Client
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            using(var container = Register(Path.GetDirectoryName(Application.ExecutablePath)))
+            {
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
 
-            string s = Path.GetDirectoryName(Application.ExecutablePath);
+                container.Resolve<IMainPresenter>(); // Initialize MainPresenter First
 
-            IMainView mainView = new MainForm();
-            IHotelRoomDetailsView hotelRoomDetailsView = new HotelDetailsForm();
-            IHotelBookingView hotelBookingView = new ReservationForm();
-            IReferenceView referenceView = new ReferenceForm();
+                Application.Run(container.Resolve<IMainView>() as MainForm);
+            }
+        }
 
-            IHotelSerializer hotelSerializer = new HotelSerializer(s);
-            IHotelBookSerializer reservationSerializer = new HotelBookingSerializer(s);
-
-            IHotelRoomRepository hotelRepository = new HotelRepository(hotelSerializer);
-            IHotelBookingRepository reservationRepository = new ReservationRepository(reservationSerializer);
-
-            
-            IHotelBookingPresenter reservationPresenter = new ReservationPresenter(hotelBookingView, hotelRepository, reservationRepository, referenceView);
-            IHotelRoomDetailsPresenter hotelDetailsPresenter = new HotelRoomDetailsPresenter(hotelRoomDetailsView, hotelRepository, reservationPresenter);
-            IMainPresenter mainPresenter = new MainPresenter(mainView, hotelRepository, hotelDetailsPresenter, reservationPresenter);
-
-            Application.Run(mainView as MainForm);
+        static IUnityContainer Register(string filePath)
+        {
+            return new UnityContainer()
+                .AddExtension(new Diagnostic())
+                .RegisterType<IHotelSerializer, HotelSerializer>(new InjectionConstructor(filePath))
+                .RegisterType<IHotelBookSerializer, HotelBookingSerializer>(new InjectionConstructor(filePath))
+                .RegisterType<IMainView, MainForm>(new ContainerControlledLifetimeManager())
+                .RegisterType<IHotelRoomDetailsView, HotelRoomDetailsForm>(new ContainerControlledLifetimeManager())
+                .RegisterType<IHotelBookingView, HotelBookingForm>(new ContainerControlledLifetimeManager())
+                .RegisterType<IReferenceView, ReferenceForm>(new ContainerControlledLifetimeManager())
+                .RegisterType<IHotelRoomRepository, HotelRoomRepository>(new ContainerControlledLifetimeManager())
+                .RegisterType<IHotelBookingRepository, HotelBookingRepository>(new ContainerControlledLifetimeManager())
+                .RegisterType<IHotelBookingPresenter, HotelBookingPresenter>(new ContainerControlledLifetimeManager())
+                .RegisterType<IHotelRoomDetailsPresenter, HotelRoomDetailsPresenter>(new ContainerControlledLifetimeManager())
+                .RegisterType<IMainPresenter, MainPresenter>(new ContainerControlledLifetimeManager());
         }
     }
 }

@@ -32,23 +32,23 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnManila = new QuickStop.Client.Controls.RadioToggleButton();
+            this.btnQuezon = new QuickStop.Client.Controls.RadioToggleButton();
+            this.btnBaguio = new QuickStop.Client.Controls.RadioToggleButton();
+            this.btnSanFernando = new QuickStop.Client.Controls.RadioToggleButton();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnSortCost = new QuickStop.Client.Controls.RadioToggleButton();
+            this.btnSortRatings = new QuickStop.Client.Controls.RadioToggleButton();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.btnQuery = new System.Windows.Forms.Button();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnManila = new QuickStop.Client.Controls.RadioToggleButton();
-            this.btnQuezon = new QuickStop.Client.Controls.RadioToggleButton();
-            this.btnBaguio = new QuickStop.Client.Controls.RadioToggleButton();
-            this.btnSanFernando = new QuickStop.Client.Controls.RadioToggleButton();
-            this.btnSortCost = new QuickStop.Client.Controls.RadioToggleButton();
-            this.btnSortRatings = new QuickStop.Client.Controls.RadioToggleButton();
+            this.button2 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -135,6 +135,80 @@
             this.label4.Text = "LOCATIONS";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnManila
+            // 
+            this.btnManila.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnManila.AutoSize = true;
+            this.btnManila.BackgroundImage = global::QuickStop.Client.Properties.Resources.manila1;
+            this.btnManila.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnManila.Checked = true;
+            this.btnManila.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnManila.FlatAppearance.BorderSize = 0;
+            this.btnManila.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnManila.Location = new System.Drawing.Point(12, 73);
+            this.btnManila.Margin = new System.Windows.Forms.Padding(12);
+            this.btnManila.Name = "btnManila";
+            this.btnManila.Size = new System.Drawing.Size(135, 100);
+            this.btnManila.TabIndex = 1;
+            this.btnManila.TabStop = true;
+            this.btnManila.Tag = "Manila";
+            this.btnManila.UseVisualStyleBackColor = true;
+            this.btnManila.CheckedChanged += new System.EventHandler(this.SelectedLocationChanged);
+            // 
+            // btnQuezon
+            // 
+            this.btnQuezon.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnQuezon.AutoSize = true;
+            this.btnQuezon.BackgroundImage = global::QuickStop.Client.Properties.Resources.quezon_city1;
+            this.btnQuezon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnQuezon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnQuezon.FlatAppearance.BorderSize = 0;
+            this.btnQuezon.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnQuezon.Location = new System.Drawing.Point(171, 73);
+            this.btnQuezon.Margin = new System.Windows.Forms.Padding(12);
+            this.btnQuezon.Name = "btnQuezon";
+            this.btnQuezon.Size = new System.Drawing.Size(135, 100);
+            this.btnQuezon.TabIndex = 2;
+            this.btnQuezon.Tag = "Quezon";
+            this.btnQuezon.UseVisualStyleBackColor = true;
+            this.btnQuezon.CheckedChanged += new System.EventHandler(this.SelectedLocationChanged);
+            // 
+            // btnBaguio
+            // 
+            this.btnBaguio.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnBaguio.AutoSize = true;
+            this.btnBaguio.BackgroundImage = global::QuickStop.Client.Properties.Resources.baguio1;
+            this.btnBaguio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBaguio.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnBaguio.FlatAppearance.BorderSize = 0;
+            this.btnBaguio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnBaguio.Location = new System.Drawing.Point(330, 73);
+            this.btnBaguio.Margin = new System.Windows.Forms.Padding(12);
+            this.btnBaguio.Name = "btnBaguio";
+            this.btnBaguio.Size = new System.Drawing.Size(129, 100);
+            this.btnBaguio.TabIndex = 3;
+            this.btnBaguio.Tag = "Baguio";
+            this.btnBaguio.UseVisualStyleBackColor = true;
+            this.btnBaguio.CheckedChanged += new System.EventHandler(this.SelectedLocationChanged);
+            // 
+            // btnSanFernando
+            // 
+            this.btnSanFernando.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnSanFernando.AutoSize = true;
+            this.btnSanFernando.BackgroundImage = global::QuickStop.Client.Properties.Resources.san_fernando1;
+            this.btnSanFernando.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSanFernando.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSanFernando.FlatAppearance.BorderSize = 0;
+            this.btnSanFernando.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnSanFernando.Location = new System.Drawing.Point(483, 73);
+            this.btnSanFernando.Margin = new System.Windows.Forms.Padding(12);
+            this.btnSanFernando.Name = "btnSanFernando";
+            this.btnSanFernando.Size = new System.Drawing.Size(142, 100);
+            this.btnSanFernando.TabIndex = 4;
+            this.btnSanFernando.Tag = "SanFernando";
+            this.btnSanFernando.UseVisualStyleBackColor = true;
+            this.btnSanFernando.CheckedChanged += new System.EventHandler(this.SelectedLocationChanged);
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(163)))), ((int)(((byte)(168)))));
@@ -186,6 +260,46 @@
             this.label6.TabIndex = 15;
             this.label6.Text = "SORT BY";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnSortCost
+            // 
+            this.btnSortCost.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnSortCost.AutoSize = true;
+            this.btnSortCost.BackColor = System.Drawing.Color.OldLace;
+            this.btnSortCost.Checked = true;
+            this.btnSortCost.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSortCost.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSortCost.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSortCost.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(163)))), ((int)(((byte)(168)))));
+            this.btnSortCost.Location = new System.Drawing.Point(3, 24);
+            this.btnSortCost.Name = "btnSortCost";
+            this.btnSortCost.Size = new System.Drawing.Size(151, 53);
+            this.btnSortCost.TabIndex = 16;
+            this.btnSortCost.TabStop = true;
+            this.btnSortCost.Tag = "Price";
+            this.btnSortCost.Text = "Cost (Lowest)";
+            this.btnSortCost.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSortCost.UseVisualStyleBackColor = false;
+            this.btnSortCost.CheckedChanged += new System.EventHandler(this.SelectedSortChanged);
+            // 
+            // btnSortRatings
+            // 
+            this.btnSortRatings.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnSortRatings.AutoSize = true;
+            this.btnSortRatings.BackColor = System.Drawing.Color.OldLace;
+            this.btnSortRatings.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSortRatings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSortRatings.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSortRatings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(163)))), ((int)(((byte)(168)))));
+            this.btnSortRatings.Location = new System.Drawing.Point(160, 24);
+            this.btnSortRatings.Name = "btnSortRatings";
+            this.btnSortRatings.Size = new System.Drawing.Size(151, 53);
+            this.btnSortRatings.TabIndex = 17;
+            this.btnSortRatings.Tag = "Rating";
+            this.btnSortRatings.Text = "Ratings (Highest)";
+            this.btnSortRatings.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSortRatings.UseVisualStyleBackColor = false;
+            this.btnSortRatings.CheckedChanged += new System.EventHandler(this.SelectedSortChanged);
             // 
             // numericUpDown2
             // 
@@ -286,6 +400,19 @@
             this.label2.Text = "Already booked? ";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(201)))), ((int)(((byte)(197)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.textBox1.Location = new System.Drawing.Point(839, 46);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(115, 20);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(66)))), ((int)(((byte)(60)))));
@@ -300,133 +427,6 @@
             this.button2.Text = "Check Booking";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.ViewReservationByReference);
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(201)))), ((int)(((byte)(197)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.textBox1.Location = new System.Drawing.Point(839, 46);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(115, 20);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // btnManila
-            // 
-            this.btnManila.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnManila.AutoSize = true;
-            this.btnManila.BackgroundImage = global::QuickStop.Client.Properties.Resources.manila1;
-            this.btnManila.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnManila.Checked = true;
-            this.btnManila.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnManila.FlatAppearance.BorderSize = 0;
-            this.btnManila.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnManila.Location = new System.Drawing.Point(12, 73);
-            this.btnManila.Margin = new System.Windows.Forms.Padding(12);
-            this.btnManila.Name = "btnManila";
-            this.btnManila.Size = new System.Drawing.Size(135, 100);
-            this.btnManila.TabIndex = 1;
-            this.btnManila.TabStop = true;
-            this.btnManila.Tag = "Manila";
-            this.btnManila.UseVisualStyleBackColor = true;
-            this.btnManila.CheckedChanged += new System.EventHandler(this.SelectedLocationChanged);
-            // 
-            // btnQuezon
-            // 
-            this.btnQuezon.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnQuezon.AutoSize = true;
-            this.btnQuezon.BackgroundImage = global::QuickStop.Client.Properties.Resources.quezon_city1;
-            this.btnQuezon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnQuezon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnQuezon.FlatAppearance.BorderSize = 0;
-            this.btnQuezon.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnQuezon.Location = new System.Drawing.Point(171, 73);
-            this.btnQuezon.Margin = new System.Windows.Forms.Padding(12);
-            this.btnQuezon.Name = "btnQuezon";
-            this.btnQuezon.Size = new System.Drawing.Size(135, 100);
-            this.btnQuezon.TabIndex = 2;
-            this.btnQuezon.Tag = "Quezon";
-            this.btnQuezon.UseVisualStyleBackColor = true;
-            this.btnQuezon.CheckedChanged += new System.EventHandler(this.SelectedLocationChanged);
-            // 
-            // btnBaguio
-            // 
-            this.btnBaguio.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnBaguio.AutoSize = true;
-            this.btnBaguio.BackgroundImage = global::QuickStop.Client.Properties.Resources.baguio1;
-            this.btnBaguio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBaguio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnBaguio.FlatAppearance.BorderSize = 0;
-            this.btnBaguio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnBaguio.Location = new System.Drawing.Point(330, 73);
-            this.btnBaguio.Margin = new System.Windows.Forms.Padding(12);
-            this.btnBaguio.Name = "btnBaguio";
-            this.btnBaguio.Size = new System.Drawing.Size(129, 100);
-            this.btnBaguio.TabIndex = 3;
-            this.btnBaguio.Tag = "Baguio";
-            this.btnBaguio.UseVisualStyleBackColor = true;
-            this.btnBaguio.CheckedChanged += new System.EventHandler(this.SelectedLocationChanged);
-            // 
-            // btnSanFernando
-            // 
-            this.btnSanFernando.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnSanFernando.AutoSize = true;
-            this.btnSanFernando.BackgroundImage = global::QuickStop.Client.Properties.Resources.san_fernando1;
-            this.btnSanFernando.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSanFernando.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSanFernando.FlatAppearance.BorderSize = 0;
-            this.btnSanFernando.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnSanFernando.Location = new System.Drawing.Point(483, 73);
-            this.btnSanFernando.Margin = new System.Windows.Forms.Padding(12);
-            this.btnSanFernando.Name = "btnSanFernando";
-            this.btnSanFernando.Size = new System.Drawing.Size(142, 100);
-            this.btnSanFernando.TabIndex = 4;
-            this.btnSanFernando.Tag = "SanFernando";
-            this.btnSanFernando.UseVisualStyleBackColor = true;
-            this.btnSanFernando.CheckedChanged += new System.EventHandler(this.SelectedLocationChanged);
-            // 
-            // btnSortCost
-            // 
-            this.btnSortCost.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnSortCost.AutoSize = true;
-            this.btnSortCost.BackColor = System.Drawing.Color.OldLace;
-            this.btnSortCost.Checked = true;
-            this.btnSortCost.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSortCost.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSortCost.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSortCost.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(163)))), ((int)(((byte)(168)))));
-            this.btnSortCost.Location = new System.Drawing.Point(3, 24);
-            this.btnSortCost.Name = "btnSortCost";
-            this.btnSortCost.Size = new System.Drawing.Size(151, 53);
-            this.btnSortCost.TabIndex = 16;
-            this.btnSortCost.TabStop = true;
-            this.btnSortCost.Tag = "Price";
-            this.btnSortCost.Text = "Cost (Lowest)";
-            this.btnSortCost.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnSortCost.UseVisualStyleBackColor = false;
-            this.btnSortCost.CheckedChanged += new System.EventHandler(this.SelectedSortChanged);
-            // 
-            // btnSortRatings
-            // 
-            this.btnSortRatings.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnSortRatings.AutoSize = true;
-            this.btnSortRatings.BackColor = System.Drawing.Color.OldLace;
-            this.btnSortRatings.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSortRatings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSortRatings.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSortRatings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(163)))), ((int)(((byte)(168)))));
-            this.btnSortRatings.Location = new System.Drawing.Point(160, 24);
-            this.btnSortRatings.Name = "btnSortRatings";
-            this.btnSortRatings.Size = new System.Drawing.Size(151, 53);
-            this.btnSortRatings.TabIndex = 17;
-            this.btnSortRatings.Tag = "Rating";
-            this.btnSortRatings.Text = "Ratings (Highest)";
-            this.btnSortRatings.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnSortRatings.UseVisualStyleBackColor = false;
-            this.btnSortRatings.CheckedChanged += new System.EventHandler(this.SelectedSortChanged);
             // 
             // MainForm
             // 

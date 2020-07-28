@@ -8,13 +8,13 @@ using System.Linq;
 
 namespace QuickStop.Infrastructure.Repositories
 {
-    public sealed class HotelRepository : RepositoryBase<HotelRoom>, IHotelRoomRepository
+    public sealed class HotelRoomRepository : RepositoryBase<HotelRoom>, IHotelRoomRepository
     {
         private IEnumerable<HotelRoom> hotels;
 
-        public HotelRepository(ISerializer serializer) : base(serializer)
+        public HotelRoomRepository(IHotelSerializer serializer) : base(serializer)
         {
-            hotels = (serializer as IHotelSerializer).DeserializeHotels();
+            hotels = (base.serializer as IHotelSerializer).DeserializeHotels();
         }
 
         IEnumerable<HotelRoom> IHotelRoomRepository.GetHotels(Location location, int guestCount, Sort sort)

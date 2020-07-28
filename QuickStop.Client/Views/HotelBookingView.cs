@@ -4,7 +4,7 @@ using System;
 
 namespace QuickStop.Client.Views
 {
-    public partial class ReservationForm : IHotelBookingView
+    public partial class HotelBookingForm : IHotelBookingView
     {
         #region Events
         private event EventHandler RequestCreateReservation;

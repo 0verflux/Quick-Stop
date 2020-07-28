@@ -4,9 +4,9 @@ using QuickStop.Infrastructure.Contracts;
 
 namespace QuickStop.Infrastructure.Repositories
 {
-    public sealed class ReservationRepository : RepositoryBase<HotelBook>, IHotelBookingRepository
+    public sealed class HotelBookingRepository : RepositoryBase<HotelBook>, IHotelBookingRepository
     {
-        public ReservationRepository(ISerializer serializer) : base(serializer)
+        public HotelBookingRepository(IHotelBookSerializer serializer) : base(serializer)
         {
 
         }

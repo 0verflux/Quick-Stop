@@ -1,6 +1,6 @@
 ﻿namespace QuickStop.Client.Views
 {
-    partial class HotelDetailsForm
+    partial class HotelRoomDetailsForm
     {
         /// <summary>
         /// Required designer variable.

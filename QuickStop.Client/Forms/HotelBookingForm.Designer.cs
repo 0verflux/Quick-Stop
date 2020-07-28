@@ -1,6 +1,6 @@
 ﻿namespace QuickStop.Client.Views
 {
-    partial class ReservationForm
+    partial class HotelBookingForm
     {
         /// <summary>
         /// Required designer variable.
@@ -424,7 +424,7 @@
             this.label1.TabIndex = 1;
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // ReservationForm
+            // HotelBookingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -432,7 +432,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "ReservationForm";
+            this.Name = "HotelBookingForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Quick Stop: Reservation";
             this.Load += new System.EventHandler(this.OnLoad);

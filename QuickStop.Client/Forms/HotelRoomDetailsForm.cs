@@ -4,9 +4,9 @@ using System.Windows.Forms;
 
 namespace QuickStop.Client.Views
 {
-    public partial class HotelDetailsForm : Form
+    public partial class HotelRoomDetailsForm : Form
     {
-        public HotelDetailsForm()
+        public HotelRoomDetailsForm()
         {
             InitializeComponent();
         }
