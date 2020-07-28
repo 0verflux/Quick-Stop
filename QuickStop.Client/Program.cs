@@ -25,8 +25,9 @@ namespace QuickStop.Client
             string s = Path.GetDirectoryName(Application.ExecutablePath);
 
             IMainView mainView = new MainForm();
-            IHotelRoomDetailsView hotelDetailsView = new HotelDetailsForm();
-            IHotelBookingView reservationView = new ReservationForm();
+            IHotelRoomDetailsView hotelRoomDetailsView = new HotelDetailsForm();
+            IHotelBookingView hotelBookingView = new ReservationForm();
+            IReferenceView referenceView = new ReferenceForm();
 
             IHotelSerializer hotelSerializer = new HotelSerializer(s);
             IHotelBookSerializer reservationSerializer = new HotelBookingSerializer(s);
@@ -35,8 +36,8 @@ namespace QuickStop.Client
             IHotelBookingRepository reservationRepository = new ReservationRepository(reservationSerializer);
 
             
-            IHotelBookingPresenter reservationPresenter = new ReservationPresenter(reservationView, hotelRepository, reservationRepository);
-            IHotelRoomDetailsPresenter hotelDetailsPresenter = new HotelRoomDetailsPresenter(hotelDetailsView, hotelRepository, reservationPresenter);
+            IHotelBookingPresenter reservationPresenter = new ReservationPresenter(hotelBookingView, hotelRepository, reservationRepository, referenceView);
+            IHotelRoomDetailsPresenter hotelDetailsPresenter = new HotelRoomDetailsPresenter(hotelRoomDetailsView, hotelRepository, reservationPresenter);
             IMainPresenter mainPresenter = new MainPresenter(mainView, hotelRepository, hotelDetailsPresenter, reservationPresenter);
 
             Application.Run(mainView as MainForm);
