@@ -166,43 +166,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\quezon city.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\baguio.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\san fernando.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\manila.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\1 middle.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\hotel name.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\hotel name1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\hotel name2.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\book now.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\checkincheckout.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\roomdescription.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\total fees.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\location guests.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\manila1.jpg" />
@@ -217,16 +184,10 @@
     <None Include="Resources\baguio1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\logo banner.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\logo banner1.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\locations1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\location-icon-map-png--1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
