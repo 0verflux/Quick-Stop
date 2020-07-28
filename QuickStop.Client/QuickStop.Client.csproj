@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Base\PresenterBase.cs" />
     <Compile Include="Contracts\IView.cs" />
+    <Compile Include="Contracts\Views\IReferenceView.cs" />
     <Compile Include="Controls\HotelCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -74,6 +75,12 @@
     </Compile>
     <Compile Include="Forms\HotelBookingForm.Designer.cs">
       <DependentUpon>HotelBookingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ReferenceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReferenceForm.Designer.cs">
+      <DependentUpon>ReferenceForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Presenters\HotelRoomDetailsPresenter.cs" />
     <Compile Include="Contracts\Presenters\IHotelRoomDetailsPresenter.cs" />
@@ -107,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HotelBookingForm.resx">
       <DependentUpon>HotelBookingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReferenceForm.resx">
+      <DependentUpon>ReferenceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

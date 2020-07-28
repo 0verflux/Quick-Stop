@@ -10,6 +10,6 @@ namespace QuickStop.Client.Contracts.Views
         HotelBookingViewModel HotelBookingViewModel { get; set; }
 
         void DisplayHotelBooking(bool isReadOnly = false);
-        void FinalizeHotelBooking(string reference);
+        void CloseView();
     }
 }

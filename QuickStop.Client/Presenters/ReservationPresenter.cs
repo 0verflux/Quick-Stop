@@ -15,11 +15,13 @@ namespace QuickStop.Client.Presenters
     {
         private readonly IHotelRoomRepository hotelRoomRepository;
         private readonly IHotelBookingRepository hotelBookingRepository;
+        private readonly IReferenceView referenceView;
 
-        public ReservationPresenter(IHotelBookingView hotelBookingView, IHotelRoomRepository hotelRoomRepository, IHotelBookingRepository hotelBookingRepository) : base(hotelBookingView)
+        public ReservationPresenter(IHotelBookingView hotelBookingView, IHotelRoomRepository hotelRoomRepository, IHotelBookingRepository hotelBookingRepository, IReferenceView referenceView) : base(hotelBookingView)
         {
             this.hotelRoomRepository = hotelRoomRepository;
             this.hotelBookingRepository = hotelBookingRepository;
+            this.referenceView = referenceView;
 
             view.RequestCreateHotelBooking += RequestCreateHotelBooking;
         }
@@ -83,7 +85,10 @@ namespace QuickStop.Client.Presenters
             hotelBookingRepository.BookHotel(hotelBook);
             hotelRoomRepository.SetHotelInavailablity(hotelBook.HotelID, hotelBook.CheckOut);
 
-            view.FinalizeHotelBooking(hotelBook.Reference);
+            if (referenceView.DisplayBookingReference(hotelBook.Reference) == DialogResult.OK)
+            {
+                view.CloseView();
+            }
         }
     }
 }
