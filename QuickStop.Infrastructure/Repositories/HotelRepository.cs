@@ -41,15 +41,7 @@ namespace QuickStop.Infrastructure.Repositories
 
         HotelRoom IHotelRoomRepository.FindHotelByID(int id)
         {
-            try
-            {
-                return hotels.Where(x => x.ID == id).First();
-            }
-            catch(Exception ex)
-            {
-                throw ex;
-                // TODO: Handle Exception
-            }
+            return hotels.Where(x => x.ID == id).First();
         }
 
         void IHotelRoomRepository.SetHotelInavailablity(int id, DateTime dateTime)

@@ -2,6 +2,7 @@
 using QuickStop.Client.Contracts.Presenters;
 using QuickStop.Client.Contracts.Views;
 using QuickStop.Client.ViewModels;
+using QuickStop.Components.Exceptions;
 using QuickStop.Components.Helpers;
 using QuickStop.Domain.Models;
 using QuickStop.Infrastructure.Contracts;
@@ -68,9 +69,8 @@ namespace QuickStop.Client.Presenters
 
                 view.DisplayHotelBooking(true);
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
-                // TODO: catch Hotel BOoking Not Found Eexception
                 MessageBox.Show("An Error Occured!\r\n" + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

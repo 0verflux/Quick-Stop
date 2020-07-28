@@ -44,6 +44,10 @@
   <ItemGroup>
     <Compile Include="CustomEventArgs\HotelFilterEventArgs.cs" />
     <Compile Include="CustomEventArgs\HotelSelectedEventArgs.cs" />
+    <Compile Include="Exceptions\HotelBookReferenceNotFoundException.cs" />
+    <Compile Include="Exceptions\HotelDataNotFoundException.cs" />
+    <Compile Include="Exceptions\HotelRoomNotFoundException.cs" />
+    <Compile Include="Exceptions\HotelRoomParsingException.cs" />
     <Compile Include="Helpers\HotelRoomBooking.cs" />
     <Compile Include="Helpers\ImageConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

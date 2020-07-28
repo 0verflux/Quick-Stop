@@ -1,4 +1,5 @@
-﻿using QuickStop.Domain.Models;
+﻿using QuickStop.Components.Exceptions;
+using QuickStop.Domain.Models;
 using QuickStop.Infrastructure.Base;
 using QuickStop.Infrastructure.Contracts;
 using System;
@@ -7,9 +8,9 @@ using System.Text;
 
 namespace QuickStop.Infrastructure.Serializers
 {
-    public sealed class ReservationSerializer : SerializerBase, IHotelBookSerializer
+    public sealed class HotelBookingSerializer : SerializerBase, IHotelBookSerializer
     {
-        public ReservationSerializer(string baseDirectory) : base(baseDirectory, null)
+        public HotelBookingSerializer(string baseDirectory) : base(baseDirectory, @"\Data\HotelRoomBookings\", null)
         {
 
         }
@@ -17,7 +18,7 @@ namespace QuickStop.Infrastructure.Serializers
         void IHotelBookSerializer.CreateBookHotel(HotelBook reservation)
         {
             StringBuilder sb = new StringBuilder();
-            string file = Path.Combine(baseDirectory, reservation.Reference + extension);
+            string file = FilePath(reservation.Reference);
 
             sb.AppendLine(reservation.HotelID.ToString());
             sb.AppendLine(reservation.GuestCount.ToString());
@@ -32,7 +33,7 @@ namespace QuickStop.Infrastructure.Serializers
         {
             try
             {
-                string file = Path.Combine(baseDirectory, reference + extension);
+                string file = FilePath(reference);
                 string[] parameters = File.ReadAllLines(file);
 
                 HotelBook reservation = new HotelBook
@@ -47,15 +48,15 @@ namespace QuickStop.Infrastructure.Serializers
 
                 return reservation;
             }
-            catch(Exception ex)
+            catch(FileNotFoundException)
             {
-                throw ex; // TODO: Throw BookingNotFoundException
+                throw new HotelBookReferenceNotFoundException();
             }
         }
 
         bool IHotelBookSerializer.BookHotelExists(string reference)
         {
-            string file = Path.Combine(baseDirectory, reference + extension);
+            string file = FilePath(reference);
 
             return File.Exists(file);
         }
