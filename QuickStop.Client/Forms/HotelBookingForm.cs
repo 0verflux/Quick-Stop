@@ -40,14 +40,6 @@ namespace QuickStop.Client.Views
         private void NotifyInputChanged(object sender, EventArgs e)
         {
             dateTimePicker1.MinDate = dateTimePicker2.Value.AddDays(1);
-
-            if (HotelBookingViewModel == null) return;
-
-            if((HotelBookingViewModel.TotalCost = HotelRoomBooking.CalculateTotalPrice(HotelBookingViewModel.Cost, HotelBookingViewModel.GuestCount, HotelBookingViewModel.MinimumGuestCount, HotelBookingViewModel.MaximumGuestCount, HotelBookingViewModel.CheckIn, HotelBookingViewModel.CheckOut)) == 0m)
-            {
-                label13.Text = "TeST";
-            }
-            
         }
 
         private void GuestCountChanged(object sender, EventArgs e)
@@ -63,6 +55,6 @@ namespace QuickStop.Client.Views
         private void CalculateTotalCost()
         {
             HotelBookingViewModel.TotalCost = HotelRoomBooking.CalculateTotalPrice(HotelBookingViewModel.Cost, HotelBookingViewModel.GuestCount, HotelBookingViewModel.MinimumGuestCount, HotelBookingViewModel.MaximumGuestCount, HotelBookingViewModel.CheckIn, HotelBookingViewModel.CheckOut);
-        }    
-  }
+        }
+    }
 }

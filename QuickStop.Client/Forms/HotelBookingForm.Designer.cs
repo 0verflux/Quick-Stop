@@ -283,6 +283,7 @@
             this.dateTimePicker2.Size = new System.Drawing.Size(163, 26);
             this.dateTimePicker2.TabIndex = 9;
             this.dateTimePicker2.TabStop = false;
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.NotifyInputChanged);
             // 
             // label5
             // 
@@ -330,7 +331,7 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(157, 26);
             this.dateTimePicker1.TabIndex = 9;
             this.dateTimePicker1.TabStop = false;
-            this.dateTimePicker1.CloseUp += new System.EventHandler(this.NotifyInputChanged);
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.NotifyInputChanged);
             // 
             // tableLayoutPanel7
             // 
