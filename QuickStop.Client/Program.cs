@@ -30,6 +30,7 @@ namespace QuickStop.Client
                 container.Resolve<IMainPresenter>(); // Initialize MainPresenter First
 
                 Application.Run(container.Resolve<IMainView>() as MainForm);
+                
             }
         }
 
