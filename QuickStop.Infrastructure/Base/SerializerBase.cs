@@ -1,5 +1,4 @@
-﻿using System.Text;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 
 namespace QuickStop.Infrastructure.Base
 {
@@ -12,11 +11,11 @@ namespace QuickStop.Infrastructure.Base
 
         protected SerializerBase(string baseDirectory, params char[] delimiters)
         {
-            this.parser = new Regex(",(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))");
+            parser = new Regex(",(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))");
+            extension = ".txt";
 
             this.baseDirectory = baseDirectory;
             this.delimiters = delimiters;
-            this.extension = ".txt";
         }
     }
 }

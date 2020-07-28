@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace QuickStop.Client.Contracts.Views
 {
-    public interface IHotelDetailsView : IView
+    public interface IHotelRoomDetailsView : IView
     {
-        event EventHandler<HotelSelectedEventArgs> RequestReservation;
+        event EventHandler<HotelSelectedEventArgs> RequestHotelBooking;
 
-        void DisplayHotel(HotelRoom hotel);
+        void DisplayHotelRoom(HotelRoom hotel);
     }
 }

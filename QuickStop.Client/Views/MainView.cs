@@ -13,10 +13,10 @@ namespace QuickStop.Client.Views
         #region Events
         private event EventHandler<HotelSelectedEventArgs> RequestViewHotelDetails;
         private event EventHandler<HotelFilterEventArgs> RequestLoadHotels;
-        private event EventHandler<ReservationReferenceEventArgs> RequestViewReservation;
+        private event EventHandler<BookReferenceEventArgs> RequestViewReservation;
         private event EventHandler RequestSaveData;
 
-        event EventHandler<HotelSelectedEventArgs> IMainView.RequestViewHotelDetails
+        event EventHandler<HotelSelectedEventArgs> IMainView.RequestViewHotelRoomDetails
         {
             add { RequestViewHotelDetails += value; }
             remove { RequestViewHotelDetails -= value; }
@@ -26,7 +26,7 @@ namespace QuickStop.Client.Views
             add { RequestLoadHotels += value; }
             remove { RequestLoadHotels -= value; }
         }
-        event EventHandler<ReservationReferenceEventArgs> IMainView.RequestViewReservation
+        event EventHandler<BookReferenceEventArgs> IMainView.RequestViewHotelBooking
         {
             add { RequestViewReservation += value; }
             remove { RequestViewReservation -= value; }

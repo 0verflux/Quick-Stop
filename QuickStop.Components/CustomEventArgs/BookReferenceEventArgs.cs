@@ -2,11 +2,11 @@
 
 namespace QuickStop.Components.CustomEventArgs
 {
-    public class ReservationReferenceEventArgs : EventArgs
+    public class BookReferenceEventArgs : EventArgs
     {
         public string Reference { get; private set; }
 
-        public ReservationReferenceEventArgs(string reference) : base()
+        public BookReferenceEventArgs(string reference) : base()
         {
             Reference = reference;
         }

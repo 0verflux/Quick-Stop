@@ -2,22 +2,19 @@
 using QuickStop.Infrastructure.Base;
 using QuickStop.Infrastructure.Contracts;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace QuickStop.Infrastructure.Serializers
 {
-    public sealed class ReservationSerializer : SerializerBase, IReservationSerializer
+    public sealed class ReservationSerializer : SerializerBase, IHotelBookSerializer
     {
         public ReservationSerializer(string baseDirectory) : base(baseDirectory, null)
         {
 
         }
 
-        void IReservationSerializer.CreateReservation(HotelBook reservation)
+        void IHotelBookSerializer.CreateBookHotel(HotelBook reservation)
         {
             StringBuilder sb = new StringBuilder();
             string file = Path.Combine(baseDirectory, reservation.Reference + extension);
@@ -31,25 +28,32 @@ namespace QuickStop.Infrastructure.Serializers
             File.WriteAllText(file, sb.ToString());
         }
 
-        HotelBook IReservationSerializer.ReadReservation(string reference)
+        HotelBook IHotelBookSerializer.FindBookHotel(string reference)
         {
-            string file = Path.Combine(baseDirectory, reference + extension);
-            string[] parameters = File.ReadAllLines(file);
-            
-            HotelBook reservation = new HotelBook
+            try
             {
-                Reference = reference,
-                HotelID = Convert.ToInt32(parameters[0]),
-                GuestCount = Convert.ToInt32(parameters[1]),
-                CheckIn = Convert.ToDateTime(parameters[2]),
-                CheckOut = Convert.ToDateTime(parameters[3]),
-                TotalCost = Convert.ToDecimal(parameters[4])
-            };
+                string file = Path.Combine(baseDirectory, reference + extension);
+                string[] parameters = File.ReadAllLines(file);
 
-            return reservation;
+                HotelBook reservation = new HotelBook
+                {
+                    Reference = reference,
+                    HotelID = Convert.ToInt32(parameters[0]),
+                    GuestCount = Convert.ToInt32(parameters[1]),
+                    CheckIn = Convert.ToDateTime(parameters[2]),
+                    CheckOut = Convert.ToDateTime(parameters[3]),
+                    TotalCost = Convert.ToDecimal(parameters[4])
+                };
+
+                return reservation;
+            }
+            catch(Exception ex)
+            {
+                throw ex; // TODO: Throw BookingNotFoundException
+            }
         }
 
-        bool IReservationSerializer.ReservationExists(string reference)
+        bool IHotelBookSerializer.BookHotelExists(string reference)
         {
             string file = Path.Combine(baseDirectory, reference + extension);
 

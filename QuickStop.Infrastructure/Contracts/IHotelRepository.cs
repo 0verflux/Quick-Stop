@@ -1,12 +1,11 @@
 ﻿using QuickStop.Domain.Enums;
 using QuickStop.Domain.Models;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace QuickStop.Infrastructure.Contracts
 {
-    public interface IHotelRepository
+    public interface IHotelRoomRepository
     {
         IEnumerable<HotelRoom> GetHotels(Location location, int guestCount, Sort sort);
 

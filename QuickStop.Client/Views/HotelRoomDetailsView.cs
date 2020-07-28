@@ -6,19 +6,19 @@ using System;
 
 namespace QuickStop.Client.Views
 {
-    public partial class HotelDetailsForm : IHotelDetailsView
+    public partial class HotelDetailsForm : IHotelRoomDetailsView
     {
         #region Events
         private event EventHandler<HotelSelectedEventArgs> RequestReservation;
 
-        event EventHandler<HotelSelectedEventArgs> IHotelDetailsView.RequestReservation
+        event EventHandler<HotelSelectedEventArgs> IHotelRoomDetailsView.RequestHotelBooking
         {
             add { RequestReservation += value; }
             remove { RequestReservation -= value; }
         }
         #endregion
 
-        void IHotelDetailsView.DisplayHotel(HotelRoom hotel)
+        void IHotelRoomDetailsView.DisplayHotelRoom(HotelRoom hotel)
         {
             Tag = hotel.ID.ToString();
 

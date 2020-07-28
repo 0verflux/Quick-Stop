@@ -1,13 +1,11 @@
-﻿using QuickStop.Components.Helpers;
-using QuickStop.Domain.Enums;
-using QuickStop.Domain.Models;
+﻿using QuickStop.Domain.Models;
 using System;
 using System.ComponentModel;
 using System.Drawing;
 
 namespace QuickStop.Client.ViewModels
 {
-    public class ReservationViewModel : INotifyPropertyChanged
+    public class HotelBookingViewModel : INotifyPropertyChanged
     {
         private int minimumGuestCount;
         private int maximumGuestCount;
@@ -16,21 +14,21 @@ namespace QuickStop.Client.ViewModels
         private string description;
         private string location;
 
-        public HotelBook Reservation { get; }
+        public HotelBook HotelBook { get; }
 
-        public ReservationViewModel() : this(new HotelBook())
+        public HotelBookingViewModel() : this(new HotelBook())
         {
 
         }
 
-        public ReservationViewModel(int hotelID) : this(new HotelBook { HotelID = hotelID })
+        public HotelBookingViewModel(int hotelID) : this(new HotelBook { HotelID = hotelID })
         {
 
         }
 
-        public ReservationViewModel(HotelBook reservation)
+        public HotelBookingViewModel(HotelBook hotelBook)
         {
-            Reservation = reservation;
+            HotelBook = hotelBook;
         }
 
         public string HotelName
@@ -125,60 +123,60 @@ namespace QuickStop.Client.ViewModels
 
         public int GuestCount
         {
-            get { return Reservation.GuestCount; }
+            get { return HotelBook.GuestCount; }
             set
             {
-                if (Equals(Reservation.GuestCount, value))
+                if (Equals(HotelBook.GuestCount, value))
                 {
                     return;
                 }
 
-                Reservation.GuestCount = value;
+                HotelBook.GuestCount = value;
                 OnPropertyChanged("GuestCount");
             }
         }
 
         public decimal TotalCost
         {
-            get { return Reservation.TotalCost; }
+            get { return HotelBook.TotalCost; }
             set
             {
-                if (Equals(Reservation.TotalCost, value))
+                if (Equals(HotelBook.TotalCost, value))
                 {
                     return;
                 }
 
-                Reservation.TotalCost = value;
+                HotelBook.TotalCost = value;
                 OnPropertyChanged("TotalCost");
             }
         }
 
         public DateTime CheckIn
         {
-            get { return Reservation.CheckIn; }
+            get { return HotelBook.CheckIn; }
             set
             {
-                if (Equals(Reservation.CheckIn, value))
+                if (Equals(HotelBook.CheckIn, value))
                 {
                     return;
                 }
 
-                Reservation.CheckIn = value;
+                HotelBook.CheckIn = value;
                 OnPropertyChanged("CheckIn");
             }
         }
 
         public DateTime CheckOut
         {
-            get { return Reservation.CheckOut; }
+            get { return HotelBook.CheckOut; }
             set
             {
-                if (Equals(Reservation.CheckOut, value))
+                if (Equals(HotelBook.CheckOut, value))
                 {
                     return;
                 }
 
-                Reservation.CheckOut = value;
+                HotelBook.CheckOut = value;
                 OnPropertyChanged("CheckOut");
             }
         }

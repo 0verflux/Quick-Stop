@@ -10,24 +10,24 @@ using System.Windows.Forms;
 
 namespace QuickStop.Client.Presenters
 {
-    public sealed class ReservationPresenter : PresenterBase<IReservationView>, IReservationPresenter
+    public sealed class ReservationPresenter : PresenterBase<IHotelBookingView>, IHotelBookingPresenter
     {
-        private readonly IHotelRepository hotelRepository;
-        private readonly IReservationRepository reservationRepository;
+        private readonly IHotelRoomRepository hotelRoomRepository;
+        private readonly IHotelBookingRepository hotelBookingRepository;
 
-        public ReservationPresenter(IReservationView reservationView, IHotelRepository hotelRepository, IReservationRepository reservationRepository) : base(reservationView)
+        public ReservationPresenter(IHotelBookingView hotelBookingView, IHotelRoomRepository hotelRoomRepository, IHotelBookingRepository hotelBookingRepository) : base(hotelBookingView)
         {
-            this.hotelRepository = hotelRepository;
-            this.reservationRepository = reservationRepository;
+            this.hotelRoomRepository = hotelRoomRepository;
+            this.hotelBookingRepository = hotelBookingRepository;
 
-            view.RequestCreateReservation += RequestCreateReservation;
+            view.RequestCreateHotelBooking += RequestCreateHotelBooking;
         }
 
-        void IReservationPresenter.RequestReservation(int hotelIndex)
+        void IHotelBookingPresenter.RequestHotelBooking(int hotelIndex)
         {
-            HotelRoom selectedHotel = hotelRepository.FindHotelByID(hotelIndex);
+            HotelRoom selectedHotel = hotelRoomRepository.FindHotelByID(hotelIndex);
 
-            view.ReservationViewModel = new ReservationViewModel(hotelIndex)
+            view.HotelBookingViewModel = new HotelBookingViewModel(hotelIndex)
             {
                 HotelName = selectedHotel.Name,
                 Cost = selectedHotel.Price,
@@ -42,17 +42,17 @@ namespace QuickStop.Client.Presenters
                 CheckOut = DateTime.Now.AddDays(1)
             };
 
-            view.DisplayReservation();
+            view.DisplayHotelBooking();
         }
 
-        void IReservationPresenter.RequestViewReservation(string reference)
+        void IHotelBookingPresenter.RequestViewHotelBooking(string reference)
         {
             try
             {
-                HotelBook reservation = reservationRepository.GetReservation(reference);
-                HotelRoom hotel = hotelRepository.FindHotelByID(reservation.HotelID);
+                HotelBook reservation = hotelBookingRepository.FindBookHotel(reference);
+                HotelRoom hotel = hotelRoomRepository.FindHotelByID(reservation.HotelID);
 
-                view.ReservationViewModel = new ReservationViewModel(hotel.ID)
+                view.HotelBookingViewModel = new HotelBookingViewModel(hotel.ID)
                 {
                     HotelName = hotel.Name,
                     HotelDescription = hotel.Description,
@@ -66,23 +66,24 @@ namespace QuickStop.Client.Presenters
                     TotalCost = reservation.TotalCost
                 };
 
-                view.DisplayReservation(true);
+                view.DisplayHotelBooking(true);
             }
             catch (Exception ex)
             {
+                // TODO: catch Hotel BOoking Not Found Eexception
                 MessageBox.Show("An Error Occured!\r\n" + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void RequestCreateReservation(object s, EventArgs e)
+        private void RequestCreateHotelBooking(object s, EventArgs e)
         {
-            HotelBook reservation = view.ReservationViewModel.Reservation;
-            reservation.Reference = ReferenceGenerator.Generate(6);
+            HotelBook hotelBook = view.HotelBookingViewModel.HotelBook;
+            hotelBook.Reference = ReferenceGenerator.Generate(6);
 
-            reservationRepository.CreateReservation(reservation);
-            hotelRepository.SetHotelInavailablity(reservation.HotelID, reservation.CheckOut);
+            hotelBookingRepository.BookHotel(hotelBook);
+            hotelRoomRepository.SetHotelInavailablity(hotelBook.HotelID, hotelBook.CheckOut);
 
-            view.FinalizeReservation(reservation.Reference);
+            view.FinalizeHotelBooking(hotelBook.Reference);
         }
     }
 }

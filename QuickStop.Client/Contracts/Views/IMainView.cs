@@ -7,9 +7,9 @@ namespace QuickStop.Client.Contracts.Views
 {
     public interface IMainView : IView
     {
-        event EventHandler<HotelSelectedEventArgs> RequestViewHotelDetails;
+        event EventHandler<HotelSelectedEventArgs> RequestViewHotelRoomDetails;
         event EventHandler<HotelFilterEventArgs> RequestLoadHotels;
-        event EventHandler<ReservationReferenceEventArgs> RequestViewReservation;
+        event EventHandler<BookReferenceEventArgs> RequestViewHotelBooking;
         event EventHandler RequestSaveData;
 
         void LoadHotels(IEnumerable<HotelRoom> hotels);
