@@ -37,11 +37,15 @@ namespace QuickStop.Client.Views
             dateTimePicker2.DataBindings.Add("Value", HotelBookingViewModel, "CheckIn", true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
-        private void NotifyInputChanged(object sender, EventArgs e)
+        private void UpdateDatePickerMinimumDate(object sender, EventArgs e)
         {
             dateTimePicker1.MinDate = dateTimePicker2.Value.AddDays(1);
         }
 
+        private void NotifyInputChanged(object sender, EventArgs e)
+        {
+            CalculateTotalCost();
+        }
         private void GuestCountChanged(object sender, EventArgs e)
         {
             CalculateTotalCost();
@@ -56,5 +60,7 @@ namespace QuickStop.Client.Views
         {
             HotelBookingViewModel.TotalCost = HotelRoomBooking.CalculateTotalPrice(HotelBookingViewModel.Cost, HotelBookingViewModel.GuestCount, HotelBookingViewModel.MinimumGuestCount, HotelBookingViewModel.MaximumGuestCount, HotelBookingViewModel.CheckIn, HotelBookingViewModel.CheckOut);
         }
+
+        
     }
 }

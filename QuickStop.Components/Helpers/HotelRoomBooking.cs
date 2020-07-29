@@ -19,7 +19,7 @@ namespace QuickStop.Components.Helpers
         /// <returns>A Total Cost to Book a <see cref="Domain.Models.HotelRoom"/>.</returns>
         public static decimal CalculateTotalPrice(decimal hotelPrice, int guestCount, int minGuestCount, int maxGuestCount, DateTime checkIn, DateTime checkOut)
         {
-            return hotelPrice * (1 + ((decimal)(guestCount - minGuestCount) / (maxGuestCount - minGuestCount))) * (checkOut - checkIn).Days;
+            return hotelPrice * (1 + ((decimal)(guestCount - minGuestCount) / (maxGuestCount - minGuestCount))) * (decimal)Math.Round((checkOut - checkIn).TotalDays);
         }
     }
 }
