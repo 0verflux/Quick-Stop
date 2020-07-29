@@ -8,13 +8,25 @@ using System.Text;
 
 namespace QuickStop.Infrastructure.Serializers
 {
+    /// <summary>
+    /// Represents a Reader and Writer for <see cref="HotelBook"/>.
+    /// </summary>
     public sealed class HotelBookingSerializer : SerializerBase, IHotelBookSerializer
     {
+
+        /// <summary>
+        /// Initializes a new Instance of <see cref="HotelBook"/>.
+        /// </summary>
+        /// <param name="baseDirectory">The base directory of a file.</param>
         public HotelBookingSerializer(string baseDirectory) : base(baseDirectory, @"\Data\HotelRoomBookings\", null)
         {
 
         }
 
+        /// <summary>
+        /// Creates a new Booked Hotel Room. 
+        /// </summary>
+        /// <param name="reservation">The data to be stored.</param>
         void IHotelBookSerializer.CreateBookHotel(HotelBook reservation)
         {
             StringBuilder sb = new StringBuilder();
@@ -29,6 +41,11 @@ namespace QuickStop.Infrastructure.Serializers
             File.WriteAllText(file, sb.ToString());
         }
 
+        /// <summary>
+        /// Finds all Booked Hotel Room by reference key.
+        /// </summary>
+        /// <param name="reference">The key to be searched with.</param>
+        /// <returns><see cref="HotelBook"/></returns>
         HotelBook IHotelBookSerializer.FindBookHotel(string reference)
         {
             try

@@ -1,5 +1,4 @@
-﻿using QuickStop.Components.Exceptions;
-using QuickStop.Domain.Enums;
+﻿using QuickStop.Domain.Enums;
 using QuickStop.Domain.Models;
 using QuickStop.Infrastructure.Base;
 using QuickStop.Infrastructure.Contracts;
@@ -12,10 +11,17 @@ using System.Text;
 
 namespace QuickStop.Infrastructure.Serializers
 {
+    /// <summary>
+    /// Represents a Reader and Writer for <see cref="HotelRoom"/>.
+    /// </summary>
     public sealed class HotelSerializer : SerializerBase, IHotelSerializer
     {
         private readonly string fileName;
 
+        /// <summary>
+        /// Initializes a new Instance of <see cref="HotelSerializer"/>.
+        /// </summary>
+        /// <param name="baseDirectory">The base directory of the file.</param>
         public HotelSerializer(string baseDirectory) : base(baseDirectory, @"\Data\", ',')
         {
             fileName = "HotelData";
@@ -27,16 +33,20 @@ namespace QuickStop.Infrastructure.Serializers
 
             string file = FilePath(fileName);
 
+            // Check if File Exists
+            // If no file is found, a new file is made.
             if(!File.Exists(file))
             {
                 string src = GetResourceFileContentAsString(fileName + extension);
                 File.WriteAllText(file, src);
             }
 
+            // Reads all data per line in the file.
             string[] data = File.ReadAllLines(file);
 
             foreach (string hotelData in data)
             {
+                // splits all data by a delimiter.
                 string[] hotelParams = parser.Split(hotelData);
 
                 try
@@ -89,6 +99,7 @@ namespace QuickStop.Infrastructure.Serializers
                 sb.AppendLine();
             }
 
+            // Write all collection of hotels in the text file.
             File.WriteAllText(file, sb.ToString());
         }
 
