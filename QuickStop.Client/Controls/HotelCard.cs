@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuickStop.Domain.Models;
 using QuickStop.Components.CustomEventArgs;
@@ -13,16 +6,32 @@ using QuickStop.Components.Helpers;
 
 namespace QuickStop.Client.Controls
 {
+    /// <summary>
+    /// Represents a placeholder to display a <see cref="HotelRoom"/>.
+    /// </summary>
     public partial class HotelCard : UserControl
     {
-        private readonly int hotelID;
+        #region Events
+        /// <summary>
+        /// Occurs when the user Selected this <see cref="HotelCard"/>.
+        /// </summary>
         public event EventHandler<HotelSelectedEventArgs> HotelSelected;
+        #endregion
 
+        private readonly int hotelID;
+
+        /// <summary>
+        /// Initializes a new Instance of <see cref="HotelCard"/>.
+        /// </summary>
         public HotelCard()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Initializes a new Instance of <see cref="HotelCard"/>, with an assigned <see cref="HotelRoom"/>.
+        /// </summary>
+        /// <param name="hotel">The <see cref="HotelRoom"/> to be displayed.</param>
         public HotelCard(HotelRoom hotel) : this()
         {
             hotelID = hotel.ID;

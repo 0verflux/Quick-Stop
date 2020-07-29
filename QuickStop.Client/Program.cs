@@ -30,16 +30,25 @@ namespace QuickStop.Client
                 container.Resolve<IMainPresenter>(); // Initialize MainPresenter First
 
                 Application.Run(container.Resolve<IMainView>() as MainForm);
+
+                
                 
             }
         }
 
-        static IUnityContainer Register(string filePath)
+        /// <summary>
+        /// Creates an <see cref="IUnityContainer"/> to handle Dependency Injection.
+        /// </summary>
+        /// <param name="baseDirectory">The base directory of a text file to be injected in a Serializer.</param>
+        /// <returns><see cref="IUnityContainer"/></returns>
+        static IUnityContainer Register(string baseDirectory)
         {
             return new UnityContainer()
-                .AddExtension(new Diagnostic())
-                .RegisterType<IHotelSerializer, HotelSerializer>(new InjectionConstructor(filePath))
-                .RegisterType<IHotelBookSerializer, HotelBookingSerializer>(new InjectionConstructor(filePath))
+#if DEBUG
+                .AddExtension(new Diagnostic()) // Necessary if a Certain Dependency Fails to Resolve or something.
+#endif
+                .RegisterType<IHotelSerializer, HotelSerializer>(new InjectionConstructor(baseDirectory))
+                .RegisterType<IHotelBookSerializer, HotelBookingSerializer>(new InjectionConstructor(baseDirectory))
                 .RegisterType<IMainView, MainForm>(new ContainerControlledLifetimeManager())
                 .RegisterType<IHotelRoomDetailsView, HotelRoomDetailsForm>(new ContainerControlledLifetimeManager())
                 .RegisterType<IHotelBookingView, HotelBookingForm>(new ContainerControlledLifetimeManager())

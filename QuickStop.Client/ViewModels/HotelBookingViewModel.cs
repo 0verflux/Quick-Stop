@@ -5,6 +5,9 @@ using System.Drawing;
 
 namespace QuickStop.Client.ViewModels
 {
+    /// <summary>
+    /// A View Model for <see cref="Domain.Models.HotelBook"/> to listen each time a property changes.
+    /// </summary>
     public class HotelBookingViewModel : INotifyPropertyChanged
     {
         private int minimumGuestCount;
@@ -14,23 +17,40 @@ namespace QuickStop.Client.ViewModels
         private string description;
         private string location;
 
+        /// <summary>
+        /// The Hotel Book Model.
+        /// </summary>
         public HotelBook HotelBook { get; }
 
+        /// <summary>
+        /// Initializes a new instance of <see cref="HotelBookingViewModel"/>.
+        /// </summary>
         public HotelBookingViewModel() : this(new HotelBook())
         {
 
         }
 
+        /// <summary>
+        /// Initializes a new instance of <see cref="HotelBookingViewModel"/>, provided with the Hotel ID.
+        /// </summary>
+        /// <param name="hotelID">The hotel ID to be booked.</param>
         public HotelBookingViewModel(int hotelID) : this(new HotelBook { HotelID = hotelID })
         {
 
         }
 
+        /// <summary>
+        /// Initializes a new instance of <see cref="HotelBookingViewModel"/>, with an existing <see cref="Domain.Models.HotelBook"/>.
+        /// </summary>
+        /// <param name="hotelBook">The <see cref="Domain.Models.HotelBook"/> to be assigned.</param>
         public HotelBookingViewModel(HotelBook hotelBook)
         {
             HotelBook = hotelBook;
         }
 
+        /// <summary>
+        /// The Hotel's Name.
+        /// </summary>
         public string HotelName
         {
             get { return name; }
@@ -46,6 +66,9 @@ namespace QuickStop.Client.ViewModels
             }
         }
 
+        /// <summary>
+        /// The Hotel's Description.
+        /// </summary>
         public string HotelDescription
         {
             get { return description; }
@@ -61,6 +84,9 @@ namespace QuickStop.Client.ViewModels
             }
         }
         
+        /// <summary>
+        /// The Hotel's Location.
+        /// </summary>
         public string HotelLocation
         {
             get { return location; }
@@ -76,6 +102,9 @@ namespace QuickStop.Client.ViewModels
             }
         }
 
+        /// <summary>
+        /// The Hotel's Room Image.
+        /// </summary>
         public Image HotelRoomImage
         {
             get { return image; }
@@ -91,6 +120,9 @@ namespace QuickStop.Client.ViewModels
             }
         }
 
+        /// <summary>
+        /// The Minimum Guest Count for a Hotel Room.
+        /// </summary>
         public int MinimumGuestCount
         {
             get { return minimumGuestCount; }
@@ -106,6 +138,9 @@ namespace QuickStop.Client.ViewModels
             }
         }
 
+        /// <summary>
+        /// The Maximum Guest Count for a Hotel Room.
+        /// </summary>
         public int MaximumGuestCount
         {
             get { return maximumGuestCount; }
@@ -121,6 +156,9 @@ namespace QuickStop.Client.ViewModels
             }
         }
 
+        /// <summary>
+        /// The current guest count booked in a Hotel Room.
+        /// </summary>
         public int GuestCount
         {
             get { return HotelBook.GuestCount; }
@@ -136,6 +174,9 @@ namespace QuickStop.Client.ViewModels
             }
         }
 
+        /// <summary>
+        /// The total cost for a booked Hotel Room.
+        /// </summary>
         public decimal TotalCost
         {
             get { return HotelBook.TotalCost; }
@@ -151,6 +192,9 @@ namespace QuickStop.Client.ViewModels
             }
         }
 
+        /// <summary>
+        /// The Check-In Date for a Booked Hotel Room.
+        /// </summary>
         public DateTime CheckIn
         {
             get { return HotelBook.CheckIn; }
@@ -166,6 +210,9 @@ namespace QuickStop.Client.ViewModels
             }
         }
 
+        /// <summary>
+        /// The Check-Out Date for a Booked Hotel Room.
+        /// </summary>
         public DateTime CheckOut
         {
             get { return HotelBook.CheckOut; }
@@ -183,11 +230,18 @@ namespace QuickStop.Client.ViewModels
 
         public decimal Cost { get; set; }
 
+        /// <summary>
+        /// Notifies all Data-Binded Controls that a certain Property has been changed.
+        /// </summary>
+        /// <param name="propertyName">The property name to be notified.</param>
         private void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        /// <summary>
+        /// Occurs when a Property value has been Changed.
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
     }
 }

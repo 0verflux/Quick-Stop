@@ -6,6 +6,9 @@ using System;
 
 namespace QuickStop.Client.Views
 {
+    /// <summary>
+    /// Represents the View for <see cref="HotelRoomDetailsForm"/>.
+    /// </summary>
     public partial class HotelRoomDetailsForm : IHotelRoomDetailsView
     {
         #region Events

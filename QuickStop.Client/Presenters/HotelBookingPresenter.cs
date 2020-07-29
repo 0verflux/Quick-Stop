@@ -2,7 +2,6 @@
 using QuickStop.Client.Contracts.Presenters;
 using QuickStop.Client.Contracts.Views;
 using QuickStop.Client.ViewModels;
-using QuickStop.Components.Exceptions;
 using QuickStop.Components.Helpers;
 using QuickStop.Domain.Models;
 using QuickStop.Infrastructure.Contracts;
@@ -11,12 +10,22 @@ using System.Windows.Forms;
 
 namespace QuickStop.Client.Presenters
 {
+    /// <summary>
+    /// Represents the Presenter for <see cref="Views.HotelBookingForm"/>.
+    /// </summary>
     public sealed class HotelBookingPresenter : PresenterBase<IHotelBookingView>, IHotelBookingPresenter
     {
         private readonly IHotelRoomRepository hotelRoomRepository;
         private readonly IHotelBookingRepository hotelBookingRepository;
         private readonly IReferenceView referenceView;
 
+        /// <summary>
+        /// Initializes a new instance of <see cref="HotelBookingPresenter"/>.
+        /// </summary>
+        /// <param name="hotelBookingView">The view assigned for the presenter.</param>
+        /// <param name="hotelRoomRepository">The repository used for accessing the Hotel Room Data.</param>
+        /// <param name="hotelBookingRepository">The repository used for accessing the Booked Hotel Room Data.</param>
+        /// <param name="referenceView">The view assigned to show the final output.</param>
         public HotelBookingPresenter(IHotelBookingView hotelBookingView, IHotelRoomRepository hotelRoomRepository, IHotelBookingRepository hotelBookingRepository, IReferenceView referenceView) : base(hotelBookingView)
         {
             this.hotelRoomRepository = hotelRoomRepository;
@@ -30,6 +39,7 @@ namespace QuickStop.Client.Presenters
         {
             HotelRoom selectedHotel = hotelRoomRepository.FindHotelByID(hotelIndex);
 
+            // Assigns a new Instance of HotelBookingViewModel, and updates the Control's Value that is Binded for Hotel Booking Details Form.
             view.HotelBookingViewModel = new HotelBookingViewModel(hotelIndex)
             {
                 HotelName = selectedHotel.Name,
@@ -55,6 +65,7 @@ namespace QuickStop.Client.Presenters
                 HotelBook reservation = hotelBookingRepository.FindBookHotel(reference);
                 HotelRoom hotel = hotelRoomRepository.FindHotelByID(reservation.HotelID);
 
+                // Creates a new Instance of HotelBookingViewModel, and updates the Control's Value for Hotel Booking Details Form.
                 view.HotelBookingViewModel = new HotelBookingViewModel(hotel.ID)
                 {
                     HotelName = hotel.Name,
@@ -71,7 +82,7 @@ namespace QuickStop.Client.Presenters
 
                 view.DisplayHotelBooking(true);
             }
-            catch(Exception ex)
+            catch(Exception ex) // Catches any exception and display the error message.
             {
                 MessageBox.Show("An Error Occured!\r\n" + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -80,15 +91,13 @@ namespace QuickStop.Client.Presenters
         private void RequestCreateHotelBooking(object s, EventArgs e)
         {
             HotelBook hotelBook = view.HotelBookingViewModel.HotelBook;
-            hotelBook.Reference = ReferenceGenerator.Generate(6);
+            hotelBook.Reference = ReferenceGenerator.Generate(6);   // Generates 6-character reference key.
 
             hotelBookingRepository.BookHotel(hotelBook);
             hotelRoomRepository.SetHotelInavailablity(hotelBook.HotelID, hotelBook.CheckOut);
 
-            if (referenceView.DisplayBookingReference(hotelBook.Reference) == DialogResult.OK)
-            {
-                view.CloseView();
-            }
+            referenceView.DisplayBookingReference(hotelBook.Reference);
+            view.CloseView();
         }
     }
 }

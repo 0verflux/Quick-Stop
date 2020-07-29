@@ -22,11 +22,11 @@ namespace QuickStop.Client.Views
             DialogResult = DialogResult.OK;
         }
 
-        DialogResult IReferenceView.DisplayBookingReference(string reference)
+        void IReferenceView.DisplayBookingReference(string reference)
         {
             textBox1.Text = reference;
 
-            return ShowDialog();
+            ShowDialog();
         }
     }
 }

@@ -7,11 +7,20 @@ using QuickStop.Infrastructure.Contracts;
 
 namespace QuickStop.Client.Presenters
 {
+    /// <summary>
+    /// Represents the Presenter for <see cref="Views.HotelRoomDetailsForm"/>.
+    /// </summary>
     public sealed class HotelRoomDetailsPresenter : PresenterBase<IHotelRoomDetailsView>, IHotelRoomDetailsPresenter
     {
         private readonly IHotelRoomRepository hotelRoomRepository;
         private readonly IHotelBookingPresenter hotelBookingPresenter;
 
+        /// <summary>
+        /// Initializes a new instance of <see cref="HotelRoomDetailsPresenter"/>.
+        /// </summary>
+        /// <param name="hotelRoomDetailsView">The view assigned for the presenter.</param>
+        /// <param name="hotelRoomRepository">The repository used for accessing Hotel Room Data.</param>
+        /// <param name="hotelBookingPresenter">The presenter used to interact in <see cref="HotelRoomDetailsPresenter"/>.</param>
         public HotelRoomDetailsPresenter(IHotelRoomDetailsView hotelRoomDetailsView, IHotelRoomRepository hotelRoomRepository, IHotelBookingPresenter hotelBookingPresenter) : base(hotelRoomDetailsView)
         {
             this.hotelRoomRepository = hotelRoomRepository;
@@ -20,23 +29,16 @@ namespace QuickStop.Client.Presenters
             view.RequestHotelBooking += RequestHotelBooking;
         }
 
-        #region Hotel Details Logic
         void IHotelRoomDetailsPresenter.RequestViewHotelRoomDetails(int hotelIndex)
         {
             HotelRoom selectedHotel = hotelRoomRepository.FindHotelByID(hotelIndex);
 
             view.DisplayHotelRoom(selectedHotel);
         }
-        #endregion
 
-        #region Navigation
-        //
-        // Hotel Details -> Reservation
-        //
         private void RequestHotelBooking(object s, HotelSelectedEventArgs e)
         {
             hotelBookingPresenter.RequestHotelBooking(e.Index);
         }
-        #endregion
     }
 }

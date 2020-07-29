@@ -4,6 +4,9 @@ using System;
 
 namespace QuickStop.Client.Views
 {
+    /// <summary>
+    /// Represents the View for <see cref="HotelBookingForm"/>.
+    /// </summary>
     public partial class HotelBookingForm : IHotelBookingView
     {
         #region Events
@@ -18,9 +21,8 @@ namespace QuickStop.Client.Views
 
         public HotelBookingViewModel HotelBookingViewModel { get; set; }
 
-#pragma warning disable CS1066 // The default value specified will have no effect because it applies to a member that is used in contexts that do not allow optional arguments
-        void IHotelBookingView.DisplayHotelBooking(bool isReadOnly = false)
-#pragma warning restore CS1066 // The default value specified will have no effect because it applies to a member that is used in contexts that do not allow optional arguments
+
+        void IHotelBookingView.DisplayHotelBooking(bool isReadOnly)
         {
             numericUpDown1.Enabled = !isReadOnly;
             dateTimePicker1.Enabled = !isReadOnly;

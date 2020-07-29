@@ -1,14 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace QuickStop.Client.Controls
 {
+    /// <summary>
+    /// A Reskinned <see cref="RadioButton"/>, providing the same functions.
+    /// </summary>
     public class RadioToggleButton : RadioButton
     {
+        /// <summary>
+        /// Initializes a new Instance of <see cref="RadioToggleButton"/>.
+        /// </summary>
         public RadioToggleButton() : base()
         {
             Appearance = Appearance.Button;

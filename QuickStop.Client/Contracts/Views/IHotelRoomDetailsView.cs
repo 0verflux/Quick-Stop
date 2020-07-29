@@ -1,19 +1,25 @@
-﻿
-using QuickStop.Components.CustomEventArgs;
+﻿using QuickStop.Components.CustomEventArgs;
 using QuickStop.Domain.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace QuickStop.Client.Contracts.Views
 {
+    /// <summary>
+    /// Represents the View for <see cref="Client.Views.HotelRoomDetailsForm"/>.
+    /// </summary>
     public interface IHotelRoomDetailsView : IView
     {
+        #region Events
+        /// <summary>
+        /// Occurs when the user requests to Book this <see cref="HotelRoom"/>.
+        /// </summary>
         event EventHandler<HotelSelectedEventArgs> RequestHotelBooking;
+        #endregion
 
+        /// <summary>
+        /// Displays the Full Hotel Room Details.
+        /// </summary>
+        /// <param name="hotel">The <see cref="HotelRoom"/> to be viewed.</param>
         void DisplayHotelRoom(HotelRoom hotel);
     }
 }
