@@ -17,7 +17,7 @@ namespace QuickStop.Infrastructure.Contracts
         /// <summary>
         /// Writes all <see cref="HotelRoom"/> data in the Text File.
         /// </summary>
-        /// <param name="hotels">A Collection of <see cref="HotelRoom"/>.</param>
+        /// <param name="hotels">A Collection of <see cref="HotelRoom"/>.</param> 
         void SerializeHotels(IEnumerable<HotelRoom> hotels);
     }
 }

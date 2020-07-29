@@ -12,7 +12,7 @@ namespace QuickStop.Infrastructure.Repositories
         /// <summary>
         /// Initializes a new instance of <see cref="HotelBookingRepository"/> provided with an <see cref="IHotelBookSerializer"/>.
         /// </summary>
-        /// <param name="serializer">The serializer used for accessing data.</param>
+        /// <param name="serializer">The serializer used for accessing data.</param> 
         public HotelBookingRepository(IHotelBookSerializer serializer) : base(serializer)
         {
 

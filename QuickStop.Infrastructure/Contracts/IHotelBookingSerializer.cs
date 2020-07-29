@@ -17,7 +17,7 @@ namespace QuickStop.Infrastructure.Contracts
         /// Finds all Booked Hotel Room by reference key.
         /// </summary>
         /// <param name="reference">The key to be searched with.</param>
-        /// <returns><see cref="HotelBook"/></returns>
+        /// <returns><see cref="HotelBook"/></returns> 
         HotelBook FindBookHotel(string reference);
 
         /// <summary>

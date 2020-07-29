@@ -19,7 +19,7 @@ namespace QuickStop.Infrastructure.Base
         /// </summary>
         /// <param name="baseDirectory">The base directory of the file.</param>
         /// <param name="folder">The folder of a contained file.</param>
-        /// <param name="delimiters">A collection of characters used to read data each delimiter.</param>
+        /// <param name="delimiters">A collection of characters used to read data each delimiter.</param> 
         protected SerializerBase(string baseDirectory, string folder, params char[] delimiters)
         {
             parser = new Regex(",(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))");

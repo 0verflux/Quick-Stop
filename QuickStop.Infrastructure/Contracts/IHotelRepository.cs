@@ -16,7 +16,7 @@ namespace QuickStop.Infrastructure.Contracts
         /// <param name="location">The <see cref="Location"/> to filter the <see cref="HotelRoom"/>.</param>
         /// <param name="guestCount">The guest count to filter the <see cref="HotelRoom"/>.</param>
         /// <param name="sort">The  <see cref="Sort"/> type to sort the <see cref="HotelRoom"/>.</param>
-        /// <returns>A filtered collection of <see cref="HotelRoom"/>.</returns>
+        /// <returns>A filtered collection of <see cref="HotelRoom"/>.</returns> 
         IEnumerable<HotelRoom> GetHotels(Location location, int guestCount, Sort sort);
 
         /// <summary>

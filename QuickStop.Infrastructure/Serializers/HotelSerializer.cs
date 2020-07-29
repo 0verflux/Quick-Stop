@@ -14,7 +14,7 @@ namespace QuickStop.Infrastructure.Serializers
     /// <summary>
     /// Represents a Reader and Writer for <see cref="HotelRoom"/>.
     /// </summary>
-    public sealed class HotelSerializer : SerializerBase, IHotelSerializer
+    public sealed class HotelSerializer : SerializerBase, IHotelSerializer 
     {
         private readonly string fileName;
 

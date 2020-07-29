@@ -13,7 +13,7 @@ namespace QuickStop.Infrastructure.Base
         /// <summary>
         /// Initializes a new Instance of <see cref="RepositoryBase{TEntity}"/>.
         /// </summary>
-        /// <param name="serializer">The serializer used for accessing data.</param>
+        /// <param name="serializer">The serializer used for accessing data.</param> 
         protected RepositoryBase(ISerializer serializer)
         {
             this.serializer = serializer;
