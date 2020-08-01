@@ -23,7 +23,7 @@ namespace QuickStop.Infrastructure.Base
         protected SerializerBase(string baseDirectory, string folder, params char[] delimiters)
         {
             parser = new Regex(",(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))");
-            extension = ".txt";
+            extension = ".quickstop";
 
             this.baseDirectory = baseDirectory;
             this.delimiters = delimiters;
