@@ -7,7 +7,7 @@ namespace QuickStop.Infrastructure.Repositories
     /// <summary>
     /// Provides data access of <see cref="HotelBook"/>.
     /// </summary>
-    public sealed class HotelBookingRepository : RepositoryBase<HotelBook>, IHotelBookingRepository
+    public sealed class HotelBookingRepository : RepositoryBase, IHotelBookingRepository
     {
         /// <summary>
         /// Initializes a new instance of <see cref="HotelBookingRepository"/> provided with an <see cref="IHotelBookSerializer"/>.

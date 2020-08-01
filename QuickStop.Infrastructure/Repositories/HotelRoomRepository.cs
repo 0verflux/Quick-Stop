@@ -11,7 +11,7 @@ namespace QuickStop.Infrastructure.Repositories
     /// <summary>
     /// Provides data access of <see cref="HotelRoom"/>.
     /// </summary>
-    public sealed class HotelRoomRepository : RepositoryBase<HotelRoom>, IHotelRoomRepository
+    public sealed class HotelRoomRepository : RepositoryBase, IHotelRoomRepository
     {
         private IEnumerable<HotelRoom> hotels;
 
