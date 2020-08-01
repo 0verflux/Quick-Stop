@@ -7,15 +7,15 @@ namespace QuickStop.Infrastructure.Base
     /// </summary>
     public abstract class RepositoryBase
     {
-        protected readonly ISerializer serializer;
+        protected readonly IModelStream modelStream;
 
         /// <summary>
         /// Initializes a new Instance of <see cref="RepositoryBase"/>.
         /// </summary>
-        /// <param name="serializer">The serializer used for accessing data.</param> 
-        protected RepositoryBase(ISerializer serializer)
+        /// <param name="modelStream">The stream used for accessing data.</param> 
+        protected RepositoryBase(IModelStream modelStream)
         {
-            this.serializer = serializer;
+            this.modelStream = modelStream;
         }
     }
 }

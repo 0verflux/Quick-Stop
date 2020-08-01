@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace QuickStop.Infrastructure.Contracts
 {
     /// <summary>
-    /// Provides data access of <see cref="HotelRoom"/> between the domain and <see cref="ISerializer"/>.
+    /// Provides data access of <see cref="HotelRoom"/> between the domain and <see cref="IModelStream"/>.
     /// </summary>
     public interface IHotelRoomRepository
     {

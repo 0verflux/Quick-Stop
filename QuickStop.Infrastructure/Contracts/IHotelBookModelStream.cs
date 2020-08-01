@@ -5,7 +5,7 @@ namespace QuickStop.Infrastructure.Contracts
     /// <summary>
     /// Represents a Reader and Writer for <see cref="HotelBook"/>.
     /// </summary>
-    public interface IHotelBookSerializer : ISerializer
+    public interface IHotelBookModelStream : IModelStream
     {
         /// <summary>
         /// Creates a new Booked Hotel Room. 

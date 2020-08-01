@@ -16,12 +16,12 @@ namespace QuickStop.Infrastructure.Repositories
         private IEnumerable<HotelRoom> hotels;
 
         /// <summary>
-        /// Initializes a new instance of <see cref="HotelRoomRepository"/> provided with an <see cref="IHotelSerializer"/>.
+        /// Initializes a new instance of <see cref="HotelRoomRepository"/> provided with an <see cref="IHotelRoomModelStream"/>.
         /// </summary>
-        /// <param name="serializer">The serializer used for accessing data.</param> 
-        public HotelRoomRepository(IHotelSerializer serializer) : base(serializer)
+        /// <param name="hotelModelStream">The stream used for accessing data.</param> 
+        public HotelRoomRepository(IHotelRoomModelStream hotelModelStream) : base(hotelModelStream)
         {
-            hotels = (base.serializer as IHotelSerializer).DeserializeHotels();
+            hotels = (modelStream as IHotelRoomModelStream).ReadAllHotels();
         }
 
         IEnumerable<HotelRoom> IHotelRoomRepository.GetHotels(Location location, int guestCount, Sort sort)
@@ -50,7 +50,7 @@ namespace QuickStop.Infrastructure.Repositories
 
         void IHotelRoomRepository.Save()
         {
-            (serializer as IHotelSerializer).SerializeHotels(hotels);
+            (modelStream as IHotelRoomModelStream).WriteAllHotels(hotels);
         }
 
         HotelRoom IHotelRoomRepository.FindHotelByID(int id)

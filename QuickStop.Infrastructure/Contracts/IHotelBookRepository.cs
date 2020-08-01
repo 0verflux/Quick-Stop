@@ -3,9 +3,9 @@
 namespace QuickStop.Infrastructure.Contracts
 {
     /// <summary>
-    /// Provides data access of <see cref="HotelBook"/> between the domain and <see cref="ISerializer"/>.
+    /// Provides data access of <see cref="HotelBook"/> between the domain and <see cref="IModelStream"/>.
     /// </summary>
-    public interface IHotelBookingRepository
+    public interface IHotelBookRepository
     {
         /// <summary>
         /// Books a selected <see cref="HotelRoom"/>.

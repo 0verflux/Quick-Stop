@@ -1,9 +1,9 @@
 ﻿namespace QuickStop.Infrastructure.Contracts
 {
     /// <summary>
-    /// Represents a Serializer for reading and writing Text Files.
+    /// Represents a Model Parser for reading and writing Text Files.
     /// </summary>
-    public interface ISerializer
+    public interface IModelStream
     {
          
     }

@@ -4,9 +4,9 @@ using System.Text.RegularExpressions;
 namespace QuickStop.Infrastructure.Base
 {
     /// <summary>
-    /// Provides a Base class for <see cref="Contracts.ISerializer"/>.
+    /// Provides a Base class for <see cref="Contracts.IModelStream"/>.
     /// </summary>
-    public abstract class SerializerBase
+    public abstract class ModelStreamBase
     {
         protected readonly Regex parser;
         protected readonly string baseDirectory;
@@ -15,21 +15,21 @@ namespace QuickStop.Infrastructure.Base
         protected readonly char[] delimiters;
         
         /// <summary>
-        /// Initializes a new instance of <see cref="SerializerBase"/>.
+        /// Initializes a new instance of <see cref="ModelStreamBase"/>.
         /// </summary>
         /// <param name="baseDirectory">The base directory of the file.</param>
-        /// <param name="folder">The folder of a contained file.</param>
+        /// <param name="folderDirectory">The folder of a contained file.</param>
         /// <param name="delimiters">A collection of characters used to read data each delimiter.</param> 
-        protected SerializerBase(string baseDirectory, string folder, params char[] delimiters)
+        protected ModelStreamBase(string baseDirectory, string folderDirectory, params char[] delimiters)
         {
             parser = new Regex(",(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))");
-            extension = ".quickstop";
+            extension = ".txt";
 
             this.baseDirectory = baseDirectory;
             this.delimiters = delimiters;
-            this.folder = folder;
+            this.folder = folderDirectory;
 
-            Directory.CreateDirectory(baseDirectory + folder);
+            Directory.CreateDirectory(baseDirectory + folderDirectory);
         }
 
         /// <summary>
