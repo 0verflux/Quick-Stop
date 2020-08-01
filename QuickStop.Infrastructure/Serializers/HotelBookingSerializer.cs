@@ -70,12 +70,5 @@ namespace QuickStop.Infrastructure.Serializers
                 throw new HotelBookReferenceNotFoundException();
             }
         }
-
-        bool IHotelBookSerializer.BookHotelExists(string reference)
-        {
-            string file = FilePath(reference);
-
-            return File.Exists(file);
-        }
     }
 }

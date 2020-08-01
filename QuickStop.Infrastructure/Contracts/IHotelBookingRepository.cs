@@ -19,12 +19,5 @@ namespace QuickStop.Infrastructure.Contracts
         /// <param name="reference">The key used to find a booked Hotel.</param> 
         /// <returns><see cref="HotelBook"/></returns>
         HotelBook FindBookHotel(string reference);
-
-        /// <summary>
-        /// Checks if a certain Booked Hotel Room exists.
-        /// </summary>
-        /// <param name="reference">The key used to find a booked Hotel.</param>
-        /// <returns></returns>
-        bool BookHotelExists(string reference);
     }
 }

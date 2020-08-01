@@ -27,10 +27,5 @@ namespace QuickStop.Infrastructure.Repositories
         {
             return (serializer as IHotelBookSerializer).FindBookHotel(reference);
         }
-
-        bool IHotelBookingRepository.BookHotelExists(string reference)
-        {
-            return (serializer as IHotelBookSerializer).BookHotelExists(reference);
-        }
     }
 }
