@@ -4,7 +4,7 @@ using QuickStop.Client.Presenters;
 using QuickStop.Client.Views;
 using QuickStop.Infrastructure.Contracts;
 using QuickStop.Infrastructure.Repositories;
-using QuickStop.Infrastructure.Serializers;
+using QuickStop.Infrastructure.ModelStreams;
 using System;
 using System.IO;
 using System.Windows.Forms;
@@ -47,14 +47,14 @@ namespace QuickStop.Client
 #if DEBUG
                 .AddExtension(new Diagnostic()) // Necessary if a Certain Dependency Fails to Resolve or something.
 #endif
-                .RegisterType<IHotelSerializer, HotelSerializer>(new InjectionConstructor(baseDirectory))
-                .RegisterType<IHotelBookSerializer, HotelBookingSerializer>(new InjectionConstructor(baseDirectory))
+                .RegisterType<IHotelRoomModelStream, HotelRoomModelStream>(new InjectionConstructor(baseDirectory))
+                .RegisterType<IHotelBookModelStream, HotelBookModelStream>(new InjectionConstructor(baseDirectory))
                 .RegisterType<IMainView, MainForm>(new ContainerControlledLifetimeManager())
                 .RegisterType<IHotelRoomDetailsView, HotelRoomDetailsForm>(new ContainerControlledLifetimeManager())
                 .RegisterType<IHotelBookingView, HotelBookingForm>(new ContainerControlledLifetimeManager())
                 .RegisterType<IReferenceView, ReferenceForm>(new ContainerControlledLifetimeManager())
                 .RegisterType<IHotelRoomRepository, HotelRoomRepository>(new ContainerControlledLifetimeManager())
-                .RegisterType<IHotelBookingRepository, HotelBookingRepository>(new ContainerControlledLifetimeManager())
+                .RegisterType<IHotelBookRepository, HotelBookRepository>(new ContainerControlledLifetimeManager())
                 .RegisterType<IHotelBookingPresenter, HotelBookingPresenter>(new ContainerControlledLifetimeManager())
                 .RegisterType<IHotelRoomDetailsPresenter, HotelRoomDetailsPresenter>(new ContainerControlledLifetimeManager())
                 .RegisterType<IMainPresenter, MainPresenter>(new ContainerControlledLifetimeManager());

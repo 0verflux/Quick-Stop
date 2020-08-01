@@ -16,7 +16,7 @@ namespace QuickStop.Client.Presenters
     public sealed class HotelBookingPresenter : PresenterBase<IHotelBookingView>, IHotelBookingPresenter
     {
         private readonly IHotelRoomRepository hotelRoomRepository;
-        private readonly IHotelBookingRepository hotelBookingRepository;
+        private readonly IHotelBookRepository hotelBookingRepository;
         private readonly IReferenceView referenceView;
 
         /// <summary>
@@ -26,7 +26,7 @@ namespace QuickStop.Client.Presenters
         /// <param name="hotelRoomRepository">The repository used for accessing the Hotel Room Data.</param>
         /// <param name="hotelBookingRepository">The repository used for accessing the Booked Hotel Room Data.</param>
         /// <param name="referenceView">The view assigned to show the final output.</param>
-        public HotelBookingPresenter(IHotelBookingView hotelBookingView, IHotelRoomRepository hotelRoomRepository, IHotelBookingRepository hotelBookingRepository, IReferenceView referenceView) : base(hotelBookingView)
+        public HotelBookingPresenter(IHotelBookingView hotelBookingView, IHotelRoomRepository hotelRoomRepository, IHotelBookRepository hotelBookingRepository, IReferenceView referenceView) : base(hotelBookingView)
         {
             this.hotelRoomRepository = hotelRoomRepository;
             this.hotelBookingRepository = hotelBookingRepository;
