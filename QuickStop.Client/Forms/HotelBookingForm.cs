@@ -11,35 +11,35 @@ namespace QuickStop.Client.Views
         {
             InitializeComponent();
 
-            dateTimePicker2.MinDate = DateTime.Now;
+            CheckInDatePicker.MinDate = DateTime.Now;
         }
 
         private void OnLoad(object sender, EventArgs e)
         {
-            label7.DataBindings.Clear();
-            label4.DataBindings.Clear();
-            label10.DataBindings.Clear();
-            label13.DataBindings.Clear();
-            pictureBox1.DataBindings.Clear();
-            numericUpDown1.DataBindings.Clear();
-            dateTimePicker1.DataBindings.Clear();
-            dateTimePicker2.DataBindings.Clear();
+            HotelRoomName.DataBindings.Clear();
+            HotelRoomDescription.DataBindings.Clear();
+            HotelRoomLocation.DataBindings.Clear();
+            HotelRoomTotalCost.DataBindings.Clear();
+            HotelRoomImage.DataBindings.Clear();
+            GuestCountPicker.DataBindings.Clear();
+            CheckOutDatePicker.DataBindings.Clear();
+            CheckInDatePicker.DataBindings.Clear();
 
-            label7.DataBindings.Add("Text", HotelBookDTO, "HotelName", true, DataSourceUpdateMode.OnPropertyChanged);
-            label4.DataBindings.Add("Text", HotelBookDTO, "HotelDescription", true, DataSourceUpdateMode.OnPropertyChanged);
-            label10.DataBindings.Add("Text", HotelBookDTO, "HotelLocation", true, DataSourceUpdateMode.OnPropertyChanged);
-            label13.DataBindings.Add("Text", HotelBookDTO, "TotalCost", true, DataSourceUpdateMode.OnPropertyChanged, 0m, "C2");
-            pictureBox1.DataBindings.Add("Image", HotelBookDTO, "HotelRoomImage", true, DataSourceUpdateMode.OnPropertyChanged);
-            numericUpDown1.DataBindings.Add("Minimum", HotelBookDTO, "MinimumGuestCount", false, DataSourceUpdateMode.OnPropertyChanged, 1);
-            numericUpDown1.DataBindings.Add("Maximum", HotelBookDTO, "MaximumGuestCount", false, DataSourceUpdateMode.OnPropertyChanged, 100);
-            numericUpDown1.DataBindings.Add("Value", HotelBookDTO, "GuestCount", false, DataSourceUpdateMode.OnPropertyChanged, 1);
-            dateTimePicker1.DataBindings.Add("Value", HotelBookDTO, "CheckOut", true, DataSourceUpdateMode.OnPropertyChanged);
-            dateTimePicker2.DataBindings.Add("Value", HotelBookDTO, "CheckIn", true, DataSourceUpdateMode.OnPropertyChanged);
+            HotelRoomName.DataBindings.Add("Text", HotelBookDTO, "HotelName", true, DataSourceUpdateMode.OnPropertyChanged);
+            HotelRoomDescription.DataBindings.Add("Text", HotelBookDTO, "HotelDescription", true, DataSourceUpdateMode.OnPropertyChanged);
+            HotelRoomLocation.DataBindings.Add("Text", HotelBookDTO, "HotelLocation", true, DataSourceUpdateMode.OnPropertyChanged);
+            HotelRoomTotalCost.DataBindings.Add("Text", HotelBookDTO, "TotalCost", true, DataSourceUpdateMode.OnPropertyChanged, 0m, "C2");
+            HotelRoomImage.DataBindings.Add("Image", HotelBookDTO, "HotelRoomImage", true, DataSourceUpdateMode.OnPropertyChanged);
+            GuestCountPicker.DataBindings.Add("Minimum", HotelBookDTO, "MinimumGuestCount", false, DataSourceUpdateMode.OnPropertyChanged, 1);
+            GuestCountPicker.DataBindings.Add("Maximum", HotelBookDTO, "MaximumGuestCount", false, DataSourceUpdateMode.OnPropertyChanged, 100);
+            GuestCountPicker.DataBindings.Add("Value", HotelBookDTO, "GuestCount", false, DataSourceUpdateMode.OnPropertyChanged, 1);
+            CheckOutDatePicker.DataBindings.Add("Value", HotelBookDTO, "CheckOut", true, DataSourceUpdateMode.OnPropertyChanged);
+            CheckInDatePicker.DataBindings.Add("Value", HotelBookDTO, "CheckIn", true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
         private void UpdateDatePickerMinimumDate(object sender, EventArgs e)
         {
-            dateTimePicker1.MinDate = dateTimePicker2.Value.AddDays(1);
+            CheckOutDatePicker.MinDate = CheckInDatePicker.Value.AddDays(1);
         }
 
         private void NotifyInputChanged(object sender, EventArgs e)

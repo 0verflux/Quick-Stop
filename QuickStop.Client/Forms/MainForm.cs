@@ -15,7 +15,7 @@ namespace QuickStop.Client.Views
 
         private void QueryHotels(object sender, EventArgs e)
         {
-            RequestLoadHotels?.Invoke(sender, new HotelFilterEventArgs(selectedLocation, (int)numericUpDown2.Value, sort));
+            RequestLoadHotels?.Invoke(sender, new HotelFilterEventArgs(selectedLocation, (int)GuestCountPicker.Value, sort));
         }
 
         private void ViewSelectedHotel(object sender, HotelSelectedEventArgs e)
@@ -51,7 +51,7 @@ namespace QuickStop.Client.Views
 
         private void ViewReservationByReference(object sender, EventArgs e)
         {
-            RequestViewReservation?.Invoke(sender, new BookReferenceEventArgs(textBox1.Text));
+            RequestViewReservation?.Invoke(sender, new BookReferenceEventArgs(ReferenceTextBox.Text));
         }
     }
 }

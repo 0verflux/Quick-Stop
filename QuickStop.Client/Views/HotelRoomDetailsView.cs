@@ -25,13 +25,13 @@ namespace QuickStop.Client.Views
         {
             Tag = hotel.ID.ToString();
 
-            label1.Text = hotel.Name;
-            label2.Text = hotel.Description;
-            label4.Text = $"{hotel.Price:C2}/Night";
-            label5.Text = $"{new string('★', hotel.Ratings)}{new string('☆', 5-hotel.Ratings)}";
-            label7.Text = hotel.Location.ToString();
-            label8.Text = $"{hotel.MinGuestCount} - {hotel.MaxGuestCount} guests";
-            pictureBox1.Image = hotel.Room.ConvertToImage();
+            HotelRoomName.Text = hotel.Name;
+            HotelRoomDescription.Text = hotel.Description;
+            HotelRoomPrice.Text = $"{hotel.Price:C2}/Night";
+            HotelRatings.Text = $"{new string('★', hotel.Ratings)}{new string('☆', 5-hotel.Ratings)}";
+            HotelRoomLocation.Text = hotel.Location.ToString();
+            HotelRoomGuestCount.Text = $"{hotel.MinGuestCount} - {hotel.MaxGuestCount} guests";
+            HotelRoomImage.Image = hotel.Room.ConvertToImage();
 
             ShowDialog();
         }

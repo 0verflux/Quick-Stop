@@ -24,10 +24,10 @@ namespace QuickStop.Client.Views
 
         void IHotelBookingView.DisplayHotelBooking(bool isReadOnly)
         {
-            numericUpDown1.Enabled = !isReadOnly;
-            dateTimePicker1.Enabled = !isReadOnly;
-            dateTimePicker2.Enabled = !isReadOnly;
-            button1.Visible = !isReadOnly;
+            GuestCountPicker.Enabled = !isReadOnly;
+            CheckOutDatePicker.Enabled = !isReadOnly;
+            CheckInDatePicker.Enabled = !isReadOnly;
+            ReserveButton.Visible = !isReadOnly;
             label2.Visible = !isReadOnly;
 
             ShowDialog();

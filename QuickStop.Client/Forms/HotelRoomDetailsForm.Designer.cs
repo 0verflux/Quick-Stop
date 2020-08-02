@@ -28,57 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.HotelRoomName = new System.Windows.Forms.Label();
+            this.SelectHotelRoomButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.HotelRoomImage = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.HotelRoomDescription = new System.Windows.Forms.Label();
+            this.HotelRoomPrice = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.HotelRoomLocation = new System.Windows.Forms.Label();
+            this.HotelRatings = new System.Windows.Forms.Label();
+            this.HotelRoomGuestCount = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HotelRoomImage)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // HotelRoomName
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(66)))), ((int)(((byte)(60)))));
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(195)))), ((int)(((byte)(100)))));
-            this.label1.Location = new System.Drawing.Point(12, 12);
-            this.label1.Margin = new System.Windows.Forms.Padding(12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(647, 37);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "HOTEL NAME";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.HotelRoomName.AutoSize = true;
+            this.HotelRoomName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(66)))), ((int)(((byte)(60)))));
+            this.HotelRoomName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.HotelRoomName.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HotelRoomName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(195)))), ((int)(((byte)(100)))));
+            this.HotelRoomName.Location = new System.Drawing.Point(12, 12);
+            this.HotelRoomName.Margin = new System.Windows.Forms.Padding(12);
+            this.HotelRoomName.Name = "HotelRoomName";
+            this.HotelRoomName.Size = new System.Drawing.Size(647, 37);
+            this.HotelRoomName.TabIndex = 1;
+            this.HotelRoomName.Text = "HOTEL NAME";
+            this.HotelRoomName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button1
+            // SelectHotelRoomButton
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(66)))), ((int)(((byte)(60)))));
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(195)))), ((int)(((byte)(100)))));
-            this.button1.Location = new System.Drawing.Point(445, 439);
-            this.button1.Margin = new System.Windows.Forms.Padding(6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(220, 49);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "SELECT ROOM";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.BookHotelOnClick);
+            this.SelectHotelRoomButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(66)))), ((int)(((byte)(60)))));
+            this.SelectHotelRoomButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SelectHotelRoomButton.FlatAppearance.BorderSize = 0;
+            this.SelectHotelRoomButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SelectHotelRoomButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SelectHotelRoomButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(195)))), ((int)(((byte)(100)))));
+            this.SelectHotelRoomButton.Location = new System.Drawing.Point(445, 439);
+            this.SelectHotelRoomButton.Margin = new System.Windows.Forms.Padding(6);
+            this.SelectHotelRoomButton.Name = "SelectHotelRoomButton";
+            this.SelectHotelRoomButton.Size = new System.Drawing.Size(220, 49);
+            this.SelectHotelRoomButton.TabIndex = 3;
+            this.SelectHotelRoomButton.Text = "SELECT ROOM";
+            this.SelectHotelRoomButton.UseVisualStyleBackColor = false;
+            this.SelectHotelRoomButton.Click += new System.EventHandler(this.BookHotelOnClick);
             // 
             // label3
             // 
@@ -102,10 +102,10 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.90611F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.51863F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.42623F));
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.button1, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.HotelRoomImage, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.SelectHotelRoomButton, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.HotelRoomPrice, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -118,18 +118,18 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(671, 494);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
-            // pictureBox1
+            // HotelRoomImage
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(46)))), ((int)(((byte)(56)))));
-            this.tableLayoutPanel1.SetColumnSpan(this.pictureBox1, 2);
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(355, 113);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(316, 320);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.HotelRoomImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(46)))), ((int)(((byte)(56)))));
+            this.tableLayoutPanel1.SetColumnSpan(this.HotelRoomImage, 2);
+            this.HotelRoomImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.HotelRoomImage.Location = new System.Drawing.Point(355, 113);
+            this.HotelRoomImage.Margin = new System.Windows.Forms.Padding(0);
+            this.HotelRoomImage.Name = "HotelRoomImage";
+            this.HotelRoomImage.Size = new System.Drawing.Size(316, 320);
+            this.HotelRoomImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.HotelRoomImage.TabIndex = 0;
+            this.HotelRoomImage.TabStop = false;
             // 
             // tableLayoutPanel2
             // 
@@ -138,7 +138,7 @@
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Controls.Add(this.label3, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label2, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.HotelRoomDescription, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 113);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
@@ -151,33 +151,33 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(355, 320);
             this.tableLayoutPanel2.TabIndex = 8;
             // 
-            // label2
+            // HotelRoomDescription
             // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.OldLace;
-            this.label2.Location = new System.Drawing.Point(6, 50);
-            this.label2.Margin = new System.Windows.Forms.Padding(6);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(343, 264);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "label2";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.HotelRoomDescription.AutoSize = true;
+            this.HotelRoomDescription.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.HotelRoomDescription.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HotelRoomDescription.ForeColor = System.Drawing.Color.OldLace;
+            this.HotelRoomDescription.Location = new System.Drawing.Point(6, 50);
+            this.HotelRoomDescription.Margin = new System.Windows.Forms.Padding(6);
+            this.HotelRoomDescription.Name = "HotelRoomDescription";
+            this.HotelRoomDescription.Size = new System.Drawing.Size(343, 264);
+            this.HotelRoomDescription.TabIndex = 7;
+            this.HotelRoomDescription.Text = "label2";
+            this.HotelRoomDescription.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label4
+            // HotelRoomPrice
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.OldLace;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(66)))), ((int)(((byte)(60)))));
-            this.label4.Location = new System.Drawing.Point(3, 433);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(349, 61);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Price";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.HotelRoomPrice.AutoSize = true;
+            this.HotelRoomPrice.BackColor = System.Drawing.Color.OldLace;
+            this.HotelRoomPrice.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.HotelRoomPrice.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HotelRoomPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(66)))), ((int)(((byte)(60)))));
+            this.HotelRoomPrice.Location = new System.Drawing.Point(3, 433);
+            this.HotelRoomPrice.Name = "HotelRoomPrice";
+            this.HotelRoomPrice.Size = new System.Drawing.Size(349, 61);
+            this.HotelRoomPrice.TabIndex = 2;
+            this.HotelRoomPrice.Text = "Price";
+            this.HotelRoomPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel4
             // 
@@ -185,7 +185,7 @@
             this.tableLayoutPanel4.ColumnCount = 1;
             this.tableLayoutPanel1.SetColumnSpan(this.tableLayoutPanel4, 3);
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.HotelRoomName, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel3, 0, 1);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
@@ -204,9 +204,9 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.Controls.Add(this.label7, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label5, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label8, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.HotelRoomLocation, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.HotelRatings, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.HotelRoomGuestCount, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 61);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
@@ -216,52 +216,52 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(671, 44);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
-            // label7
+            // HotelRoomLocation
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(163)))), ((int)(((byte)(168)))));
-            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.OldLace;
-            this.label7.Location = new System.Drawing.Point(446, 0);
-            this.label7.Margin = new System.Windows.Forms.Padding(0);
-            this.label7.Name = "label7";
-            this.label7.Padding = new System.Windows.Forms.Padding(6);
-            this.label7.Size = new System.Drawing.Size(225, 44);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "LOCATION";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.HotelRoomLocation.AutoSize = true;
+            this.HotelRoomLocation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(163)))), ((int)(((byte)(168)))));
+            this.HotelRoomLocation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.HotelRoomLocation.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HotelRoomLocation.ForeColor = System.Drawing.Color.OldLace;
+            this.HotelRoomLocation.Location = new System.Drawing.Point(446, 0);
+            this.HotelRoomLocation.Margin = new System.Windows.Forms.Padding(0);
+            this.HotelRoomLocation.Name = "HotelRoomLocation";
+            this.HotelRoomLocation.Padding = new System.Windows.Forms.Padding(6);
+            this.HotelRoomLocation.Size = new System.Drawing.Size(225, 44);
+            this.HotelRoomLocation.TabIndex = 10;
+            this.HotelRoomLocation.Text = "LOCATION";
+            this.HotelRoomLocation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label5
+            // HotelRatings
             // 
-            this.label5.AutoSize = true;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.OldLace;
-            this.label5.Location = new System.Drawing.Point(223, 0);
-            this.label5.Margin = new System.Windows.Forms.Padding(0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(223, 44);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Ratings";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.HotelRatings.AutoSize = true;
+            this.HotelRatings.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.HotelRatings.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HotelRatings.ForeColor = System.Drawing.Color.OldLace;
+            this.HotelRatings.Location = new System.Drawing.Point(223, 0);
+            this.HotelRatings.Margin = new System.Windows.Forms.Padding(0);
+            this.HotelRatings.Name = "HotelRatings";
+            this.HotelRatings.Size = new System.Drawing.Size(223, 44);
+            this.HotelRatings.TabIndex = 7;
+            this.HotelRatings.Text = "Ratings";
+            this.HotelRatings.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label8
+            // HotelRoomGuestCount
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(163)))), ((int)(((byte)(168)))));
-            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.OldLace;
-            this.label8.Location = new System.Drawing.Point(0, 0);
-            this.label8.Margin = new System.Windows.Forms.Padding(0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(223, 44);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "label8";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.HotelRoomGuestCount.AutoSize = true;
+            this.HotelRoomGuestCount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(163)))), ((int)(((byte)(168)))));
+            this.HotelRoomGuestCount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.HotelRoomGuestCount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HotelRoomGuestCount.ForeColor = System.Drawing.Color.OldLace;
+            this.HotelRoomGuestCount.Location = new System.Drawing.Point(0, 0);
+            this.HotelRoomGuestCount.Margin = new System.Windows.Forms.Padding(0);
+            this.HotelRoomGuestCount.Name = "HotelRoomGuestCount";
+            this.HotelRoomGuestCount.Size = new System.Drawing.Size(223, 44);
+            this.HotelRoomGuestCount.TabIndex = 9;
+            this.HotelRoomGuestCount.Text = "label8";
+            this.HotelRoomGuestCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // HotelDetailsForm
+            // HotelRoomDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -269,12 +269,12 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "HotelDetailsForm";
+            this.Name = "HotelRoomDetailsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Quick Stop: Hotel Details";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HotelRoomImage)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
@@ -288,18 +288,18 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox HotelRoomImage;
+        private System.Windows.Forms.Label HotelRoomName;
+        private System.Windows.Forms.Button SelectHotelRoomButton;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label HotelRoomPrice;
+        private System.Windows.Forms.Label HotelRatings;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label HotelRoomDescription;
+        private System.Windows.Forms.Label HotelRoomGuestCount;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label HotelRoomLocation;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
     }
 }

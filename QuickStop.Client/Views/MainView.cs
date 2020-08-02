@@ -50,7 +50,7 @@ namespace QuickStop.Client.Views
             SuspendLayout();
             
             // Clears the current hotel card in the panel.
-            flowLayoutPanel1.Controls.Clear();
+            HotelCardPanel.Controls.Clear();
 
             // Checks if the list is empty, then the scope exits in this line.
             if (hotels == null) return;
@@ -68,7 +68,7 @@ namespace QuickStop.Client.Views
                 hotelCard.HotelSelected += ViewSelectedHotel;
 
                 // Inserts the created Hotel Card.
-                flowLayoutPanel1.Controls.Add(hotelCard);
+                HotelCardPanel.Controls.Add(hotelCard);
             }
 
             // Resumes the layout.
