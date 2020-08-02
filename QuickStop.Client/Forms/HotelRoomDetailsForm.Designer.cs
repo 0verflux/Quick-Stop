@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HotelRoomDetailsForm));
             this.HotelRoomName = new System.Windows.Forms.Label();
             this.SelectHotelRoomButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -268,6 +269,7 @@
             this.ClientSize = new System.Drawing.Size(671, 494);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "HotelRoomDetailsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
