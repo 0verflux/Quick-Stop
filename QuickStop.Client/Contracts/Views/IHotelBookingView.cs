@@ -1,4 +1,4 @@
-﻿using QuickStop.Client.ViewModels;
+﻿using QuickStop.Client.DTO;
 using System;
 
 namespace QuickStop.Client.Contracts.Views
@@ -16,9 +16,9 @@ namespace QuickStop.Client.Contracts.Views
         #endregion
 
         /// <summary>
-        /// Provides a Two-Way Interaction of <see cref="ViewModels.HotelBookingViewModel"/> from the View and Presenter.
+        /// Provides a Two-Way Interaction of <see cref="DTO.HotelBookDTO"/> from the View and Presenter.
         /// </summary>
-        HotelBookingViewModel HotelBookingViewModel { get; set; }
+        HotelBookDTO HotelBookDTO { get; set; }
 
         /// <summary>
         /// Displays the Hotel Room Booking Details.

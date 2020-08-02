@@ -1,5 +1,5 @@
 ﻿using QuickStop.Client.Contracts.Views;
-using QuickStop.Client.ViewModels;
+using QuickStop.Client.DTO;
 using System;
 
 namespace QuickStop.Client.Views
@@ -19,7 +19,7 @@ namespace QuickStop.Client.Views
         }
         #endregion
 
-        public HotelBookingViewModel HotelBookingViewModel { get; set; }
+        public HotelBookDTO HotelBookDTO { get; set; }
 
 
         void IHotelBookingView.DisplayHotelBooking(bool isReadOnly)

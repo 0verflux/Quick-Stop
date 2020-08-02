@@ -3,12 +3,12 @@ using System;
 using System.ComponentModel;
 using System.Drawing;
 
-namespace QuickStop.Client.ViewModels
+namespace QuickStop.Client.DTO
 {
     /// <summary>
-    /// A View Model for <see cref="Domain.Models.HotelBook"/> to listen each time a property changes.
+    /// A Data Transfer Object for <see cref="Domain.Models.HotelBook"/> to listen each time a property changes.
     /// </summary>
-    public class HotelBookingViewModel : INotifyPropertyChanged
+    public class HotelBookDTO : INotifyPropertyChanged
     {
         private int minimumGuestCount;
         private int maximumGuestCount;
@@ -23,27 +23,27 @@ namespace QuickStop.Client.ViewModels
         public HotelBook HotelBook { get; }
 
         /// <summary>
-        /// Initializes a new instance of <see cref="HotelBookingViewModel"/>.
+        /// Initializes a new instance of <see cref="HotelBookDTO"/>.
         /// </summary>
-        public HotelBookingViewModel() : this(new HotelBook())
+        public HotelBookDTO() : this(new HotelBook())
         {
 
         }
 
         /// <summary>
-        /// Initializes a new instance of <see cref="HotelBookingViewModel"/>, provided with the Hotel ID.
+        /// Initializes a new instance of <see cref="HotelBookDTO"/>, provided with the Hotel ID.
         /// </summary>
         /// <param name="hotelID">The hotel ID to be booked.</param>
-        public HotelBookingViewModel(int hotelID) : this(new HotelBook { HotelID = hotelID })
+        public HotelBookDTO(int hotelID) : this(new HotelBook { HotelID = hotelID })
         {
 
         }
 
         /// <summary>
-        /// Initializes a new instance of <see cref="HotelBookingViewModel"/>, with an existing <see cref="Domain.Models.HotelBook"/>.
+        /// Initializes a new instance of <see cref="HotelBookDTO"/>, with an existing <see cref="Domain.Models.HotelBook"/>.
         /// </summary>
         /// <param name="hotelBook">The <see cref="Domain.Models.HotelBook"/> to be assigned.</param>
-        public HotelBookingViewModel(HotelBook hotelBook)
+        public HotelBookDTO(HotelBook hotelBook)
         {
             HotelBook = hotelBook;
         }

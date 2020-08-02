@@ -99,7 +99,7 @@
     <Compile Include="Presenters\HotelBookingPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\HotelBookingViewModel.cs" />
+    <Compile Include="DTO\HotelBookDTO.cs" />
     <Compile Include="Views\HotelRoomDetailsView.cs">
       <SubType>Form</SubType>
     </Compile>

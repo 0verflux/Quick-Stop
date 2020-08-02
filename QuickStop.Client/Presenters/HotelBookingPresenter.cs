@@ -1,7 +1,7 @@
 ﻿using QuickStop.Client.Base;
 using QuickStop.Client.Contracts.Presenters;
 using QuickStop.Client.Contracts.Views;
-using QuickStop.Client.ViewModels;
+using QuickStop.Client.DTO;
 using QuickStop.Components.Helpers;
 using QuickStop.Domain.Models;
 using QuickStop.Infrastructure.Contracts;
@@ -39,21 +39,21 @@ namespace QuickStop.Client.Presenters
         {
             HotelRoom selectedHotel = hotelRoomRepository.FindHotelByID(hotelIndex);
 
-            // Assigns a new Instance of HotelBookingViewModel, and updates the Control's Value that is Binded for Hotel Booking Details Form.
-            view.HotelBookingViewModel = new HotelBookingViewModel(hotelIndex)
-            {
-                HotelName = selectedHotel.Name,
-                Cost = selectedHotel.Price,
-                HotelDescription = selectedHotel.Description,
-                HotelLocation = selectedHotel.Location.ToString(),
-                HotelRoomImage = selectedHotel.Room.ConvertToImage(),
-                MinimumGuestCount = selectedHotel.MinGuestCount,
-                MaximumGuestCount = selectedHotel.MaxGuestCount,
-                GuestCount = selectedHotel.MinGuestCount,
-                TotalCost = selectedHotel.Price,
-                CheckIn = DateTime.Now,
-                CheckOut = DateTime.Now.AddDays(1)
-            };
+            // Assigns a new Instance of HotelBookDTO, and updates the Control's Value that is Binded for Hotel Booking Details Form.
+            view.HotelBookDTO = new HotelBookDTO(hotelIndex);
+
+            view.HotelBookDTO.HotelName = selectedHotel.Name;
+            view.HotelBookDTO.Cost = selectedHotel.Price;
+            view.HotelBookDTO.HotelDescription = selectedHotel.Description;
+            view.HotelBookDTO.HotelLocation = selectedHotel.Location.ToString();
+            view.HotelBookDTO.HotelRoomImage = selectedHotel.Room.ConvertToImage();
+            view.HotelBookDTO.MinimumGuestCount = selectedHotel.MinGuestCount;
+            view.HotelBookDTO.MaximumGuestCount = selectedHotel.MaxGuestCount;
+            view.HotelBookDTO.GuestCount = selectedHotel.MinGuestCount;
+            view.HotelBookDTO.TotalCost = selectedHotel.Price;
+            view.HotelBookDTO.CheckIn = DateTime.Now;
+            view.HotelBookDTO.CheckOut = DateTime.Now.AddDays(1);
+
 
             view.DisplayHotelBooking();
         }
@@ -65,20 +65,20 @@ namespace QuickStop.Client.Presenters
                 HotelBook reservation = hotelBookingRepository.FindBookHotel(reference);
                 HotelRoom hotel = hotelRoomRepository.FindHotelByID(reservation.HotelID);
 
-                // Creates a new Instance of HotelBookingViewModel, and updates the Control's Value for Hotel Booking Details Form.
-                view.HotelBookingViewModel = new HotelBookingViewModel(hotel.ID)
-                {
-                    HotelName = hotel.Name,
-                    HotelDescription = hotel.Description,
-                    HotelLocation = hotel.Location.ToString(),
-                    HotelRoomImage = hotel.Room.ConvertToImage(),
-                    MinimumGuestCount = hotel.MinGuestCount,
-                    MaximumGuestCount = hotel.MaxGuestCount,
-                    GuestCount = reservation.GuestCount,
-                    CheckIn = reservation.CheckIn,
-                    CheckOut = reservation.CheckOut,
-                    TotalCost = reservation.TotalCost
-                };
+                // Creates a new Instance of HotelBooDTO, and updates the Control's Value for Hotel Booking Details Form.
+                view.HotelBookDTO = new HotelBookDTO(hotel.ID);
+
+                view.HotelBookDTO.HotelName = hotel.Name;
+                view.HotelBookDTO.HotelDescription = hotel.Description;
+                view.HotelBookDTO.HotelLocation = hotel.Location.ToString();
+                view.HotelBookDTO.HotelRoomImage = hotel.Room.ConvertToImage();
+                view.HotelBookDTO.MinimumGuestCount = hotel.MinGuestCount;
+                view.HotelBookDTO.MaximumGuestCount = hotel.MaxGuestCount;
+                view.HotelBookDTO.GuestCount = reservation.GuestCount;
+                view.HotelBookDTO.CheckIn = reservation.CheckIn;
+                view.HotelBookDTO.CheckOut = reservation.CheckOut;
+                view.HotelBookDTO.TotalCost = reservation.TotalCost;
+                
 
                 view.DisplayHotelBooking(true);
             }
@@ -90,7 +90,7 @@ namespace QuickStop.Client.Presenters
 
         private void RequestCreateHotelBooking(object s, EventArgs e)
         {
-            HotelBook hotelBook = view.HotelBookingViewModel.HotelBook;
+            HotelBook hotelBook = view.HotelBookDTO.HotelBook;
             hotelBook.Reference = ReferenceGenerator.Generate(6);   // Generates 6-character reference key.
 
             hotelBookingRepository.BookHotel(hotelBook);
