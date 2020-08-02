@@ -51,25 +51,21 @@ namespace QuickStop.Infrastructure.ModelStreams
                     // splits all data by a delimiter
                     string[] hotelParams = parser.Split(data);
 
-                    try
-                    {
-                        HotelRoom hotel = new HotelRoom();
+                    HotelRoom hotel = new HotelRoom();
 
-                        hotel.ID = Convert.ToInt32(hotelParams[0]);
-                        hotel.Name = hotelParams[1].Trim('\"');
-                        hotel.Description = hotelParams[2].Trim('\"');
-                        hotel.Price = Convert.ToDecimal(hotelParams[3]);
-                        hotel.Ratings = Convert.ToUInt16(hotelParams[4]);
-                        hotel.Location = (Location)Enum.Parse(typeof(Location), hotelParams[5]);
-                        hotel.MinGuestCount = Convert.ToInt32(hotelParams[6]);
-                        hotel.MaxGuestCount = Convert.ToInt32(hotelParams[7]);
-                        hotel.DateUntilAvailable = string.IsNullOrWhiteSpace(hotelParams[8]) ? null : (DateTime?)Convert.ToDateTime(hotelParams[8]);
-                        hotel.Icon = hotelParams[9];
-                        hotel.Room = hotelParams[10];
+                    hotel.ID = Convert.ToInt32(hotelParams[0]);
+                    hotel.Name = hotelParams[1].Trim('\"');
+                    hotel.Description = hotelParams[2].Trim('\"');
+                    hotel.Price = Convert.ToDecimal(hotelParams[3]);
+                    hotel.Ratings = Convert.ToUInt16(hotelParams[4]);
+                    hotel.Location = (Location)Enum.Parse(typeof(Location), hotelParams[5]);
+                    hotel.MinGuestCount = Convert.ToInt32(hotelParams[6]);
+                    hotel.MaxGuestCount = Convert.ToInt32(hotelParams[7]);
+                    hotel.DateUntilAvailable = string.IsNullOrWhiteSpace(hotelParams[8]) ? null : (DateTime?)Convert.ToDateTime(hotelParams[8]);
+                    hotel.Icon = hotelParams[9];
+                    hotel.Room = hotelParams[10];
 
-                        hotels.Add(hotel);
-                    }
-                    catch { }
+                    hotels.Add(hotel);
                 }
             }
 
